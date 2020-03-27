@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: rgb(238, 238, 238);
+}
+
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgba(255, 255, 255);
+  width: 100%;
+  height: 70px;
+  z-index: 1;
+}
+
+ul {
+  display: flex;
+  justify-content: right;
+  list-style: none;
+  margin-right: 15%;
+}
+
+.texto_menu {
+  font-size: 9px;
+  color: #43bd69;
+  position: relative;
+  margin-right: 100px;
+  margin-top: 40px;
+  opacity: 0.6;
+}
+
+.logo {
+  /*background-image: url(../img/Logo.png);
+  background-repeat: no-repeat;
+  background-size: auto;*/
+  flex: 1 1 auto;
+  margin-left: 10%;
+}
+
+a {
+  margin-left: 30px;
+  color: #43bd69;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #0c7d2f;
+  text-decoration: none;
+}
+
+.banner {
+  position: relative;
+  background-image: url("../img/Fernando-FLeitas-por-Pixabay.jpg");
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+  filter: blur(3px);
+  filter: opacity(0.4);
+}
+
+main {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  height: 700px;
+}
+
+.nome_cor {
+  color: #43bd69;
+  font-weight: bold;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.busca {
+  box-sizing: border-box;
+  height: 300px;
+  position: absolute;
+  flex-wrap: wrap;
+  font-weight: bold;
+  color: #43bd69;
+}
+
+.input-group-text {
+  border-radius: 4px;
+  width: 400px;
+}
+
+.btn btn-success {
+  background-color: #43bd69;
+  border-color: #43bd69;
+  border-radius: 4px;
+}
+
+.funciona {
+  margin: 15px 100px 100px 100px;
+}
+
+/*ESTILO DA PÁGINA DE LOGIN */
+.login-body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: rgba(91, 190, 91, 0.7);
+}
+
+.box {
+  width: 350px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(0, 0, 0);
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: black 5px 10px 20px;
+  opacity: 0.8;
+}
+
+.box h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #b5cbb7;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 4px;
+  transition: 0.25s;
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+  width: 280px;
+  border-color: #43bd69;
+}
+
+.box input[type="submit"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #43bd69;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 4px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.box input[type="submit"]:hover {
+  background: #43bd69;
+}
