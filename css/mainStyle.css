@@ -1,0 +1,59 @@
+/*
+* site used as tool complementary color descovery
+* https://color.adobe.com/create
+* site used as font of colors
+* https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+* sugestion: make changes use this two sites as a guide reference
+* the colors name is the same as used in google's site.
+* below: complementary colors used as sugestion in abobe site.
+* Color Theme Swatches in Hex 
+* .Fluorescing-coral-reef-split-shot-with-boat-1-hex { color: #A7C8F2; }
+* .Fluorescing-coral-reef-split-shot-with-boat-3-hex { color: #027368; }
+* .Fluorescing-coral-reef-split-shot-with-boat-2-hex { color: #048ABF; }
+* .Fluorescing-coral-reef-split-shot-with-boat-4-hex { color: #025951; }
+* .Fluorescing-coral-reef-split-shot-with-boat-5-hex { color: #F25116; }
+*/
+
+/*
+* google fonts import
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;1,200;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script:400,700&display=swap&subset=latin-ext');
+
+
+:root{
+  --green-700: #388E3C,
+  --green-800: #2E7D32,
+  --gree-900: #1B5E20,
+  --font-m: 'Montserrat', sans-serif;
+  --font-r: 'Raleway', sans-serif;
+  --font-m: 'Oleo Script', cursive;
+}
+
+
+/*------------------------------------------
+  Responsive Grid Media Queries - 1280, 1024, 768, 480
+   1280-1024   - desktop (default grid)
+   1024-768    - tablet landscape
+   768-480     - tablet 
+   480-less    - phone landscape & smaller
+--------------------------------------------*/
+@media all and (min-width: 1024px) and (max-width: 1280px) { }
+ 
+@media all and (min-width: 768px) and (max-width: 1024px) { }
+ 
+@media all and (min-width: 480px) and (max-width: 768px) { }
+ 
+@media all and (max-width: 480px) { }
+
+
+
+
+
+
+
+
+
+
+
