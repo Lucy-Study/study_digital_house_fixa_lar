@@ -1,0 +1,5 @@
+@import "/css/mainStyle.css";
+
+h1 {
+  font-family: var(--font-o)
+}
