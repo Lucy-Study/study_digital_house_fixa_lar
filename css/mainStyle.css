@@ -7,11 +7,14 @@
 * the colors name is the same as used in google's site.
 * below: complementary colors used as sugestion in abobe site.
 * Color Theme Swatches in Hex 
-* .Fluorescing-coral-reef-split-shot-with-boat-1-hex { color: #A7C8F2; }
-* .Fluorescing-coral-reef-split-shot-with-boat-3-hex { color: #027368; }
-* .Fluorescing-coral-reef-split-shot-with-boat-2-hex { color: #048ABF; }
-* .Fluorescing-coral-reef-split-shot-with-boat-4-hex { color: #025951; }
-* .Fluorescing-coral-reef-split-shot-with-boat-5-hex { color: #F25116; }
+*/
+
+/*
+ * esmerald: #43bd69,
+ * magic-mint: #6cf195,
+ * mine-shaft: #464646,
+ * dove-gray: #5d5b5b,    
+ * silver: #c8c8c8,    
 */
 
 /*
@@ -22,14 +25,14 @@
 @import url('https://fonts.googleapis.com/css?family=Oleo+Script:400,700&display=swap&subset=latin-ext');
 
 
-:root{
-  --green-700: #388E3C,
-  --green-800: #2E7D32,
-  --gree-900: #1B5E20,
+
+:root {
   --font-m: 'Montserrat', sans-serif;
   --font-r: 'Raleway', sans-serif;
-  --font-m: 'Oleo Script', cursive;
+  --font-o: 'Oleo Script', cursive;
 }
+
+
 
 
 /*------------------------------------------

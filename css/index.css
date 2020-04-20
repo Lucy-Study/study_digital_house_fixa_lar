@@ -5,3 +5,31 @@
 .nav-link:hover {
   color: #6cf195;
 }
+/* normalize */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*
+ * esmerald: #43bd69,
+ * magic-mint: #6cf195,
+ * mine-shaft: #464646,
+ * dove-gray: #5d5b5b,    
+ * silver: #c8c8c8,    
+*/
+.nav-style {
+  background-color: #5d5b5b;
+}
+
+.footer-container {
+  color: #5d5b5b;
+}
+
+h1 {
+  color: red;
+}
+
+small.footer-small-logo {
+  font-size: 50px;
+}
