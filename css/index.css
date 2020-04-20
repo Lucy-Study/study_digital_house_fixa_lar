@@ -15,6 +15,14 @@
   background-color: #5d5b5b;
 };
 
+.footer-container {
+  color: #5d5b5b;  
+}
+
 h1 {
   color: red;
 };
+
+small.footer-small-logo {
+  font-size: 50px;
+}
