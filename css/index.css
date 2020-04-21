@@ -42,9 +42,16 @@ small.footer-small-logo {
 #h {
   margin-right: 60px;
   border-top: 20px solid transparent;
-  border-bottom: 700px solid transparent; 
+  border-bottom: 700px solid transparent;
   border-right: 700px solid rgb(75, 32, 175);
 }
+
+/*
+* sectio how it works
+* rack for photo
+* be carfull if change are needed!!
+*
+*/
 
 .how-work {
   background-color: rgb(236, 232, 232);
@@ -54,39 +61,20 @@ small.footer-small-logo {
   display: flex;
 }
 
-
-#tri1 {
-  clip-path: ellipse(60% 90%);
-  shape-outside: ellipse(60% 90%);
-	width: 45vw;
-	height: 90vh;
-	background: url(../img/prestador_fundo_transparente.png);
-	background-size: cover;
-}
-
-#tri2 {
-  float: right;
-}
-
-
 .wrapper {
   display: flex;
-};
+}
 
 .main {
   flex: 4;
-};
+}
 
 .main h2 {
-  font-size: 32px;
-  margin: 2rem 2;
-  color: #764abc;
   text-transform: uppercase;
-};
+}
 
 .main p {
-  font-size: 2rem;
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }
 
 .polygon {
@@ -119,3 +107,4 @@ small.footer-small-logo {
 .b-contratar {
   height: 25px;
 }
+
