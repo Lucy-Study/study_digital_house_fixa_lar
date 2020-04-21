@@ -47,6 +47,32 @@ small.footer-small-logo {
 }
 
 /*
+* login section
+*
+*/
+.login-section {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.login-section::before{
+  content: "";
+  background-image: url("../img/prego_martelo.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(-1);
+  opacity: 0.3;
+}
+
+/*
 * sectio how it works
 * rack for photo
 * be carfull if change are needed!!
@@ -54,7 +80,6 @@ small.footer-small-logo {
 */
 
 .how-work {
-  background-color: rgb(236, 232, 232);
   height: 100vh;
   width: 100vw;
   overflow: hidden;
