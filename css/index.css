@@ -38,20 +38,3 @@ h1 {
 small.footer-small-logo {
   font-size: 50px;
 }
-
-.checked {
-  color: orange;
-}
-
-#exampleInputEmail1 {
-  border-radius: 100px;
-}
-
-.btn-form-contratar {
-  display: flex;
-  justify-content: center;
-}
-
-.b-contratar {
-  height: 25px;
-}

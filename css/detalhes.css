@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;1,200;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Oleo+Script:400,700&display=swap&subset=latin-ext");
+
+.checked {
+  color: orange;
+}
+
+#exampleInputEmail1 {
+  border-radius: 100px;
+}
+
+.btn-form-contratar {
+  display: flex;
+  justify-content: center;
+}
+
+.b-contratar {
+  height: 25px;
+}
