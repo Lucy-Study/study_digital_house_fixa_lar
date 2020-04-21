@@ -43,3 +43,87 @@ h1 {
 small.footer-small-logo {
   font-size: 50px;
 }
+
+#h {
+  margin-right: 60px;
+  border-top: 20px solid transparent;
+  border-bottom: 700px solid transparent; 
+  border-right: 700px solid rgb(75, 32, 175);
+}
+
+.how-work {
+  background-color: rgb(236, 232, 232);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+}
+
+
+#tri1 {
+  clip-path: ellipse(60% 90%);
+  shape-outside: ellipse(60% 90%);
+	width: 45vw;
+	height: 90vh;
+	background: url(../img/prestador_fundo_transparente.png);
+	background-size: cover;
+}
+
+#tri2 {
+  float: right;
+}
+
+
+.wrapper {
+  display: flex;
+};
+
+.main {
+  flex: 4;
+};
+
+.main h2 {
+  font-size: 32px;
+  margin: 2rem 2;
+  color: #764abc;
+  text-transform: uppercase;
+};
+
+.main p {
+  font-size: 2rem;
+  margin-bottom: .75rem;
+}
+
+.polygon {
+  width: 50vw;
+  height: 90vh;
+  /* background-color: #764ABC; */
+  background-image: url("../img/prestador_fundo_transparente.png");
+  background-size: cover;
+  float: left;
+  shape-outside: ellipse(300px 400px at 60% 50%) padding-box;
+  clip-path: ellipse(300px 400px at 50% 50%);
+  padding-right: 40px;
+  margin-right: 10px;
+}
+
+.img-inner {
+  /**/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
