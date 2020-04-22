@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;1,200;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800,900i&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script:400,700&display=swap&subset=latin-ext");
 
@@ -22,6 +22,10 @@ body {
   font-weight: 500;
 }
 
+/*
+* nav and footer style
+*/
+
 .nav-style {
   background-color: #5d5b5b;
 }
@@ -30,25 +34,32 @@ body {
   color: #5d5b5b;
 }
 
-h1 {
-  font-family: "Oleo Script", cursive;
-  color: red;
+#exampleInputEmail1 {
+  border-radius: 100px;
 }
+
+/*
+* end nav and footer style
+*/
+
+/*
+* hero section
+*/
+
+/*
+* end hero section
+*/
 
 small.footer-small-logo {
   font-size: 50px;
 }
 
-#h {
-  margin-right: 60px;
-  border-top: 20px solid transparent;
-  border-bottom: 700px solid transparent;
-  border-right: 700px solid rgb(75, 32, 175);
-}
-
 /*
 * login section
-*
+* ###########################################
+*/
+/*
+* card style
 */
 .login-section {
   position: relative;
@@ -59,7 +70,7 @@ small.footer-small-logo {
   align-items: center;
 }
 
-.login-section::before{
+.login-section::before {
   content: "";
   background-image: url("../img/prego_martelo.jpg");
   background-size: cover;
@@ -72,10 +83,66 @@ small.footer-small-logo {
   opacity: 0.3;
 }
 
+.card-header_title {
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+
+.card-footer_call {
+  font-size: 0.7rem;
+}
+
+.card-footer_call a {
+  color: inherit;
+}
+
+.card-footer_body-senha {
+  display: block;
+}
+
+.card-footer_body-senha a {
+  color: inherit;
+  font-weight: 200;
+  font-size: 0.8rem;
+}
+
+form-group input {
+  border-radius: 50px;
+}
+
 /*
-* sectio how it works
+* text login section
+*/
+
+.text-side-login p {
+  font-size: 1.5rem;
+}
+
+.text-side-login span {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+
+  text-shadow: 2px 3px #ccc;
+}
+
+.text-side-login_fixalar {
+  color: #43bd69;
+}
+/*
+*
+* end text login section 
+*/
+
+/*
+* end login section
+*###########################################
+*/
+
+/*
+* section how it works
 * rack for photo
-* be carfull if change are needed!!
+* be carfull if changes are needed!!
 *
 */
 
@@ -105,31 +172,28 @@ small.footer-small-logo {
 .polygon {
   width: 50vw;
   height: 90vh;
-  /* background-color: #764ABC; */
   background-image: url("../img/prestador_fundo_transparente.png");
-  background-size: cover;
+  background-size: 550px;
+  background-repeat: no-repeat;
   float: left;
-  shape-outside: ellipse(300px 400px at 60% 50%) padding-box;
-  clip-path: ellipse(300px 400px at 50% 50%);
+  shape-outside: ellipse(300px 400px at 40% 40%) padding-box;
+  clip-path: ellipse(400px 500px at 30% 40%);
   padding-right: 40px;
   margin-right: 10px;
 }
 
-
-.checked {
-  color: orange;
+#bairro {
+  width: 300px;
+  margin-right: 4px;
 }
 
-#exampleInputEmail1 {
-  border-radius: 100px;
+/*Profissionais em Destaque*/
+a {
+  color: white;
+  text-decoration: none;
 }
 
-.btn-form-contratar {
-  display: flex;
-  justify-content: center;
+a:hover {
+  color: white;
+  text-decoration: none;
 }
-
-.b-contratar {
-  height: 25px;
-}
-
