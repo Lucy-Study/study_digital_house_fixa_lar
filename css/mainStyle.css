@@ -1,5 +1,5 @@
 /*
-* site used as tool complementary color descovery
+* site used as tool complementary color discovery
 * https://color.adobe.com/create
 * site used as font of colors
 * https://material.io/design/color/the-color-system.html#tools-for-picking-colors
@@ -20,20 +20,15 @@
 /*
 * google fonts import
 */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;1,200;1,300&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Oleo+Script:400,700&display=swap&subset=latin-ext');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;1,200;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Oleo+Script:400,700&display=swap&subset=latin-ext");
 
 :root {
-  --font-m: 'Montserrat', sans-serif;
-  --font-r: 'Raleway', sans-serif;
-  --font-o: 'Oleo Script', cursive;
+  --font-m: "Montserrat", sans-serif;
+  --font-r: "Raleway", sans-serif;
+  --font-o: "Oleo Script", cursive;
 }
-
-
-
 
 /*------------------------------------------
   Responsive Grid Media Queries - 1280, 1024, 768, 480
@@ -42,21 +37,14 @@
    768-480     - tablet 
    480-less    - phone landscape & smaller
 --------------------------------------------*/
-@media all and (min-width: 1024px) and (max-width: 1280px) { }
- 
-@media all and (min-width: 768px) and (max-width: 1024px) { }
- 
-@media all and (min-width: 480px) and (max-width: 768px) { }
- 
-@media all and (max-width: 480px) { }
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+}
 
+@media all and (min-width: 768px) and (max-width: 1024px) {
+}
 
+@media all and (min-width: 480px) and (max-width: 768px) {
+}
 
-
-
-
-
-
-
-
-
+@media all and (max-width: 480px) {
+}

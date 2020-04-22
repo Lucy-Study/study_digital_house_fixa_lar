@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <title>Fixa Lar - Serviços</title>
@@ -17,37 +17,51 @@
 
 <body>
   <!--###### navbar section #############-->
-  <nav class="navbar navbar-expand-lg nav-style">
-    <a class="navbar-brand" href="#">
-      <img src="img/Logo_FixaLar.png" alt="Fixa Lar" style="width: 9.5rem;" />
-    </a>
-    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavId">
-      <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" href="#" style="color: #43bd69;">Como Funciona <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" style="color: #43bd69; padding-left: 3rem; padding-right: 3rem;">Seja
-            Parceiro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" style="color: #43bd69;">Contato</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <strong class="text-white-50">|</strong>
-        <a class="px-2" href="#" style="color: #43bd69;">Login</a>
-        <button class="btn badge badge-pill badge-success my-2 my-sm-0" type="submit">Cadastrar-se</button>
-      </form>
+  <nav class="navbar navbar-expand-lg nav-style sticky-top" style="background-color: #5d5b5b;">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/Logo_FixaLar.png" alt="Fixa Lar" style="width: 9.5rem;" />
+      </a>
+      <button
+        class="navbar-toggler d-lg-none"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html#how-work" style="color: #43bd69;"
+              >Como Funciona </a><span class="sr-only">(current)</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#call-to-action" style="color: #43bd69; padding-left: 3rem; padding-right: 3rem;"
+              >Seja Parceiro</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#footer-container" style="color: #43bd69;">Contato</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <strong class="text-white-50">|</strong>
+          <a class="px-2" href="index.html#login" style="color: #43bd69;">LOGIN</a>
+          <button class="btn badge badge-pill badge-success my-2 my-sm-0" type="submit">
+            CADASTRAR-SE
+          </button>
+        </form>
+      </div>
     </div>
   </nav>
   <!--###### navbar end-section #########-->
 
  <!-- ######### hero section ########### -->
+ <main>
   <section id="hero"
     style="height: 100vh; width: 100vw; background: whitesmoke; overflow: hidden; position: relative;">
     <img src="img/ferramentas_mesa.jpg" alt="ferramentas" style="object-fit: cover; opacity: 0.7;" />
@@ -86,7 +100,7 @@
       </div>
       <!--end text side-->
       <!--card-->
-      <div class="card border-success text-center mb-3 shadow-lg p-3 mb-5 bg-white rounded" style="max-width: 19rem;">
+      <div class="card border-success text-center mb-3 shadow-lg p-3 mb-5 bg-white rounded" style="max-width: 19rem;" id="login">
         <div class="card-header bg-transparent border-success">
           <div class="card-header_title">Minha Conta</div>
         </div>
@@ -117,7 +131,7 @@
   </section>
   <!-- ###### end login-section ######### -->
 
-  <!-- ######################section how it work-s #############################-->
+  <!-- ######################section how it works #############################-->
   <section class="how-work" id="how-work">
     <div class="wrapper container-fluid">
       <section class="main">
@@ -139,7 +153,7 @@
         <h5 class="mt-5">Vamos encontrar um profissonal pertinho de você</h5>
         <form action="">
           <div class="form-row">
-            <input type="text" name="name" id="name" placeholder="...Informe seu Bairro"
+            <input type="text" name="bairro" id="bairro" placeholder="...Informe seu Bairro"
               style="border: 2px solid #000;  border-radius: 10px">
             <button type="button" class="btn badge badge-pill badge-success" style="font-size: 1rem;">Buscar</button>
         </form>
@@ -147,146 +161,184 @@
         <div class="container">
           <div class="row">
             <div class="col-sm"><img class="border border-success rounded-circle" src="./img/conserto-chuveiro.png"
-                alt="conserto chuveiro" style="width: 7rem;"></div>
+                alt="conserto chuveiro" style="width: 7rem; height: 7rem;"></div>
             <div class="col-sm"><img class="border border-success rounded-circle" src="./img/consertos-eletricos.png"
-                alt="conserto elétrico" style="width: 7rem;"></div>
+                alt="conserto elétrico" style="width: 7rem; height: 7rem;"></div>
             <div class="col-sm"><img class="border border-success rounded-circle" src="./img/montador-moveis.png"
-                alt="montador de moveis" style="width: 7rem"></div>
+                alt="montador de moveis" style="width: 7rem; height: 7rem;"></div>
             <div class="col-sm"><img class="border border-success rounded-circle" src="./img/reforma-geral.png"
-                alt="reforma geral" style="width: 7rem;"></div>
+                alt="reforma geral" style="width: 7rem; height: 7rem;"></div>
           </div>
         </div>
 
       </section>
     </div>
   </section>
-  <!-- ###################end section how it work-s ############################-->
+  <!-- ###################end section how it works ############################-->
 
-  <hr />
   <!-- ########## section profissionais em destaque ####### -->
   <!-- begin width overlay after card-deck -->
-  <section id="section-profissionais"
-    style="height: 100vh; width: 100vw; background: whitesmoke; overflow: hidden; position: relative;">
-    <img src="img/ferrametas_up_and_down.png" alt="ferramentas" style="object-fit: cover; opacity: 0.5;" />
-    <div style="position: absolute; 
-        top: 10%; 
-        left: 6%">
-      <div class="card-deck">
-        <!-- second card start -->
-        <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded" style="width: 300px;">
-          <img src="img/prestador-1.webp" class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
-            alt="prestador de serviços" style="height: 150px; width: auto;" />
+  <div id="banner1" style="height:570px;background-image:url(img/ferrametas_up_and_down.png);background-position:center;background-size:cover;">
+    <section class="container">
+            <p class="font-weight-bold pl-5 pt-5" style="color: white;">Profissionais em destaque</p>
+    <div class="card-deck py-5 px-5">
+          <!-- first card start -->
+          <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded" style="width: 300px; height: 350px;">
+            <img
+              src="img/prestador-1.webp"
+              class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
+              alt="prestador de serviços"
+              style="height: 100px; width: auto;"
+            />
+           
+            <div class="card-body">
+              <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
+          <div class="mb-3">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+          </div>
+          <p 
+            class="p-0 text-muted"
+            href="#" 
+            style="text-decoration: underline; 
+            font-weight: 400; font-size: 12px;
+            "
+          >São Paulo - Tatuapé</p>
+          <p 
+            class="card-text pt-2"
+            style="
+            font-family: 'Raleway';
+            font-weight: lighter;
+            letter-spacing: 0.0625em;
+            font-size: 0.70rem;
+            "
+            >Civil, Hidráulica...</p>
+            <div class="btn btn-success"><a href="contratar.html" class="link-card">Contratar</a></div>
+            </div>
+          </div>
+          <!-- end first card -->
+       
+          <!-- second card start -->
+          <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded" style="width: 300px; height: 350px;">
+            <img
+              src="img/prestador-1.webp"
+              class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
+              alt="prestador de serviços"
+              style="height: 100px; width: auto;"
+            />
+           
+            <div class="card-body">
+              <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
+          <div class="mb-3">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+          </div>
+          <p 
+            class="p-0 text-muted"
+            href="#" 
+            style="text-decoration: underline; 
+            font-weight: 400; font-size: 12px;
+            "
+          >São Paulo - Tatuapé</p>
+          <p 
+            class="card-text pt-2"
+            style="
+            font-family: 'Raleway';
+            font-weight: lighter;
+            letter-spacing: 0.0625em;
+            font-size: 0.70rem;
+            "
+            >Civil, Hidráulica...</p>
+            <div class="btn btn-success"><a href="contratar.html" class="link-card">Contratar</a></div>
+            </div>
+          </div>
+          <!-- end second card -->
 
-          <div class="card-body">
-            <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
-            <div class="mb-3">
-              <span class="text-dark mr-2">Avaliação</span>
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            </div>
-            <a class="p-4 text-muted" href="#" style="text-decoration: underline; 
-            font-weight: 400;
-            ">São Paulo - Tatuapé</a>
-            <p class="card-text pt-2" style="
+          <!-- third card start -->
+          <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded" style="width: 300px; height: 350px;">
+            <img
+              src="img/prestador-1.webp"
+              class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
+              alt="prestador de serviços"
+              style="height: 100px; width: auto;"
+            />
+           
+            <div class="card-body">
+              <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
+          <div class="mb-3">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+          </div>
+          <p 
+            class="p-0 text-muted"
+            href="#" 
+            style="text-decoration: underline; 
+            font-weight: 400; font-size: 12px;
+            "
+          >São Paulo - Tatuapé</p>
+          <p 
+            class="card-text pt-2"
+            style="
             font-family: 'Raleway';
             font-weight: lighter;
             letter-spacing: 0.0625em;
             font-size: 0.70rem;
-            ">Civil, Hidráulica...</p>
-            <p>+Detalhes...</p>
-            <div class="btn btn-success">Contratar</div>
-          </div>
-        </div>
-        <!-- end second card -->
-        <!-- second card start -->
-        <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded" style="width: 300px;">
-          <img src="img/prestador-1.webp" class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
-            alt="prestador de serviços" style="height: 150px; width: auto;" />
-          <div class="card-body">
-            <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
-            <div class="mb-3">
-              <span class="text-dark mr-2">Avaliação</span>
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            "
+            >Civil, Hidráulica...</p>
+            <div class="btn btn-success"><a href="contratar.html">Contratar</a></div>
             </div>
-            <a class="p-4 text-muted" href="#" style="text-decoration: underline; 
-            font-weight: 400;
-            ">São Paulo - Tatuapé</a>
-            <p class="card-text pt-2" style="
-            font-family: 'Raleway';
-            font-weight: lighter;
-            letter-spacing: 0.0625em;
-            font-size: 0.70rem;
-            ">Hidráulica, Eletrica...</p>
-            <p>+Detalhes...</p>
-            <div class="btn btn-success">Contratar</div>
           </div>
-        </div>
-        <!-- end second card -->
-        <!-- third card start -->
-        <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded" style="width: 300px;">
-          <img src="img/prestador-1.webp" class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
-            alt="prestador de serviços" style="height: 150px; width: auto;" />
+          <!-- end third card -->
 
-          <div class="card-body">
-            <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
-            <div class="mb-3">
-              <span class="text-dark mr-2">Avaliação</span>
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            </div>
-            <a class="p-4 text-muted" href="#" style="text-decoration: underline; 
-            font-weight: 400;
-            ">São Paulo - Tatuapé</a>
-            <p class="card-text pt-2" style="
+          <!-- fourth card start -->
+          <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded" style="width: 300px; height: 350px;">
+            <img
+              src="img/prestador-1.webp"
+              class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
+              alt="prestador de serviços"
+              style="height: 100px; width: auto;"
+            />
+           
+            <div class="card-body">
+              <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
+          <div class="mb-3">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+          </div>
+          <p 
+            class="p-0 text-muted"
+            href="#" 
+            style="text-decoration: underline; 
+            font-weight: 400; font-size: 12px;
+            "
+          >São Paulo - Tatuapé</p>
+          <p 
+            class="card-text pt-2"
+            style="
             font-family: 'Raleway';
             font-weight: lighter;
             letter-spacing: 0.0625em;
             font-size: 0.70rem;
-            ">Civil, Hidráulica Eletrica</p>
-            <p>+Detalhes...</p>
-            <div class="btn btn-success">Contratar</div>
-          </div>
-        </div>
-        <!-- end third card -->
-        <!-- fourth card start -->
-        <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded" style="width: 300px;">
-          <img src="img/prestador-1.webp" class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
-            alt="prestador de serviços" style="height: 150px; width: auto;" />
-          <div class="card-body">
-            <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
-            <div class="mb-3">
-              <span class="text-dark mr-2">Avaliação</span>
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-              <img src="img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            "
+            >Civil, Hidráulica...</p>
+            <div class="btn btn-success"><a href="contratar.html">Contratar</a></div>
             </div>
-            <a class="p-4 text-muted" href="#" style="text-decoration: underline; 
-            font-weight: 400;
-            ">São Paulo - Tatuapé</a>
-            <p class="card-text pt-2" style="
-            font-family: 'Raleway';
-            font-weight: lighter;
-            letter-spacing: 0.0625em;
-            font-size: 0.70rem;
-            ">Elétrica, Civil...</p>
-            <p>+Detalhes...</p>
-            <div class="btn btn-success">Contratar</div>
           </div>
-        </div>
-        <!-- end fourth card -->
+          <!-- end fourth card -->
       </div>
+    </section>
       <!-- end card deck -->
     </div>
   </section>
@@ -306,102 +358,98 @@
     </div>
   </section>
   <!-- ###### section call-to-action-2 last section on page ######### -->
+</main>
 
-  <!-- footte section -->
-  <div id="footer-container" class="text-white-50 pt-3 pb-3" style="background-color: #5d5b5b;">
-    <div class="container-fluid">
-      <div class="row d-flex">
-        <div class="col-sm">
-          <img src="img/Logo_FixaLar.png" alt="Fixa Lar" style="width: 11rem; padding: 20px 0 5px;" />
-          <span style="display: block; font-size: 12px; font-family: serif; font-stretch: condensed;">Encontre o
-            profissional que você precisa com a comodiade que você merece</span>
-          <h6 class="footer-container" style="color: #43bd69; padding-top: 1.5rem;">Entre em Contato</h6>
-          <div class="row">
-            <div class="col-1">
-              <svg class="bi bi-envelope-fill" width="1em" height=".8em" viewBox="0 0 16 16" fill="#43bd69"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M.05 3.555L8 8.414l7.95-4.859A2 2 0 0014 2H2A2 2 0 00.05 3.555zM16 4.697l-5.875 3.59L16 11.743V4.697zm-.168 8.108L9.157 8.879 8 9.586l-1.157-.707-6.675 3.926A2 2 0 002 14h12a2 2 0 001.832-1.195zM0 11.743l5.875-3.456L0 4.697v7.046z" />
-              </svg>
+  <!-- footer section -->
+  <footer id="footer-container" class="text-white-50 pt-3 pb-3" style="background-color: #5d5b5b;">
+    <div class="container">
+      <div class="container-fluid">
+        <div class="row d-flex">
+          <div class="col-sm">
+            <img src="img/Logo_FixaLar.png" alt="Fixa Lar" style="width: 10rem; padding: 20px 0 5px;" />
+            <span style="display: block; font-size: 12px; font-stretch: condensed; text-align: justify;"
+              >Encontre o profissional que você precisa com a comodidade que você merece.</span
+            >
+            <h6 class="footer-container" style="color: #43bd69; padding-top: 1.5rem;">Entre em Contato</h6>
+            <div class="row">
+              <div class="col-1">
+                <img src="img/icon-material-email.png" alt="Email para Contato" width="12" height="10" />
+              </div>
+              <div class="col">
+                <span style="font-size: 0.8rem;">contato@fixalar.com.br</span>
+              </div>
             </div>
-            <div class="col">
-              <span style="font-size: 0.8rem;">Contato fixalar@email.com</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-1">
-              <svg class="bi bi-chat-fill" width=".8em" height="1em" viewBox="0 0 16 16" fill="#43bd69"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 008 15z" />
-              </svg>
-            </div>
-            <div class="col">
-              <span style="font-size: 0.8rem;">11 9 8866-4455</span>
+            <div class="row">
+              <div class="col-1">
+                <img src="img/icon-whatsapp.png" alt="Whatsapp" width="12" height="12" />
+              </div>
+              <div class="col">
+                <span style="font-size: 0.8rem;">11 9 8866-4455</span>
+              </div>
             </div>
           </div>
+          <div class="col-sm">
+            <ul class="nav flex-column" style="color: #43bd69;">
+              <li class="nav-item">
+                <span class="h5 pt-3 nav-link" href="#">Mapa do Site</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white-50" href="index.html#how-work">Como Funciona</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white-50" href="index.html#call-to-action">Seja Parceiro</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white-50" href="index.html#footer-container">Contato</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <ul class="nav flex-column" style="color: #43bd69;">
+              <li class="nav-item">
+                <span class="h5 pt-3 nav-link" href="#">Links Úteis</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white-50" href="#">Serviços</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white-50" href="#">Termos e Condições</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white-50" href="#">Política de Privacidade</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <form>
+              <label class="h5 pt-3" for="exampleInputEmail1" style="color: #43bd69;">Receba nossa newsletter</label>
+              <div class="form-group text-right">
+                <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" placeholder="Insira seu e-mail" />
+                <button class="btn badge badge-pill badge-success my-2 my-sm-2" type="submit">ENVIAR</button>
+              </div>
+            </form>
+          </div>
         </div>
-        <div class="col-sm">
-          <ul class="nav flex-column" style="color: #43bd69;">
-            <li class="nav-item">
-              <span class="h5 pt-3 nav-link" href="#">Mapa do Site</span>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white-50" href="#">Como Funciona</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white-50" href="#">Seja Parceiro</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white-50" href="#">Contato</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-sm">
-          <ul class="nav flex-column" style="color: #43bd69;">
-            <li class="nav-item">
-              <span class="h5 pt-3 nav-link" href="#">Links Úteis</span>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white-50" href="#">Serviços</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white-50" href="#">Termos e Condições</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white-50" href="#">Politica de Privaciade</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-sm">
-          <form>
-            <label class="h5 pt-3" for="exampleInputEmail1" style="color: #43bd69;">Receba nossa newsletter</label>
-            <div class="form-group text-right">
-              <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" />
-              <button class="btn badge badge-pill badge-success my-2 my-sm-0" type="submit">Cadastrar-se</button>
-            </div>
-          </form>
+      </div>
+      <!-- division hr -->
+      <div class="mt-4 mb-4">
+        <hr class="container-fluid" style="color: #c8c8c8; background-color: #c8c8c8; height: 1px; width: 96%;" />
+      </div>
+      <!-- division footer -->
+      <div class="container-fluid">
+        <div class="d-flex justify-content-between">
+          <small>Por Grupo 2 DH</small>
+          <div>
+            <a href="#"><img src="img/icon-twitter.png" alt="twitter" style="width: 2.5rem;" /></a>
+            <a href="#"><img src="img/icon-facebook.png" alt="facebook" style="width: 2.5rem;" /></a>
+            <a href="#"><img src="img/icon-linkedin.png" alt="instagram" style="width: 2.5em;" /></a>
+          </div>
+
+          <small>2020 @ Todos os direitos reservados.</small>
         </div>
       </div>
     </div>
-    <!-- division hr -->
-    <div class="mt-4 mb-4">
-      <hr class="container-fluid" style="color: #c8c8c8; background-color: #c8c8c8; height: 1px; width: 96%;" />
-    </div>
-    <!-- division footer -->
-    <div class="container-fluid">
-      <div class="d-flex justify-content-between">
-        <smll>Grup 2 DH</smll>
-        <div>
-          <img src="img/icon-twitter.png" alt="twitter" style="width: 2.5rem;" />
-          <img src="img/icon-facebook.png" alt="facebook" style="width: 2.5rem;" />
-          <img src="img/icon-linkedin.png" alt="linkedin" style="width: 2.5rem;" />
-        </div>
-
-        <small>2020 @ Todos os direitos reservado.</small>
-      </div>
-    </div>
-  </div>
+  </footer>
   <!-- footer end-section -->
 
   <!-- Optional JavaScript -->

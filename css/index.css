@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800,900i&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800,900i&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script:400,700&display=swap&subset=latin-ext");
 
@@ -34,6 +34,10 @@ body {
   color: #5d5b5b;
 }
 
+#exampleInputEmail1 {
+  border-radius: 100px;
+}
+
 /*
 * end nav and footer style
 */
@@ -42,18 +46,13 @@ body {
 * hero section
 */
 
-
-
-
 /*
 * end hero section
 */
 
-
 small.footer-small-logo {
   font-size: 50px;
 }
-
 
 /*
 * login section
@@ -71,7 +70,7 @@ small.footer-small-logo {
   align-items: center;
 }
 
-.login-section::before{
+.login-section::before {
   content: "";
   background-image: url("../img/prego_martelo.jpg");
   background-size: cover;
@@ -90,7 +89,7 @@ small.footer-small-logo {
 }
 
 .card-footer_call {
-  font-size: .7rem;
+  font-size: 0.7rem;
 }
 
 .card-footer_call a {
@@ -104,7 +103,7 @@ small.footer-small-logo {
 .card-footer_body-senha a {
   color: inherit;
   font-weight: 200;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 form-group input {
@@ -122,7 +121,7 @@ form-group input {
 .text-side-login span {
   font-size: 1.8rem;
   font-weight: 800;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
 
   text-shadow: 2px 3px #ccc;
 }
@@ -135,18 +134,15 @@ form-group input {
 * end text login section 
 */
 
-
 /*
 * end login section
 *###########################################
 */
 
-
-
 /*
-* sectio how it works
+* section how it works
 * rack for photo
-* be carfull if change are needed!!
+* be carfull if changes are needed!!
 *
 */
 
@@ -186,21 +182,18 @@ form-group input {
   margin-right: 10px;
 }
 
-
-.checked {
-  color: orange;
+#bairro {
+  width: 300px;
+  margin-right: 4px;
 }
 
-#exampleInputEmail1 {
-  border-radius: 100px;
+/*Profissionais em Destaque*/
+a {
+  color: white;
+  text-decoration: none;
 }
 
-.btn-form-contratar {
-  display: flex;
-  justify-content: center;
+a:hover {
+  color: white;
+  text-decoration: none;
 }
-
-.b-contratar {
-  height: 25px;
-}
-
