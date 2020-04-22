@@ -17,10 +17,10 @@
 
 <body>
 
-<!-- Navigation -->
+<!--###### navbar section #############-->
 <nav class="navbar navbar-expand-lg nav-style sticky-top" style="background-color: #5d5b5b;">
   <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index.html">
       <img src="img/Logo_FixaLar.png" alt="Fixa Lar" style="width: 9.5rem;" />
     </a>
     <button
@@ -37,29 +37,27 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
       <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" href="#" style="color: #43bd69;"
-            >Como Funciona <span class="sr-only">(current)</span></a
-          >
+          <a class="nav-link" href="index.html#how-work" style="color: #43bd69;"
+            >Como Funciona </a><span class="sr-only">(current)</span>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" style="color: #43bd69; padding-left: 3rem; padding-right: 3rem;"
+          <a class="nav-link" href="index.html#call-to-action" style="color: #43bd69; padding-left: 3rem; padding-right: 3rem;"
             >Seja Parceiro</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" style="color: #43bd69;">Contato</a>
+          <a class="nav-link" href="index.html#footer-container" style="color: #43bd69;">Contato</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <strong class="text-white-50">|</strong>
-        <a class="px-2" href="#" style="color: #43bd69;">LOGIN</a>
+        <a class="px-2" href="index.html#login" style="color: #43bd69;">LOGIN</a>
         <a class="btn badge badge-pill badge-success my-2 my-sm-0" href="criarConta.html">CADASTRAR-SE</a>
-        <!--<button class="btn badge badge-pill badge-success my-2 my-sm-0" type="submit">CADASTRAR-SE</button>-->
       </form>
     </div>
   </div>
 </nav>
-
+<!--###### navbar end-section #########-->
 
   <div class="card-cadastro">
     <div class="card">
@@ -68,7 +66,7 @@
       </div>
       
       <div class="card-body">
-      <p>Já possui cadastro? Clique <a href="#">aqui</a> para login.</p>
+      <p>Já possui cadastro? Clique <a href="index.html#login">aqui</a> para login.</p>
     </div>
 
       <form class="form-cadastro">
@@ -332,107 +330,102 @@
     </div>
   </div> <!--fim do card para cadastro-->
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="jquery/jquery.slim.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/accordion.js"></script>
+  <!-- footer section -->
+  <footer id="footer-container" class="text-white-50 pt-3 pb-3" style="background-color: #5d5b5b;">
+    <div class="container">
+      <div class="container-fluid">
+        <div class="row d-flex">
+          <div class="col-sm">
+            <img src="img/Logo_FixaLar.png" alt="Fixa Lar" style="width: 10rem; padding: 20px 0 5px;" />
+            <span style="display: block; font-size: 12px; font-stretch: condensed; text-align: justify;"
+              >Encontre o profissional que você precisa com a comodidade que você merece.</span
+            >
+            <h6 class="footer-container" style="color: #43bd69; padding-top: 1.5rem;">Entre em Contato</h6>
+            <div class="row">
+              <div class="col-1">
+                <img src="img/icon-material-email.png" alt="Email para Contato" width="12" height="10" />
+              </div>
+              <div class="col">
+                <span style="font-size: 0.8rem;">contato@fixalar.com.br</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1">
+                <img src="img/icon-whatsapp.png" alt="Whatsapp" width="12" height="12" />
+              </div>
+              <div class="col">
+                <span style="font-size: 0.8rem;">11 9 8866-4455</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm">
+            <ul class="nav flex-column" style="color: #43bd69;">
+              <li class="nav-item">
+                <span class="h5 pt-3 nav-link" href="#">Mapa do Site</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white-50" href="index.html#how-work">Como Funciona</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white-50" href="index.html#call-to-action">Seja Parceiro</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white-50" href="index.html#footer-container">Contato</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <ul class="nav flex-column" style="color: #43bd69;">
+              <li class="nav-item">
+                <span class="h5 pt-3 nav-link" href="#">Links Úteis</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white-50" href="#">Serviços</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white-50" href="#">Termos e Condições</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white-50" href="#">Política de Privacidade</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <form>
+              <label class="h5 pt-3" for="exampleInputEmail1" style="color: #43bd69;">Receba nossa newsletter</label>
+              <div class="form-group text-right">
+                <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" placeholder="Insira seu e-mail" />
+                <button class="btn badge badge-pill badge-success my-2 my-sm-2" type="submit">ENVIAR</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- division hr -->
+      <div class="mt-4 mb-4">
+        <hr class="container-fluid" style="color: #c8c8c8; background-color: #c8c8c8; height: 1px; width: 96%;" />
+      </div>
+      <!-- division footer -->
+      <div class="container-fluid">
+        <div class="d-flex justify-content-between">
+          <small>Por Grupo 2 DH</small>
+          <div>
+            <a href="#"><img src="img/icon-twitter.png" alt="twitter" style="width: 2.5rem;" /></a>
+            <a href="#"><img src="img/icon-facebook.png" alt="facebook" style="width: 2.5rem;" /></a>
+            <a href="#"><img src="img/icon-linkedin.png" alt="instagram" style="width: 2.5em;" /></a>
+          </div>
 
-<!-- footer section -->
-<footer id="footer-container" class="text-white-50 pt-3 pb-3" style="background-color: #5d5b5b;">
-  <div class="container">
-    <div class="container-fluid">
-      <div class="row d-flex">
-        <div class="col-sm">
-          <img src="img/Logo_FixaLar.png" alt="Fixa Lar" style="width: 10rem; padding: 20px 0 5px;" />
-          <span style="display: block; font-size: 12px; font-stretch: condensed; text-align: justify;"
-            >Encontre o profissional que você precisa com a comodidade que você merece.</span
-          >
-          <h6 class="footer-container" style="color: #43bd69; padding-top: 1.5rem;">Entre em Contato</h6>
-          <div class="row">
-            <div class="col-1">
-              <img src="img/icon-material-email.png" alt="Email para Contato" width="12" height="10" />
-            </div>
-            <div class="col">
-              <span style="font-size: 0.8rem;">contato@fixalar.com.br</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-1">
-              <img src="img/icon-whatsapp.png" alt="Whatsapp" width="12" height="12" />
-            </div>
-            <div class="col">
-              <span style="font-size: 0.8rem;">11 9 8866-4455</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm">
-          <ul class="nav flex-column" style="color: #43bd69;">
-            <li class="nav-item">
-              <span class="h5 pt-3 nav-link" href="#">Mapa do Site</span>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white-50" href="#">Como Funciona</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white-50" href="#">Seja Parceiro</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white-50" href="#">Contato</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-sm">
-          <ul class="nav flex-column" style="color: #43bd69;">
-            <li class="nav-item">
-              <span class="h5 pt-3 nav-link" href="#">Links Úteis</span>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white-50" href="#">Serviços</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white-50" href="#">Termos e Condições</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white-50" href="#">Política de Privacidade</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-sm">
-          <form>
-            <label class="h5 pt-3" for="exampleInputEmail1" style="color: #43bd69;">Receba nossa newsletter</label>
-            <div class="form-group text-right">
-              <input
-                type="email"
-                class="form-control form-control-sm"
-                id="exampleInputEmail1"
-                placeholder="Insira seu e-mail"
-              />
-              <button class="btn badge badge-pill badge-success my-2 my-sm-2" type="submit">ENVIAR</button>
-            </div>
-          </form>
+          <small>2020 @ Todos os direitos reservados.</small>
         </div>
       </div>
     </div>
-    <!-- division hr -->
-    <div class="mt-4 mb-4">
-      <hr class="container-fluid" style="color: #c8c8c8; background-color: #c8c8c8; height: 1px; width: 96%;" />
-    </div>
-    <!-- division footer -->
-    <div class="container-fluid">
-      <div class="d-flex justify-content-between">
-        <small>Por Grupo 2 DH</small>
-        <div>
-          <a href="#"><img src="img/icon-twitter.png" alt="twitter" style="width: 2.5rem;" /></a>
-          <a href="#"><img src="img/icon-facebook.png" alt="facebook" style="width: 2.5rem;" /></a>
-          <a href="#"><img src="img/icon-linkedin.png" alt="instagram" style="width: 2.5em;" /></a>
-        </div>
+  </footer>
+  <!-- footer end-section -->
 
-        <small>2020 @ Todos os direitos reservados.</small>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- footer end-section --> 
+   <!-- Bootstrap core JavaScript -->
+   <script src="jquery/jquery.slim.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/accordion.js"></script>
 
 </body>
 </html>
