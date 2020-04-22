@@ -42,26 +42,7 @@ body {
 * hero section
 */
 
-.hero-section {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
 
-.hero-section::before{
-  content: "";
-  background-image: url("../img/ferramentas_mesa.jpg");
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  opacity: 0.5;
-}
 
 
 /*
