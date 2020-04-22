@@ -165,12 +165,12 @@ form-group input {
 .polygon {
   width: 50vw;
   height: 90vh;
-  /* background-color: #764ABC; */
   background-image: url("../img/prestador_fundo_transparente.png");
-  background-size: cover;
+  background-size: 550px;
+  background-repeat: no-repeat;
   float: left;
-  shape-outside: ellipse(300px 400px at 60% 50%) padding-box;
-  clip-path: ellipse(300px 400px at 50% 50%);
+  shape-outside: ellipse(300px 400px at 40% 40%) padding-box;
+  clip-path: ellipse(400px 500px at 30% 40%);
   padding-right: 40px;
   margin-right: 10px;
 }
