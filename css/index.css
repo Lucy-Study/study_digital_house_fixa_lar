@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;1,200;1,300&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800,900i&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script:400,700&display=swap&subset=latin-ext");
 
@@ -48,7 +48,10 @@ small.footer-small-logo {
 
 /*
 * login section
-*
+* ###########################################
+*/
+/*
+* card style
 */
 .login-section {
   position: relative;
@@ -71,6 +74,63 @@ small.footer-small-logo {
   transform: scaleX(-1);
   opacity: 0.3;
 }
+
+.card-header_title {
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+
+.card-footer_call {
+  font-size: .7rem;
+}
+
+.card-footer_call a {
+  color: inherit;
+}
+
+.card-footer_body-senha {
+  display: block;
+}
+
+.card-footer_body-senha a {
+  color: inherit;
+  font-weight: 200;
+  font-size: .8rem;
+}
+
+form-group input {
+  border-radius: 50px;
+}
+
+/*
+* text login section
+*/
+
+.text-side-login p {
+  font-size: 1.5rem;
+}
+
+.text-side-login span {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+
+  text-shadow: 2px 3px #ccc;
+}
+
+.text-side-login_fixalar {
+  color: #43bd69;
+}
+/*
+*
+* end text login section 
+*/
+
+
+/*
+* end login section
+*###########################################
+*/
 
 /*
 * sectio how it works
