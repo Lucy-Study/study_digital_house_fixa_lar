@@ -30,10 +30,59 @@ body {
   background-color: #5d5b5b;
 }
 
+.img-logo{
+  width: 12rem;
+  /*width: 200px;
+  height: 50px;*/
+}
+
+/* NavBar Resposive */
+.nav-btn-responsivel{
+  background-color: #43bd69; 
+}
+.navbar .navbar-toggler .icon-bar{
+  background-color: #43bd69 !important;
+}
+.nav-btn-border{
+  border: 2px solid #43bd69;
+}
+
+/* Menu */
+.menu{
+  text-align:center;
+  padding: 1px 5px 1px 5px;
+  font-size: 18px;
+  text-decoration: #fff;
+}
+.nav-link{
+  color: #43bd69; 
+  padding-left: 3rem; 
+  padding-right: 3rem;
+}
+.nav-link-cadastro{
+  color: #fff;
+}
+
+.link-cadastrar{
+  background: #43bd69;
+  border-radius: 5px;
+  ;
+}
+.link-houver{
+  border: 1px solid #5d5b5b;
+  background-color: #5d5b5b;
+}
+.link-houver:hover{
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+
+/*Footer*/
 .footer-container {
   color: #5d5b5b;
 }
-
 #exampleInputEmail1 {
   border-radius: 100px;
 }

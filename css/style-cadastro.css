@@ -4,6 +4,7 @@
   /*src: url('https://www.fontsquirrel.com/fonts/montserrat');*/
 }
 
+/*
 paleta-de-cores {
   color-emerald: #43bd69;
   color-emerald: rgb(67, 189, 105);
@@ -16,22 +17,7 @@ paleta-de-cores {
   color-silver: #c8c8c8;
   color-silver: rgb(200, 200, 200);
 }
-
-/*Navbar*/
-.img-logo {
-  width: 200px;
-  height: 50px;
-}
-.menu {
-  text-align: center;
-  padding: 1px 10px 1px 10px;
-  font-size: 17px;
-  text-decoration: #fff;
-}
-.login {
-  background: #43bd69;
-  border-radius: 8px;
-}
+*/
 
 /* ##### FORMULARIO CADASTRO #####*/
 input {
@@ -41,6 +27,17 @@ input {
 select {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);
   margin-top: -5px;
+}
+
+.clique-aqui{
+    color: blue;
+    text-decoration: none;
+  }
+
+.clique-aqui:hover{
+  color: #43bd69;
+  text-decoration: none;
+}
 }
 
 /*inputs form*/
