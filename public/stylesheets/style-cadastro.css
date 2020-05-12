@@ -1,0 +1,287 @@
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("font/montserrat/Montserrat-Regular.otf");
+  /*src: url('https://www.fontsquirrel.com/fonts/montserrat');*/
+}
+
+/*
+paleta-de-cores {
+  color-emerald: #43bd69;
+  color-emerald: rgb(67, 189, 105);
+  color-magic-mint: #6cf195;
+  color-magic-mint: rgb(108, 241, 149);
+  color-mine-shaft: #464646;
+  color-mine-shaft: rgb(46, 46, 46);
+  color-dove-gray: #5d5b5b;
+  color-dove-gray: rgb(93, 91, 91);
+  color-silver: #c8c8c8;
+  color-silver: rgb(200, 200, 200);
+}
+*/
+
+/* ##### FORMULARIO CADASTRO #####*/
+input {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);
+  margin-top: -5px;
+}
+select {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);
+  margin-top: -5px;
+}
+
+.clique-aqui{
+    color: blue;
+    text-decoration: none;
+  }
+
+.clique-aqui:hover{
+  color: #43bd69;
+  text-decoration: none;
+}
+}
+
+/*inputs form*/
+::placeholder {
+  /*color: #ffffff;*/
+  font-size: 0.9em;
+  padding-top: 2px;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.label-form {
+  color: rgb(139, 137, 137);
+  font-weight: bold;
+}
+.label-form-genero {
+  color: rgb(139, 137, 137);
+}
+
+.genero {
+  padding-left: 15px;
+}
+
+.card {
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.35);
+}
+
+.card-cadastro {
+  width: 100%;
+  padding: 5% 25% 5% 25%;
+}
+
+.form-cadastro {
+  padding-top: 20px;
+}
+
+.title-card {
+  background: #43bd69;
+}
+
+.btn-cadastrar {
+  /*border: 1px solid red;*/
+  margin: 0px 10px 20px 10px;
+  padding: 10px 30px 10px 30px;
+}
+
+/* ##### GRID HABILIDADES #####*/
+.card-habilidades {
+  border: 0.5 solid #fff;
+  margin-bottom: 20px;
+  /*box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.35);*/
+}
+
+.title {
+  width: auto;
+  place-items: center;
+  /*border: solid;*/
+  margin-bottom: 15px;
+  text-align: center;
+  font-family: tahoma;
+}
+
+.label-habilidades {
+  margin: 0px 5px 15px 5px;
+  padding: 5px 20px 5px 20px;
+  border: 1px solid gray;
+  border-radius: 40px;
+  font-family: Tahoma;
+  font-size: 14px;
+  float: left;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  transition: 0.75s;
+}
+/*
+input:focus + label {
+    border-color: blue;
+}
+*/
+.input-habilidade:checked + label {
+  /*border-color: red;*/
+  border-color: greenyellow;
+  /*background: #43BD69;*/
+  background: green;
+  transition: background-color 0.75s;
+}
+
+.input-habilidade:focus:checked + label {
+  border-color: green;
+  /*border-color: greenyellow;*/
+  /*border-radius: 5px;*/
+}
+
+/*ocultar caixa de seleção*/
+.input-habilidade {
+  display: none;
+}
+
+.input-habilidade:checked ~ label {
+  /*color: red;*/
+  color: #fff;
+}
+
+/*####### ACCORDION **************/
+:root {
+  --padding: 0.6rem 1.2rem;
+}
+
+.accordion {
+  /*margin: 3rem auto;*/
+  width: 100%;
+  font-family: Montserrat-Regular, sans-serif;
+}
+
+.accordion-titulo {
+  color: rgb(139, 137, 137);
+  /*color: #5d5b5b;*/
+  /*color: #43BD69;*/
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/*borda top do componente*/
+.accordion-item {
+  /*margin: 0 auto;*/
+  margin: 0px 0px 10px 0px;
+  border-top: 2px solid #43bd69;
+  border-radius: 5px;
+  /* padding: .6rem 1.2rem; */
+  /* text-align: center; */
+  width: 100%;
+}
+
+/*Interior do componente*/
+.accordion-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding);
+  background: rgba(207, 207, 207, 0.219);
+  /*background: rgb(236, 234, 234);*/
+  /*background: #eee;*/
+
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/*Icon do componente*/
+.accordion-icon {
+  border: 0.5rem solid transparent;
+  border-top-color: #43bd69;
+  transform: translateY(25%);
+  transform-origin: center 37.5%;
+  transition: 0.4s all ease;
+}
+
+/*Icon do componente rotacao*/
+.accordion-icon--turn {
+  transform: rotate(180deg);
+}
+
+/*Detalhes do accordion*/
+.accordion-detales {
+  max-height: 0;
+  /*background: rgba(207, 207, 207, 0.219);*/
+  font-size: 15px;
+  color: #5d5b5b;
+  margin-left: 10px;
+  overflow: hidden;
+
+  transition: 0.4s all ease;
+}
+
+.accordion-details > p {
+  padding: var(--padding);
+}
+
+/*############### CRIE SUA CONTA ###############*/
+a.nounderline:link {
+  text-decoration: none;
+}
+
+.titulo-crie-conta {
+  text-align: center;
+}
+
+.titulo-escolha-cadastro {
+  text-align: center;
+  color: #fff;
+  font-size: 25px;
+}
+
+.card-escolha-cadastro {
+  background-color: #43bd69;
+}
+
+.card-principal {
+  padding: 0 45px 50px 45px;
+}
+
+.card-crie-conta {
+  width: 90%;
+  padding: 2% 25% 5% 25%;
+}
+
+.img-criar-conta {
+  width: 100%;
+}
+
+.p-voltar {
+  color: #43bd69;
+  text-align: center;
+  font-size: 20px;
+}
+
+/*############### FOOTER ###############*/
+footer {
+  height: 30%;
+  background-color: grey;
+  /*color: #43bd69;*/
+  padding: 1.5%;
+}
+
+.sub-titulo {
+  font-size: 13px;
+  color: aliceblue;
+}
+
+.titulo {
+  color: #43bd69;
+  font-size: 20;
+}
+
+.link {
+  color: aliceblue;
+}
+
+.input-newsletter {
+  border-radius: 10px;
+  height: 40px;
+  width: 100%;
+  margin: 5px 0px 15px 0px;
+  padding-left: 10px;
+}
+
+#exampleInputEmail1 {
+  border-radius: 100px;
+}

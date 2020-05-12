@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!--Head-->
+<%- include('./includes/head'), {title: 'Fixa Lar | Home'} %>
+
+<body>
+  <!--###### navbar section #############--> 
+<% include('./includes/header') %>
+
+ <!-- ######### hero section ########### -->
+ <main>
+  <section id="hero"
+    style="height: 100vh; width: 100vw; background: whitesmoke; overflow: hidden; position: relative;">
+    <img src="./public/img/ferramentas_mesa.jpg" alt="ferramentas" style="object-fit: cover; opacity: 0.7;" />
+    <div style="position: absolute; top: 40vh; left: 35vw;">
+      <h4 
+        style="color: #140101;
+        font-size: 2em;
+        font-weight: 600;
+        "
+      >
+        Micro Reparos ao seu alcance.
+      </h4>
+        <a class="btn badge badge-pill badge-success" 
+         style="
+          margin: 2rem 8.6rem; 
+          color: whitesmoke; 
+          font-size: 1.5em;
+          font-weight: 400; 
+          padding: 10px 15px;"
+          href="index.html#banner1"
+        >
+          EXPERIMENTE
+        </a>
+    </div>
+  </section>
+ <!-- ###### end hero section ########## -->
+ 
+
+  <!-- ########## login-section ####### -->
+  <section class="login-section" id="login">
+    <div class="container d-flex justify-content-between align-items-center">
+      <!--text side-->
+      <div class="text-dark text-center text-side-login ">
+        <p>Se você precisa de <span>micro reparos</span> na sua</p>
+        <p><span>residência, a <span class="text-side-login_fixalar">FIXA LAR</span> traz os</p>
+        <p><span> melhores profissionais</span> na sua <span>região<span></p>
+      </div>
+      <!--end text side-->
+      <!--card-->
+      <div class="card border-success text-center mb-3 shadow-lg p-3 mb-5 bg-white rounded" style="max-width: 19rem;" id="login">
+        <div class="card-header bg-transparent border-success">
+          <div class="card-header_title">Minha Conta</div>
+        </div>
+        <div class="card-body text-success">
+          <p class="card-text">
+            <form action="">
+              <div class="form-group">
+                <input type="text" class="form-control mb-2"  name="name" id="name" placeholder="Email"
+                style="border-radius: 20px;"
+                >
+                <input type="password" class="form-control" name="passwd" id="passwd" placeholder="Senha"
+                style="border-radius:20px"
+                >
+                <small id="passwordHelpInline" class="text-muted card-footer_body-senha mb-2" style="text-align: left;">
+                  <a href="#">Esqueci minha senha</a>
+                </small>
+                <a href="#" class="badge badge-pill badge-success"
+                style="font-size: 1rem; padding: 7px 14px;"
+                >Entrar</a>
+              </div>
+            </form>
+          </p>
+        </div>
+        <div class="card-footer bg-transparent border-success card-footer_call">Ainda não tem cadastro? <a href="criarConta.html">Cadastre-se</a></div>
+      </div>
+      <!--end card-->
+    </div>
+  </section>
+  <!-- ###### end login-section ######### -->
+
+  <!-- ######################section how it works #############################-->
+  <section class="how-work" id="how-work">
+    <div class="wrapper container-fluid">
+      <section class="main">
+        <h2 class="how-work_h2" style="text-align:center; margin-top: 2rem; padding-bottom: 20px;">Como a <strong style="color:#43bd69">Fixa
+            Lar</strong> funciona </h2>
+
+        <!--don't change next line-->  
+        <!--#### component #####-->
+        <div class="polygon"></div>
+
+        <p>Buscamos trazer uma solução para micro reparos do tipo que precisamos o dia a dia que não têm a necessidade
+          de contratar grandes orçamentos, como pro exemplo, troca de uma peça de azulejo, reparo de extensão queimada,
+          pintura de uma pequena área, etc.
+        </p>
+        <p>Para isso, agregamos profissionais de diversas especialidades em nossa base de dados, todos com verificação e
+          autenticação.</p>
+        <p>Conectamos você a esses profissionais e buscamos ser a <div class=""></div>ponte masis eficiente para sanar
+          suas necessidades.</p>
+        <h5 class="mt-5">Vamos encontrar um profissonal pertinho de você</h5>
+        <form action="">
+          <div class="form-row">
+            <input type="text" name="bairro" id="bairro" placeholder="...Informe seu Bairro"
+              style="border: 2px solid #000;  border-radius: 10px">
+            <button type="button" class="btn badge badge-pill badge-success" style="font-size: 1rem;">Buscar</button>
+        </form>
+        <h4 class="my-4">Conheça alguns dos serviços oferecidos pela Fixa Lar</h4>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm"><img class="border border-success rounded-circle" src="./public/img/conserto-chuveiro.png"
+                alt="conserto chuveiro" style="width: 7rem; height: 7rem;"></div>
+            <div class="col-sm"><img class="border border-success rounded-circle" src="./public/img/consertos-eletricos.png"
+                alt="conserto elétrico" style="width: 7rem; height: 7rem;"></div>
+            <div class="col-sm"><img class="border border-success rounded-circle" src="./public/img/montador-moveis.png"
+                alt="montador de moveis" style="width: 7rem; height: 7rem;"></div>
+            <div class="col-sm"><img class="border border-success rounded-circle" src="./public/img/reforma-geral.png"
+                alt="reforma geral" style="width: 7rem; height: 7rem;"></div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </section>
+  <!-- ###################end section how it works ############################-->
+
+  <!-- ########## section profissionais em destaque ####### -->
+  <!-- begin width overlay after card-deck -->
+  <div id="banner1" style="height:570px;background-image:url(./public/img/ferrametas_up_and_down.png);background-position:center;background-size:cover;">
+    <section class="container">
+            <p class="font-weight-bold pl-5 pt-5" style="color: white;">Profissionais em destaque</p>
+    <div class="card-deck py-5 px-5">
+          <!-- first card start -->
+          <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded" style="width: 300px; height: 350px;">
+            <img
+              src="./public/img/prestador-1.webp"
+              class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
+              alt="prestador de serviços"
+              style="height: 100px; width: auto;"
+            />
+           
+            <div class="card-body">
+              <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
+          <div class="mb-3">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+          </div>
+          <p 
+            class="p-0 text-muted"
+            href="#" 
+            style="text-decoration: underline; 
+            font-weight: 400; font-size: 12px;
+            "
+          >São Paulo - Tatuapé</p>
+          <p 
+            class="card-text pt-2"
+            style="
+            font-family: 'Raleway';
+            font-weight: lighter;
+            letter-spacing: 0.0625em;
+            font-size: 0.70rem;
+            "
+            >Civil, Hidráulica...</p>
+            <div class="btn btn-success"><a href="contratar.html" class="link-card">Contratar</a></div>
+            </div>
+          </div>
+          <!-- end first card -->
+       
+          <!-- second card start -->
+          <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded" style="width: 300px; height: 350px;">
+            <img
+              src="./public/img/prestador-1.webp"
+              class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
+              alt="prestador de serviços"
+              style="height: 100px; width: auto;"
+            />
+           
+            <div class="card-body">
+              <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
+          <div class="mb-3">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+          </div>
+          <p 
+            class="p-0 text-muted"
+            href="#" 
+            style="text-decoration: underline; 
+            font-weight: 400; font-size: 12px;
+            "
+          >São Paulo - Tatuapé</p>
+          <p 
+            class="card-text pt-2"
+            style="
+            font-family: 'Raleway';
+            font-weight: lighter;
+            letter-spacing: 0.0625em;
+            font-size: 0.70rem;
+            "
+            >Civil, Hidráulica...</p>
+            <div class="btn btn-success"><a href="contratar.html" class="link-card">Contratar</a></div>
+            </div>
+          </div>
+          <!-- end second card -->
+
+          <!-- third card start -->
+          <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded" style="width: 300px; height: 350px;">
+            <img
+              src="./public/img/prestador-1.webp"
+              class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
+              alt="prestador de serviços"
+              style="height: 100px; width: auto;"
+            />
+           
+            <div class="card-body">
+              <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
+          <div class="mb-3">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+          </div>
+          <p 
+            class="p-0 text-muted"
+            href="#" 
+            style="text-decoration: underline; 
+            font-weight: 400; font-size: 12px;
+            "
+          >São Paulo - Tatuapé</p>
+          <p 
+            class="card-text pt-2"
+            style="
+            font-family: 'Raleway';
+            font-weight: lighter;
+            letter-spacing: 0.0625em;
+            font-size: 0.70rem;
+            "
+            >Civil, Hidráulica...</p>
+            <div class="btn btn-success"><a href="contratar.html">Contratar</a></div>
+            </div>
+          </div>
+          <!-- end third card -->
+
+          <!-- fourth card start -->
+          <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded" style="width: 300px; height: 350px;">
+            <img
+              src="./public/img/prestador-1.webp"
+              class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
+              alt="prestador de serviços"
+              style="height: 100px; width: auto;"
+            />
+           
+            <div class="card-body">
+              <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
+          <div class="mb-3">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="./public/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+          </div>
+          <p 
+            class="p-0 text-muted"
+            href="#" 
+            style="text-decoration: underline; 
+            font-weight: 400; font-size: 12px;
+            "
+          >São Paulo - Tatuapé</p>
+          <p 
+            class="card-text pt-2"
+            style="
+            font-family: 'Raleway';
+            font-weight: lighter;
+            letter-spacing: 0.0625em;
+            font-size: 0.70rem;
+            "
+            >Civil, Hidráulica...</p>
+            <div class="btn btn-success"><a href="/views/contratar.ejs">Contratar</a></div>
+            </div>
+          </div>
+          <!-- end fourth card -->
+      </div>
+    </section>
+      <!-- end card deck -->
+    </div>
+  </section>
+  <!-- ########## section profissionais em destaque end ####### -->
+
+  <!-- ########## section call-to-action-2 last section on page ####### -->
+  <section id="call-to-action"
+    style="height: 100vh; width: 100vw; background: whitesmoke; overflow: hidden; position: relative;">
+    <img src="./public/img/ferramentas_ordem.jpg" alt="ferramentas" style="object-fit: cover; opacity: 0.3;" />
+    <div style="position: absolute; top: 45vh; left: 30vw;">
+      <h4 style="color: #0e0202;">
+        É ESPECIALISTA EM CONSERTOS E REPAROS?
+        <button class="btn badge badge-pill badge-success" style="margin: 3rem 8rem;"><a href="cadastroPrestador.html">
+          VENHA SER NOSSO PARCEIRO</a>
+        </button>
+      </h4>
+    </div>
+  </section>
+  <!-- ###### section call-to-action-2 last section on page ######### -->
+</main>
+
+  <!-- footer section -->
+  <%= include('./includes/footer') %>
+</body>
+
+</html>
