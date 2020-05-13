@@ -1,58 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
+<!--Head-->
+<%- include('./includes/head', {title: 'Fixa Lar | Criar Conta'}) %>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
-  <title>Crie sua conta</title>
-
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    type="text/css" />
-
-  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="css/style-cadastro.css" type="text/css">
-  <link rel="stylesheet" href="css/index.css" type="text/css">
-</head>
+<link rel="stylesheet" href="/css/style-cadastro.css" type="text/css">
 
 <body>
   <!--###### navbar section #############-->
-  <nav class="navbar navbar-expand-lg static-top nav-style sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img class="img-logo" src="img/Logo_FixaLar.png" alt="Fixa Lar">
-      </a>
-      <button class=" navbar  navbar-toggleable-md navbar-light  navbar-toggler navbar-toggler-right  nav-btn-border" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon icon-bar"></span>
-    </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="menu">
-            <a class="nav-link btn-outline-success link-houver" href="index.html#how-work">Como Funciona</a>
-          </li>
-          <li class="menu">
-            <a class="nav-link btn-outline-success link-houver" href="index.html#call-to-action">Seja Parceiro</a>
-          </li>
-          <!--<li class="menu">
-            <a class="nav-link btn-outline-success link-houver" href="#">Serviços</a>
-          </li>-->
-          <li class="menu">
-            <a class="nav-link btn-outline-success link-houver" href="index.html#footer-container">Contato</a>
-          </li>
-          <li class="menu">
-            <a class="nav-link btn-outline-success link-houver" href="index.html#login">Login</a>
-          </li>
-          <li class="link-cadastrar menu btn-outline-success">
-            <a class="nav-link-cadastro nav-link" href="criarConta.html">Cadastre-se</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!--###### navbar end-section #########-->
-
+<%- include('./includes/header') %>
 
   <div class="card-crie-conta">
     <div class="card">
@@ -66,8 +22,8 @@
       <div class="card-deck card-principal">
         
         <div class="card">
-          <a class="nounderline" href="cadastroCliente.html">
-          <img class="card-img-top img-criar-conta" src="img/cadastro-cliente.png" alt="img cadastro cliente">
+          <a class="nounderline" href="cadastroCliente.ejs">
+          <img class="card-img-top img-criar-conta" src="/img/cadastro-cliente.png" alt="img cadastro cliente">
           <div class="card-body card-escolha-cadastro">
             <p class="card-title titulo-escolha-cadastro">Cadastro de Cliente</p>
           </div>
@@ -75,8 +31,8 @@
 
         
         <div class="card">
-          <a class="nounderline" href="cadastroPrestador.html">
-          <img class="card-img-top" src="img/cadastro-prestador.png" alt="img cadastro prestador">
+          <a class="nounderline" href="cadastroPrestador.ejs">
+          <img class="card-img-top" src="/img/cadastro-prestador.png" alt="img cadastro prestador">
           <div class="card-body card-escolha-cadastro">
             <p class="card-title titulo-escolha-cadastro">Cadastro de Prestador</p>
           </div>
@@ -84,107 +40,18 @@
     </div>
 
     <div>
-      <a class="nounderline" href="index.html"><p class="p-voltar"><u>Voltar</u></p></a>
+      <a class="nounderline" href="index.ejs"><p class="p-voltar"><u>Voltar</u></p></a>
     </div>
 
     </div>
   </div> <!--fim do card para cadastro-->
 
-  <!-- footer section -->
-  <footer id="footer-container" class="text-white-50 pt-3 pb-3" style="background-color: #5d5b5b;">
-    <div class="container">
-      <div class="container-fluid">
-        <div class="row d-flex">
-          <div class="col-sm">
-            <img src="img/Logo_FixaLar.png" alt="Fixa Lar" style="width: 10rem; padding: 20px 0 5px;" />
-            <span style="display: block; font-size: 12px; font-stretch: condensed; text-align: justify;"
-              >Encontre o profissional que você precisa com a comodidade que você merece.</span
-            >
-            <h6 class="footer-container" style="color: #43bd69; padding-top: 1.5rem;">Entre em Contato</h6>
-            <div class="row">
-              <div class="col-1">
-                <img src="img/icon-material-email.png" alt="Email para Contato" width="12" height="10" />
-              </div>
-              <div class="col">
-                <span style="font-size: 0.8rem;">contato@fixalar.com.br</span>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-1">
-                <img src="img/icon-whatsapp.png" alt="Whatsapp" width="12" height="12" />
-              </div>
-              <div class="col">
-                <span style="font-size: 0.8rem;">11 9 8866-4455</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm">
-            <ul class="nav flex-column" style="color: #43bd69;">
-              <li class="nav-item">
-                <span class="h5 pt-3 nav-link" href="#">Mapa do Site</span>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white-50" href="index.html#how-work">Como Funciona</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white-50" href="index.html#call-to-action">Seja Parceiro</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white-50" href="index.html#footer-container">Contato</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-sm">
-            <ul class="nav flex-column" style="color: #43bd69;">
-              <li class="nav-item">
-                <span class="h5 pt-3 nav-link" href="#">Links Úteis</span>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white-50" href="#">Serviços</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white-50" href="#">Termos e Condições</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white-50" href="#">Política de Privacidade</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-sm">
-            <form>
-              <label class="h5 pt-3" for="exampleInputEmail1" style="color: #43bd69;">Receba nossa newsletter</label>
-              <div class="form-group text-right">
-                <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" placeholder="Insira seu e-mail" />
-                <button class="btn badge badge-pill badge-success my-2 my-sm-2" type="submit">ENVIAR</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <!-- division hr -->
-      <div class="mt-4 mb-4">
-        <hr class="container-fluid" style="color: #c8c8c8; background-color: #c8c8c8; height: 1px; width: 96%;" />
-      </div>
-      <!-- division footer -->
-      <div class="container-fluid">
-        <div class="d-flex justify-content-between">
-          <small>Por Grupo 2 DH</small>
-          <div>
-            <a href="#"><img src="img/icon-twitter.png" alt="twitter" style="width: 2.5rem;" /></a>
-            <a href="#"><img src="img/icon-facebook.png" alt="facebook" style="width: 2.5rem;" /></a>
-            <a href="#"><img src="img/icon-linkedin.png" alt="instagram" style="width: 2.5em;" /></a>
-          </div>
-
-          <small>2020 @ Todos os direitos reservados.</small>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- footer end-section -->
+    <!-- footer section -->
+    <%- include('./includes/footer') %>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="assets/jquery/jquery.slim.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/jquery/jquery.slim.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
