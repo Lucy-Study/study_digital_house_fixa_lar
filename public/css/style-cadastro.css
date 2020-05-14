@@ -29,15 +29,14 @@ select {
   margin-top: -5px;
 }
 
-.clique-aqui{
-    color: blue;
-    text-decoration: none;
-  }
-
-.clique-aqui:hover{
-  color: #43bd69;
+.clique-aqui {
+  color: blue;
   text-decoration: none;
 }
+
+.clique-aqui:hover {
+  color: #43bd69;
+  text-decoration: none;
 }
 
 /*inputs form*/

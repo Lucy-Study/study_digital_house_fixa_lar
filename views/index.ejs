@@ -11,9 +11,9 @@
  <!-- ######### hero section ########### -->
  <main>
   <section id="hero"
-    style="height: 100vh; width: 100vw; background: whitesmoke; overflow: hidden; position: relative;">
-    <img src="/img/ferramentas_mesa.jpg" alt="ferramentas" style="object-fit: cover; opacity: 0.7;" />
-    <div style="position: absolute; top: 40vh; left: 35vw;">
+    style="height: 100vh; width: 100%; background: whitesmoke; overflow: hidden; position: relative;">
+    <img src="/img/ferramentas_mesa.jpg" alt="ferramentas" style="object-fit: cover; opacity: 0.7; height: 100vh; width: 100%;" />
+    <div style="position: absolute; top: 40vh; left: 30vw;">
       <h4 
         style="color: #140101;
         font-size: 2em;
@@ -29,7 +29,7 @@
           font-size: 1.5em;
           font-weight: 400; 
           padding: 10px 15px;"
-          href="index.html#banner1"
+          href="/#banner1"
         >
           EXPERIMENTE
         </a>
@@ -64,7 +64,7 @@
                 style="border-radius:20px"
                 >
                 <small id="passwordHelpInline" class="text-muted card-footer_body-senha mb-2" style="text-align: left;">
-                  <a href="#">Esqueci minha senha</a>
+                  <a class="login-link" href="#">Esqueci minha senha</a>
                 </small>
                 <a href="#" class="badge badge-pill badge-success"
                 style="font-size: 1rem; padding: 7px 14px;"
@@ -73,7 +73,7 @@
             </form>
           </p>
         </div>
-        <div class="card-footer bg-transparent border-success card-footer_call">Ainda não tem cadastro? <a href="criarConta.html">Cadastre-se</a></div>
+        <div class="card-footer bg-transparent border-success card-footer_call">Ainda não tem cadastro? <a class="login-link" href="criarConta">Cadastre-se</a></div>
       </div>
       <!--end card-->
     </div>
@@ -104,7 +104,7 @@
           <div class="form-row">
             <input type="text" name="bairro" id="bairro" placeholder="...Informe seu Bairro"
               style="border: 2px solid #000;  border-radius: 10px">
-            <button type="button" class="btn badge badge-pill badge-success" style="font-size: 1rem;">Buscar</button>
+            <button type="button" class="btn badge badge-pill badge-success" style="font-size: 1rem;"><a href="busca">Buscar</a></button>
         </form>
         <h4 class="my-4">Conheça alguns dos serviços oferecidos pela Fixa Lar</h4>
         <div class="container">
@@ -165,7 +165,7 @@
             font-size: 0.70rem;
             "
             >Civil, Hidráulica...</p>
-            <div class="btn btn-success"><a href="/views/contratar.ejs" class="link-card">Contratar</a></div>
+            <div class="btn btn-success"><a href="contratar" class="link-card">Contratar</a></div>
             </div>
           </div>
           <!-- end first card -->
@@ -204,7 +204,7 @@
             font-size: 0.70rem;
             "
             >Civil, Hidráulica...</p>
-            <div class="btn btn-success"><a href="/views/contratar.ejs" class="link-card">Contratar</a></div>
+            <div class="btn btn-success"><a href="contratar" class="link-card">Contratar</a></div>
             </div>
           </div>
           <!-- end second card -->
@@ -243,7 +243,7 @@
             font-size: 0.70rem;
             "
             >Civil, Hidráulica...</p>
-            <div class="btn btn-success"><a href="/views/contratar.ejs">Contratar</a></div>
+            <div class="btn btn-success"><a href="contratar">Contratar</a></div>
             </div>
           </div>
           <!-- end third card -->
@@ -282,7 +282,7 @@
             font-size: 0.70rem;
             "
             >Civil, Hidráulica...</p>
-            <div class="btn btn-success"><a href="/views/contratar.ejs">Contratar</a></div>
+            <div class="btn btn-success"><a href="contratar">Contratar</a></div>
             </div>
           </div>
           <!-- end fourth card -->
@@ -295,12 +295,12 @@
 
   <!-- ########## section call-to-action-2 last section on page ####### -->
   <section id="call-to-action"
-    style="height: 100vh; width: 100vw; background: whitesmoke; overflow: hidden; position: relative;">
-    <img src="/img/ferramentas_ordem.jpg" alt="ferramentas" style="object-fit: cover; opacity: 0.3;" />
+    style="height: 100vh; width: 100%; background: whitesmoke; overflow: hidden; position: relative;">
+    <img src="/img/ferramentas_ordem.jpg" alt="ferramentas" style="object-fit: cover; opacity: 0.3; height: 100vh; width: 100%;" />
     <div style="position: absolute; top: 45vh; left: 30vw;">
       <h4 style="color: #0e0202;">
         É ESPECIALISTA EM CONSERTOS E REPAROS?
-        <button class="btn badge badge-pill badge-success" style="margin: 3rem 8rem;"><a href="/views/cadastroPrestador.ejs">
+        <button class="btn badge badge-pill badge-success" style="margin: 3rem 8rem;"><a href="cadastroPrestador">
           VENHA SER NOSSO PARCEIRO</a>
         </button>
       </h4>

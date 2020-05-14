@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <!--Head-->
+  <%- include('./includes/head', {title: 'Fixa Lar | Busca'}) %>
+
+  <link rel="stylesheet" href="/css/busca.css" />
+
+  <body style="background-color: #fbfbfb;">
+    <!--###### navbar section #############-->
+    <%- include('./includes/header') %>
+
+    <main class="container">
+      <section id="menu-busca" class="shadow">
+        <form action="" class="form">
+          <div class="ordem">
+            <label for="servicos" class="titulo">Serviço</label>
+            <br />
+            <select id="servicos">
+              <option value="troca">Troca</option>
+              <option value="manutencao">Manutenção</option>
+              <option value="conserto">Conserto</option>
+            </select>
+          </div>
+
+          <div class="ordem">
+            <label for="regiao" class="titulo">Região</label>
+            <br />
+            <select id="regiao">
+              <option value="centro">Centro</option>
+              <option value="leste">Zona Leste</option>
+              <option value="oeste">Zona Oeste</option>
+              <option value="norte">Zona Norte</option>
+              <option value="sul">Zona Sul</option>
+            </select>
+          </div>
+
+          <div class="ordem">
+            <label for="bairro" class="titulo">Bairro</label>
+            <br />
+            <select id="bairro">
+              <option value="centro">República</option>
+              <option value="leste">Jardins</option>
+              <option value="oeste">Tatuapé</option>
+              <option value="norte">Itaquera</option>
+              <option value="sul">Barra Funda</option>
+            </select>
+          </div>
+
+          <div class="botao-buscar">
+            <button type="button" class="btn badge badge-pill badge-success" id="botao-size" style="font-size: 1rem;">
+              <a href="#">Buscar</a>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section id="cards-result" class="shadow">
+        <div class="card-deck py-5 px-5" id="card-prestador">
+          <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded">
+            <img
+              src="/img/prestador-1.webp"
+              class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
+              alt="prestador de serviços"
+              style="height: 100px; width: auto;"
+            />
+           
+            <div class="card-body">
+              <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
+          <div class="mb-3">
+            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
+          </div>
+          <p 
+            class="p-0 text-muted"
+            href="#" 
+            style="text-decoration: underline; 
+            font-weight: 400; font-size: 12px;
+            "
+          >São Paulo - Tatuapé</p>
+          <p 
+            class="card-text pt-2"
+            style="
+            font-family: 'Raleway';
+            font-weight: lighter;
+            letter-spacing: 0.0625em;
+            font-size: 0.70rem;
+            "
+            >Civil, Hidráulica...</p>
+            <div class="btn btn-success"><a href="contratar" class="link-card">Contratar</a></div>
+            </div>
+          </div>
+      </section>
+    </main>
+
+    <!-- footer section -->
+    <%- include('./includes/footer') %>
+  </body>
+</html>
