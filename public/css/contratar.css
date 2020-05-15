@@ -12,7 +12,9 @@
 }
 
 .b-contratar {
-  height: 25px;
+  height: 45px;
+  width: 150px;
+  font-size: 14px;
 }
 
 #exampleInputEmail1 {

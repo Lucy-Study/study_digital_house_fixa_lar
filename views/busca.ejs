@@ -10,6 +10,7 @@
     <%- include('./includes/header') %>
 
     <main class="container">
+      <!--Menu de Busca-->
       <section id="menu-busca" class="shadow">
         <form action="" class="form">
           <div class="ordem">
@@ -53,46 +54,75 @@
           </div>
         </form>
       </section>
+      <!--Fim - Menu de Busca-->
 
-      <section id="cards-result" class="shadow">
-        <div class="card-deck py-5 px-5" id="card-prestador">
-          <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded">
-            <img
-              src="/img/prestador-1.webp"
-              class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
-              alt="prestador de serviços"
-              style="height: 100px; width: auto;"
-            />
-           
-            <div class="card-body">
-              <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
-          <div class="mb-3">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-          </div>
-          <p 
-            class="p-0 text-muted"
-            href="#" 
-            style="text-decoration: underline; 
-            font-weight: 400; font-size: 12px;
-            "
-          >São Paulo - Tatuapé</p>
-          <p 
-            class="card-text pt-2"
-            style="
-            font-family: 'Raleway';
-            font-weight: lighter;
-            letter-spacing: 0.0625em;
-            font-size: 0.70rem;
-            "
-            >Civil, Hidráulica...</p>
-            <div class="btn btn-success"><a href="contratar" class="link-card">Contratar</a></div>
+      <!--Cards - Resultado Busca-->
+      <section id="cards-result" class="container shadow">
+        <div class="row">
+          <!--Card 1-->
+          <% relacaoPrestadores.forEach((prestador, index)=>{ %>
+          <div class="col-md-4 mt-4" id="card-prestador">
+            <div
+              class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded"
+              style="width: 250px; height: 350px;"
+            >
+              <img
+                src="/img/prestador-1.webp"
+                class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
+                alt="prestador de serviços"
+                style="height: 100px; width: auto;"
+              />
+              <div class="card-body">
+                <h4 class="card-title mt-2 mb-2"><%= prestador.nome %>></h4>
+                <div class="mb-3">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                </div>
+                <p
+                  class="p-0 text-muted"
+                  href="#"
+                  style="text-decoration: underline; font-weight: 400; font-size: 12px;"
+                >
+                  <%= prestador.regiao %>
+                </p>
+                <p
+                  class="card-text pt-2"
+                  style="font-family: 'Raleway'; font-weight: lighter; letter-spacing: 0.0625em; font-size: 0.7rem;"
+                >
+                  <%= prestador.servicos %>
+                </p>
+                <div class="btn btn-success"><a href="contratar" class="link-card">Contratar</a></div>
+              </div>
             </div>
           </div>
+          <!--Fim - Card 1-->
+          <% }) %>
+        </div>
       </section>
+      <!--Fim - Cards - Resultado Busca-->
+
+      <!--Paginação-->
+      <nav aria-label="Page navigation example" class="d-flex justify-content-center">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link text-success" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link text-success" href="#">1</a></li>
+          <li class="page-item"><a class="page-link text-success" href="#">2</a></li>
+          <li class="page-item"><a class="page-link text-success" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link text-success" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!--Fim Paginação-->
     </main>
 
     <!-- footer section -->

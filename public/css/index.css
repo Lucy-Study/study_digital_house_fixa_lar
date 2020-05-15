@@ -2,6 +2,10 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script:400,700&display=swap&subset=latin-ext");
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* normalize */
 * {
   margin: 0;
@@ -23,81 +27,6 @@ body {
 }
 
 /*
-* nav and footer style
-*/
-
-.nav-style {
-  background-color: #5d5b5b;
-}
-
-.img-logo {
-  width: 12rem;
-  /*width: 200px;
-  height: 50px;*/
-}
-
-/* NavBar Resposive */
-.nav-btn-responsivel {
-  background-color: #43bd69;
-}
-.navbar .navbar-toggler .icon-bar {
-  background-color: #43bd69 !important;
-}
-.nav-btn-border {
-  border: 2px solid #43bd69;
-}
-
-/* Menu */
-.menu {
-  text-align: center;
-  padding: 1px 5px 1px 5px;
-  font-size: 18px;
-  text-decoration: #fff;
-}
-.nav-link {
-  color: #43bd69;
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-.nav-link-cadastro {
-  color: #fff;
-}
-
-.link-cadastrar {
-  background: #43bd69;
-  border-radius: 5px;
-}
-.link-houver {
-  border: 1px solid #5d5b5b;
-  background-color: #5d5b5b;
-}
-.link-houver:hover {
-  transition-duration: 0.4s;
-  border-radius: 5px;
-  border: 1px solid white;
-}
-
-/*Footer*/
-.footer-container {
-  color: #5d5b5b;
-}
-#exampleInputEmail1 {
-  border-radius: 100px;
-}
-
-.h5 {
-  font-size: 18px;
-}
-
-#footer-links {
-  font-size: 13px;
-}
-
-/*
-* end nav and footer style
-*/
-
-/*
 * hero section
 */
 
@@ -113,9 +42,14 @@ small.footer-small-logo {
 * login section
 * ###########################################
 */
+
 /*
 * card style
 */
+.checked {
+  color: orange;
+}
+
 .login-section {
   position: relative;
   height: 100vh;
@@ -190,7 +124,6 @@ form-group input {
 }
 
 /*
-*
 * end text login section 
 */
 
@@ -199,53 +132,53 @@ form-group input {
 *###########################################
 */
 
-/*
-* section how it works
-* rack for photo
-* be carfull if changes are needed!!
-*
-*/
-
-.how-work {
-  height: 100vh;
+/*section Como a Fixa Lar Funciona*/
+#sect {
+  position: relative;
   width: 100%;
+  padding: 50px;
+}
+
+.image {
+  position: relative;
   overflow: hidden;
-  display: flex;
 }
 
-.wrapper {
-  display: flex;
-}
-
-.main {
-  flex: 4;
-}
-
-.main h2 {
-  text-transform: uppercase;
-}
-
-.main p {
-  margin-bottom: 0.75rem;
-}
-
-.polygon {
-  width: 50vw;
-  height: 90vh;
-  background-image: url("../img/prestador_fundo_transparente.png");
-  background-size: 550px;
-  background-repeat: no-repeat;
+.image.image1 {
+  width: 400px;
+  height: 533px;
   float: left;
-  shape-outside: ellipse(300px 400px at 40% 40%) padding-box;
-  clip-path: ellipse(400px 500px at 30% 40%);
-  padding-right: 40px;
-  margin-right: 10px;
+  /*shape-outside: polygon();*/
 }
 
-#bairro {
-  width: 300px;
-  margin-right: 4px;
+.image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
+
+section h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+#sect p {
+  line-height: 1.5em;
+  text-align: justify;
+}
+
+#btn-conheca {
+  width: 60%;
+  margin: 0px 0 15px 0;
+}
+
+.border {
+  border-width: 1px !important;
+}
+/*end - section Como a Fixa Lar Funciona*/
 
 /*Profissionais em Destaque*/
 a {
@@ -256,4 +189,10 @@ a {
 a:hover {
   color: white;
   text-decoration: none;
+}
+
+/*Venha Ser Parceiro*/
+#btn-parceiro {
+  height: 40px;
+  width: 400px;
 }

@@ -51,9 +51,22 @@ body {
   padding: 10px 80px 10px 80px;
   margin-bottom: 15px;
   border-radius: 7px;
+  /*display: flexbox;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: space-between;*/
 }
 
-#card-prestador {
-  width: 400px;
-  height: 350px;
+.checked {
+  color: orange;
 }
+/*
+#card-prestador {
+ width: 250px;
+  height: 350px;
+  padding: 10px 80px 10px 80px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-radius: 7px;
+}
+*/

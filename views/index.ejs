@@ -4,6 +4,8 @@
 <!--Head-->
 <%- include('./includes/head', {title: 'Fixa Lar | Home'}) %>
 
+<link rel="stylesheet" href="/css/index.css"/>
+
 <body>
   <!--###### navbar section #############--> 
 <%- include('./includes/header') %>
@@ -81,47 +83,33 @@
   <!-- ###### end login-section ######### -->
 
   <!-- ######################section how it works #############################-->
-  <section class="how-work" id="how-work">
-    <div class="wrapper container-fluid">
-      <section class="main">
-        <h2 class="how-work_h2" style="text-align:center; margin-top: 2rem; padding-bottom: 20px;">Como a <strong style="color:#43bd69">Fixa
-            Lar</strong> funciona </h2>
-
-        <!--don't change next line-->  
-        <!--#### component #####-->
-        <div class="polygon"></div>
-
-        <p>Buscamos trazer uma solução para micro reparos do tipo que precisamos o dia a dia que não têm a necessidade
-          de contratar grandes orçamentos, como pro exemplo, troca de uma peça de azulejo, reparo de extensão queimada,
+  <section id="sect" class="container">
+    <div class="image image1">
+      <img src="/img/prestador_fundo_transparente.png" alt="Pretador Apresentando o Texto" />
+    </div>
+    <br>
+        <p><h2>Como a <strong style="color:#43bd69">Fixa Lar</strong> funciona</h2></p>
+        <p>Buscamos trazer uma solução para micro reparos do tipo que precisamos no dia a dia que não têm a necessidade
+          de contratar grandes orçamentos como, por exemplo, troca de uma peça de azulejo, reparo de extensão queimada,
           pintura de uma pequena área, etc.
         </p>
         <p>Para isso, agregamos profissionais de diversas especialidades em nossa base de dados, todos com verificação e
           autenticação.</p>
-        <p>Conectamos você a esses profissionais e buscamos ser a <div class=""></div>ponte masis eficiente para sanar
-          suas necessidades.</p>
-        <h5 class="mt-5">Vamos encontrar um profissonal pertinho de você</h5>
-        <form action="">
-          <div class="form-row">
-            <input type="text" name="bairro" id="bairro" placeholder="...Informe seu Bairro"
-              style="border: 2px solid #000;  border-radius: 10px">
-            <button type="button" class="btn badge badge-pill badge-success" style="font-size: 1rem;"><a href="busca">Buscar</a></button>
-        </form>
-        <h4 class="my-4">Conheça alguns dos serviços oferecidos pela Fixa Lar</h4>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm"><img class="border border-success rounded-circle" src="/img/conserto-chuveiro.png"
-                alt="conserto chuveiro" style="width: 7rem; height: 7rem;"></div>
-            <div class="col-sm"><img class="border border-success rounded-circle" src="/img/consertos-eletricos.png"
-                alt="conserto elétrico" style="width: 7rem; height: 7rem;"></div>
-            <div class="col-sm"><img class="border border-success rounded-circle" src="/img/montador-moveis.png"
-                alt="montador de moveis" style="width: 7rem; height: 7rem;"></div>
-            <div class="col-sm"><img class="border border-success rounded-circle" src="/img/reforma-geral.png"
-                alt="reforma geral" style="width: 7rem; height: 7rem;"></div>
-          </div>
-        </div>
-
-      </section>
-    </div>
+        <p>Conectamos você a esses profissionais e buscamos ser a ponte masi eficiente para sanar suas necessidades.
+        </p>
+        <p><button id="btn-conheca" class="btn btn-success"><a href="busca">Faça uma busca e conheça alguns dos serviços oferecidos pela Fixa Lar</a></button></p>
+      <!--<h5 class="my-4">Conheça alguns dos serviços oferecidos pela Fixa Lar</h5>-->
+      <div class="container">
+        <div class="row">
+          <div class="col-sm"><img class="border border border-success rounded-circle" src="/img/conserto-chuveiro.png"
+              alt="conserto chuveiro" style="width: 5rem; height: 5rem;"></div>
+          <div class="col-sm"><img class="border border-success rounded-circle" src="/img/consertos-eletricos.png"
+              alt="conserto elétrico" style="width: 5rem; height: 5rem;"></div>
+          <div class="col-sm"><img class="border border-success rounded-circle" src="/img/montador-moveis.png"
+              alt="montador de moveis" style="width: 5rem; height: 5rem;"></div>
+          <div class="col-sm"><img class="border border-success rounded-circle" src="/img/reforma-geral.png"
+              alt="reforma geral" style="width: 5rem; height: 5rem;"></div>  
+      </div>
   </section>
   <!-- ###################end section how it works ############################-->
 
@@ -129,165 +117,132 @@
   <!-- begin width overlay after card-deck -->
   <div id="banner1" style="height:570px;background-image:url(/img/ferrametas_up_and_down.png);background-position:center;background-size:cover;">
     <section class="container">
-            <p class="font-weight-bold pl-5 pt-5" style="color: white;">Profissionais em destaque</p>
-    <div class="card-deck py-5 px-5">
-          <!-- first card start -->
-          <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded" style="width: 300px; height: 350px;">
+    <p class="font-weight-bold  pt-5" style="color: white;">Profissionais em destaque</p>
+    <!--Cards - Best Ratings-->
+      <div class="row">
+        <!--Card 1-->
+        <div class="col-md-4 mt-4" id="card-prestador">
+          <div
+            class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded"
+            style="width: 250px; height: 350px;"
+          >
             <img
               src="/img/prestador-1.webp"
               class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
               alt="prestador de serviços"
               style="height: 100px; width: auto;"
             />
-           
             <div class="card-body">
-              <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
-          <div class="mb-3">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-          </div>
-          <p 
-            class="p-0 text-muted"
-            href="#" 
-            style="text-decoration: underline; 
-            font-weight: 400; font-size: 12px;
-            "
-          >São Paulo - Tatuapé</p>
-          <p 
-            class="card-text pt-2"
-            style="
-            font-family: 'Raleway';
-            font-weight: lighter;
-            letter-spacing: 0.0625em;
-            font-size: 0.70rem;
-            "
-            >Civil, Hidráulica...</p>
-            <div class="btn btn-success"><a href="contratar" class="link-card">Contratar</a></div>
+              <h4 class="card-title mt-2 mb-2">John Doe</h4>
+              <div class="mb-3">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <p 
+          class="p-0 text-muted"
+          href="#" 
+          style="text-decoration: underline; 
+          font-weight: 400; font-size: 12px;
+          "
+        >São Paulo - Tatuapé</p>
+        <p 
+          class="card-text pt-2"
+          style="
+          font-family: 'Raleway';
+          font-weight: lighter;
+          letter-spacing: 0.0625em;
+          font-size: 0.70rem;
+          "
+          >Civil, Hidráulica...</p>
+          <div class="btn btn-success"><a href="contratar" class="link-card">Contratar</a></div>
             </div>
           </div>
-          <!-- end first card -->
-       
-          <!-- second card start -->
-          <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded" style="width: 300px; height: 350px;">
-            <img
-              src="/img/prestador-1.webp"
-              class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
-              alt="prestador de serviços"
-              style="height: 100px; width: auto;"
-            />
-           
-            <div class="card-body">
-              <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
-          <div class="mb-3">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-          </div>
-          <p 
-            class="p-0 text-muted"
-            href="#" 
-            style="text-decoration: underline; 
-            font-weight: 400; font-size: 12px;
-            "
-          >São Paulo - Tatuapé</p>
-          <p 
-            class="card-text pt-2"
-            style="
-            font-family: 'Raleway';
-            font-weight: lighter;
-            letter-spacing: 0.0625em;
-            font-size: 0.70rem;
-            "
-            >Civil, Hidráulica...</p>
-            <div class="btn btn-success"><a href="contratar" class="link-card">Contratar</a></div>
-            </div>
-          </div>
-          <!-- end second card -->
+        </div>
+        <!--Fim - Card 1-->
 
-          <!-- third card start -->
-          <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded" style="width: 300px; height: 350px;">
+        <!--Card 2-->
+        <div class="col-md-4 mt-4" id="card-prestador">
+          <div
+            class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded"
+            style="width: 250px; height: 350px;"
+          >
             <img
               src="/img/prestador-1.webp"
               class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
               alt="prestador de serviços"
               style="height: 100px; width: auto;"
             />
-           
             <div class="card-body">
-              <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
-          <div class="mb-3">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-          </div>
-          <p 
-            class="p-0 text-muted"
-            href="#" 
-            style="text-decoration: underline; 
-            font-weight: 400; font-size: 12px;
-            "
-          >São Paulo - Tatuapé</p>
-          <p 
-            class="card-text pt-2"
-            style="
-            font-family: 'Raleway';
-            font-weight: lighter;
-            letter-spacing: 0.0625em;
-            font-size: 0.70rem;
-            "
-            >Civil, Hidráulica...</p>
-            <div class="btn btn-success"><a href="contratar">Contratar</a></div>
+              <h4 class="card-title mt-2 mb-2">John Doe</h4>
+              <div class="mb-3">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+              </div>
+              <p
+                class="p-0 text-muted"
+                href="#"
+                style="text-decoration: underline; font-weight: 400; font-size: 12px;"
+              >
+                São Paulo - Tatuapé
+              </p>
+              <p
+                class="card-text pt-2"
+                style="font-family: 'Raleway'; font-weight: lighter; letter-spacing: 0.0625em; font-size: 0.7rem;"
+              >
+                Civil, Hidráulica...
+              </p>
+              <div class="btn btn-success"><a href="contratar" class="link-card">Contratar</a></div>
             </div>
           </div>
-          <!-- end third card -->
+        </div>
+        <!--Fim - Card 2-->
 
-          <!-- fourth card start -->
-          <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded" style="width: 300px; height: 350px;">
+        <!--Card 3-->
+        <div class="col-md-4 mt-4" id="card-prestador">
+          <div
+            class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded"
+            style="width: 250px; height: 350px;"
+          >
             <img
               src="/img/prestador-1.webp"
               class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
               alt="prestador de serviços"
               style="height: 100px; width: auto;"
             />
-           
             <div class="card-body">
-              <h4 class="card-title mt-2" style="margin-bottom: 0;">John Doe</h4>
-          <div class="mb-3">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-            <img src="/img/start.jpg" alt="star" style="width: 1rem; height: 1rem;">
-          </div>
-          <p 
-            class="p-0 text-muted"
-            href="#" 
-            style="text-decoration: underline; 
-            font-weight: 400; font-size: 12px;
-            "
-          >São Paulo - Tatuapé</p>
-          <p 
-            class="card-text pt-2"
-            style="
-            font-family: 'Raleway';
-            font-weight: lighter;
-            letter-spacing: 0.0625em;
-            font-size: 0.70rem;
-            "
-            >Civil, Hidráulica...</p>
-            <div class="btn btn-success"><a href="contratar">Contratar</a></div>
+              <h4 class="card-title mt-2 mb-2">John Doe</h4>
+              <div class="mb-3">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+              </div>
+              <p
+                class="p-0 text-muted"
+                href="#"
+                style="text-decoration: underline; font-weight: 400; font-size: 12px;"
+              >
+                São Paulo - Tatuapé
+              </p>
+              <p
+                class="card-text pt-2"
+                style="font-family: 'Raleway'; font-weight: lighter; letter-spacing: 0.0625em; font-size: 0.7rem;"
+              >
+                Civil, Hidráulica...
+              </p>
+              <div class="btn btn-success"><a href="contratar" class="link-card">Contratar</a></div>
             </div>
           </div>
-          <!-- end fourth card -->
+        </div>
+        <!--Fim - Card 3-->
       </div>
-    </section>
       <!-- end card deck -->
     </div>
   </section>
@@ -300,7 +255,7 @@
     <div style="position: absolute; top: 45vh; left: 30vw;">
       <h4 style="color: #0e0202;">
         É ESPECIALISTA EM CONSERTOS E REPAROS?
-        <button class="btn badge badge-pill badge-success" style="margin: 3rem 8rem;"><a href="cadastroPrestador">
+        <button class="btn badge badge-pill badge-success" id="btn-parceiro" style="margin: 3rem 5rem;"><a href="cadastroPrestador">
           VENHA SER NOSSO PARCEIRO</a>
         </button>
       </h4>

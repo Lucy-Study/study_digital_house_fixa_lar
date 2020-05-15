@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800,900i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Oleo+Script:400,700&display=swap&subset=latin-ext");
+
+/* normalize */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+ * esmerald: #43bd69,
+ * magic-mint: #6cf195,
+ * mine-shaft: #464646,
+ * dove-gray: #5d5b5b,    
+ * silver: #c8c8c8,    
+*/
+
+body {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 500;
+}
+
+/*
+* nav style
+*/
+
+.nav-style {
+  background-color: #5d5b5b;
+}
+
+.img-logo {
+  width: 12rem;
+  /*width: 200px;
+  height: 50px;*/
+}
+
+/* NavBar Resposive */
+.nav-btn-responsivel {
+  background-color: #43bd69;
+}
+.navbar .navbar-toggler .icon-bar {
+  background-color: #43bd69 !important;
+}
+.nav-btn-border {
+  border: 2px solid #43bd69;
+}
+
+/* Menu */
+.menu {
+  text-align: center;
+  padding: 1px 5px 1px 5px;
+  font-size: 18px;
+  text-decoration: #fff;
+}
+.nav-link {
+  color: #43bd69;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.nav-link-cadastro {
+  color: #fff;
+}
+
+.link-cadastrar {
+  background: #43bd69;
+  border-radius: 5px;
+}
+.link-houver {
+  border: 1px solid #5d5b5b;
+  background-color: #5d5b5b;
+}
+.link-houver:hover {
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
