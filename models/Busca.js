@@ -7,3 +7,5 @@ let prestador = [
 function buscarPrestador() {
   return prestador;
 }
+
+module.exports = buscarPrestador;
