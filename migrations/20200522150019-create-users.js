@@ -22,15 +22,15 @@ module.exports = {
           type: Sequelize.INTEGER,
           allowNull: false,
         },
+        senha: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
         logradouro: Sequelize.STRING,
         cep: Sequelize.STRING,
         complemento: Sequelize.STRING,
         created_at: {
           type: Sequelize.DATE,
-          allowNull: false,
-        },
-        senha: {
-          type: Sequelize.STRING,
           allowNull: false,
         },
         updated_at: {
