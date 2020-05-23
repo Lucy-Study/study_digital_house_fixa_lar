@@ -2,13 +2,13 @@
 <html lang="pt-br">
 
 <!--Head-->
-<%- include('./includes/head', {title: 'Fixa Lar | Cadastro de Cliente'}) %>
+<%- include('../includes/head', {title: 'Fixa Lar | Cadastro de Cliente'}) %>
 
 <link rel="stylesheet" type="text/css" href="/css/style-cadastro.css">
 
 <body>
   <!--###### navbar section #############--> 
-<%- include('./includes/header') %>
+<%- include('../includes/header') %>
 
   <div class="card-cadastro">
     <div class="card">
@@ -20,7 +20,7 @@
       <p>Já possui cadastro? Clique <a class="clique-aqui" href="/#login">aqui</a> para login.</p>
     </div>
 
-      <form class="form-cadastro">
+      <form class="form-cadastro" method="POST" action="/users/register">
         <!--inicio area de pessoa-->
         <div class="form-group col-md-6">
           <label class="label-form" for="cpf">CPF:</label>
@@ -136,7 +136,7 @@
   </div> <!--fim do card para cadastro-->
 
   <!-- footer section -->
-  <%- include('./includes/footer') %>
+  <%- include('../includes/footer') %>
 
     <!-- Bootstrap core JavaScript -->
     <script src="/jquery/jquery.slim.min.js"></script>

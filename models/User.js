@@ -19,14 +19,15 @@ module.exports = (sequelize, DataTypes) => {
         type:DataTypes.INTEGER,
         allowNull: false,
       },
-      senha: {
+      password: {
         type:DataTypes.STRING,
         allowNull: false,
       },
-      logradouro: {
+      address: {
         type:DataTypes.STRING,
         allowNull: false,
       },
+      phone: DataTypes.STRING,
       cep: {
         type:DataTypes.STRING,
         allowNull: false,

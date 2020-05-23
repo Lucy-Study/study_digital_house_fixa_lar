@@ -5,7 +5,6 @@ module.exports = {
   password: "davijose",
   database: "fixa1",
   define: {
-    timestamps: true,
-    underscored: true,
-  }
+    underscore: true,
+  },
 };

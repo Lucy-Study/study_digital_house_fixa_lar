@@ -25,6 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
+// used as router to register
 app.use("/users", usersRouter);
 app.use("/contratar", rotasContratar);
 app.use("/cadastroCliente", rotasCliente);

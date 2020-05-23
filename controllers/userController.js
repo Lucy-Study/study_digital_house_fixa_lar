@@ -1,7 +1,9 @@
 const { User } = require("../models");
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
+const Sequelize = require("sequelize")
+const config = require("../config/database");
 
-const userController = {
+module.exports = {
   // display view register with form
   create: (_req, res) => res.render("auth/register"),
 
@@ -20,9 +22,9 @@ const userController = {
       city,
       state,
       zone,
-    } = req.params;
+    } = req.body;
     const hashPassword = bcrypt.hashSync(password, 10);
-    console.log(name);
+    return res.redirect("/users/register")
   },
 
 }
