@@ -7,46 +7,42 @@
 <link rel="stylesheet" type="text/css" href="/css/style-cadastro.css">
 
 <body>
-  <!--###### navbar section #############--> 
-<%- include('../includes/header') %>
+  <!--###### navbar section #############-->
+  <%- include('../includes/header') %>
 
   <div class="card-cadastro">
     <div class="card">
       <div class="card-header text-white title-card">
         <h2>Cadastro de Cliente</h2>
       </div>
-      
+
       <div class="card-body">
-      <p>Já possui cadastro? Clique <a class="clique-aqui" href="/#login">aqui</a> para login.</p>
-    </div>
+        <p>Já possui cadastro? Clique <a class="clique-aqui" href="/#login">aqui</a> para login.</p>
+      </div>
 
       <form class="form-cadastro" method="POST" action="/users/register">
+        <% if(typeof(errors) !== 'undefined') {%>
+        <% errors.forEach((error, index) => { %>
+        <p class="small text-danger pl-5"><%= error %></p>
+        <% }) %>
+        <% }else{%>
+        <% console.log('2')%>
+        <% } %>
+
         <!--inicio area de pessoa-->
         <div class="form-group col-md-6">
           <label class="label-form" for="cpf">CPF:</label>
-          <input type="number" class="form-control" id="cpf" name ="cpf" placeholder="Informe somente números" maxlength="11">
+          <input type="number" class="form-control" id="cpf" name="cpf" placeholder="Informe somente números">
+
         </div>
-        
+
         <div class="form-row col-md-12">
           <div class="form-group col-md-12">
             <label class="label-form" for="nome">Nome Completo:</label>
             <input type="text" class="form-control" id="nome" name="name" laceholder="Informe seu nome completo">
           </div>
 
-          <!--genero-->
-          <!--<div class="form-group col-md-3" >
-            <div class="genero">
-              <div class="form-check">
-                <label class="form-check-label label-form" for="">Gênero:</label><br>    
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="masculino">
-                <label class="form-check-label label-form-genero" for="exampleRadios1">Masculino</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="feminino">
-                <label class="form-check-label label-form-genero" for="exampleRadios2">Feminino</label>
-              </div>
-            </div>
-          </div>-->
+
         </div>
 
         <div class="form-row col-md-12">
@@ -60,44 +56,47 @@
             <input type="contato" class="form-control" id="contato" name="phone" placeholder="(00)99999-0000">
           </div>
         </div>
-      <!--fim area de pessoa-->
+        <!--fim area de pessoa-->
 
         <!--inicio area de endereco-->
         <div class="form-row col-md-12">
-        <!--logradouro-->  
-        <div class="form-group col-md-9">
-          <label class="label-form" for="inputAddress">Logradouro:</label>
-          <input type="text" class="form-control" id="inputAddress" name="address" placeholder="Av. Brasil, nr 000 - Centro">
+          <!--logradouro-->
+          <div class="form-group col-md-9">
+            <label class="label-form" for="inputAddress">Logradouro:</label>
+            <input type="text" class="form-control" id="inputAddress" name="address"
+              placeholder="Av. Brasil, nr 000 - Centro">
+          </div>
+
+          <div class="form-group col-md-3">
+            <label class="label-form" for="inputZip">CEP:</label>
+            <input type="text" class="form-control" id="inputZip" name="cep" placeholder="00000-000" autocomplete="off"
+              maxlength="9">
+          </div>
         </div>
 
-        <div class="form-group col-md-3">
-          <label class="label-form" for="inputZip">CEP:</label>
-          <input type="text" class="form-control" id="inputZip" name="cep" placeholder="00000-000" autocomplete="off" maxlength="9">
-        </div>
-      </div>
-      
-      <!--complemento-->
-      <div class="form-row col-md-12">
-        <div class="form-group col-md-9">
-          <label class="label-form" for="inputAddress2">Complemento:</label>
-          <input type="text" class="form-control" id="inputAddress2" name="complemento" placeholder="Apartamento, quadra, bloco">
-        </div>
-        <div class="form-group col-md-3" >
-          <label class="label-form" for="inputZona">Zona:</label>
-          <select id="inputZona"
-          name="zone" class="form-control">
-            <option selected>Selecione...</option>
+        <!--complemento-->
+        <div class="form-row col-md-12">
+          <div class="form-group col-md-9">
+            <label class="label-form" for="inputAddress2">Complemento:</label>
+            <input type="text" class="form-control" id="inputAddress2" name="complemento"
+              placeholder="Apartamento, quadra, bloco">
+          </div>
+          <div class="form-group col-md-3">
+            <label class="label-form" for="inputZona">Zona:</label>
+            <select id="inputZona" name="zone" class="form-control">
+              <option selected>Selecione...</option>
               <option value="Norte"> Norte </option>
               <option value="Sul"> Sul </option>
               <option value="Leste"> Leste </option>
               <option value="Oeste"> Oeste </option>
               <option value="Oeste"> Centro </option>
-          </select>
+            </select>
+          </div>
         </div>
-      </div>
         <!--fim area de dados-->
 
-        <div class="form-row col-md-12"><!--inicio area de endereco-->
+        <div class="form-row col-md-12">
+          <!--inicio area de endereco-->
           <div class="form-group col-md-9">
             <label class="label-form" for="cidade">Cidade:</label>
             <input type="text" class="form-control" id="cidade" name="city" placeholder="Informe cidade que mora">
@@ -106,24 +105,52 @@
             <label class="label-form" for="inputState">Estado:</label>
             <select id="inputState" name="state" class="form-control">
               <option selected>Selecione...</option>
-              <option value="AC"> AC </option><option value="AL"> AL </option><option value="AM"> AM </option><option value="AP"> AP </option><option value="BA"> BA </option><option value="CE"> CE </option><option value="DF"> DF </option><option value="ES"> ES </option><option value="GO"> GO </option><option value="MA"> MA </option><option value="MG"> MG </option><option value="MS"> MS </option><option value="MT"> MT </option><option value="PA"> PA </option><option value="PB"> PB </option><option value="PE"> PE </option><option value="PI"> PI </option><option value="PR"> PR </option><option value="RJ"> RJ </option><option value="RN"> RN </option><option value="RO"> RO </option><option value="RR"> RR </option><option value="RS"> RS </option><option value="SC"> SC </option><option value="SE"> SE </option><option value="SP"> SP </option><option value="TO"> TO </option>
-                </select>
+              <option value="AC"> AC </option>
+              <option value="AL"> AL </option>
+              <option value="AM"> AM </option>
+              <option value="AP"> AP </option>
+              <option value="BA"> BA </option>
+              <option value="CE"> CE </option>
+              <option value="DF"> DF </option>
+              <option value="ES"> ES </option>
+              <option value="GO"> GO </option>
+              <option value="MA"> MA </option>
+              <option value="MG"> MG </option>
+              <option value="MS"> MS </option>
+              <option value="MT"> MT </option>
+              <option value="PA"> PA </option>
+              <option value="PB"> PB </option>
+              <option value="PE"> PE </option>
+              <option value="PI"> PI </option>
+              <option value="PR"> PR </option>
+              <option value="RJ"> RJ </option>
+              <option value="RN"> RN </option>
+              <option value="RO"> RO </option>
+              <option value="RR"> RR </option>
+              <option value="RS"> RS </option>
+              <option value="SC"> SC </option>
+              <option value="SE"> SE </option>
+              <option value="SP"> SP </option>
+              <option value="TO"> TO </option>
+            </select>
             </select>
           </div>
-          
-        </div> <!--fim area de endereco-->
 
-        <div class="form-row col-md-12"><!--inicio area senha-->
+        </div>
+        <!--fim area de endereco-->
+
+        <div class="form-row col-md-12">
+          <!--inicio area senha-->
           <div class="form-group col-md-6">
             <label class="label-form" for="criar-senha">Criar Senha:</label>
-            <input type="password" class="form-control" id="criar-senha" 
-            name="password" placeholder="**********">
+            <input type="password" class="form-control" id="criar-senha" name="password" placeholder="**********">
           </div>
           <div class="form-group col-md-6">
             <label class="label-form" for="conf-senha">Confirme Senha:</label>
-            <input type="password" class="form-control" id="conf-senha"  placeholder="**********">
+            <input type="password" class="form-control" id="conf-senha" name="confirm_password" placeholder="**********">
           </div>
-        </div> <!--fim area senha-->
+        </div>
+        <!--fim area senha-->
         <hr>
 
 
@@ -131,16 +158,19 @@
         <div class="btn-cadastrar">
           <button type="submit" class="btn btn-success btn-lg btn-block">Cadastrar</button>
         </div>
-      </form><!--fim do formulário-->
+      </form>
+      <!--fim do formulário-->
     </div>
-  </div> <!--fim do card para cadastro-->
+  </div>
+  <!--fim do card para cadastro-->
 
   <!-- footer section -->
   <%- include('../includes/footer') %>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="/jquery/jquery.slim.min.js"></script>
-    <script src="/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="/jquery/jquery.slim.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
