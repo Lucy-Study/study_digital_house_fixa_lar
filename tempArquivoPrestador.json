@@ -1,0 +1,7 @@
+[
+  { "nome": "John Doe", "regiao": "Leste", "servicos": "Manutenção" },
+  { "nome": "Airton", "regiao": "Norte", "servicos": "Conserto" },
+  { "nome": "Pereira", "regiao": "Sul", "servicos": "Troca" },
+  { "nome": "Zé", "regiao": "Norte", "servicos": "Conserto, Manutenção" },
+  { "nome": "Everton", "regiao": "Centro", "servicos": "Manutenção, Troca" }
+]

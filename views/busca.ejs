@@ -11,7 +11,7 @@
 
     <main class="container">
       <!--Menu de Busca-->
-      <section id="menu-busca" class="shadow">
+      <section id="menu-busca" class="shadow d-flex justify-content-center">
         <form action="" class="form">
           <div class="ordem">
             <label for="servicos" class="titulo">Serviço</label>
@@ -35,7 +35,7 @@
             </select>
           </div>
 
-          <div class="ordem">
+          <!-- <div class="ordem">
             <label for="bairro" class="titulo">Bairro</label>
             <br />
             <select id="bairro">
@@ -45,7 +45,7 @@
               <option value="norte">Itaquera</option>
               <option value="sul">Barra Funda</option>
             </select>
-          </div>
+          </div> -->
 
           <div class="botao-buscar">
             <button type="button" class="btn badge badge-pill badge-success" id="botao-size" style="font-size: 1rem;">
@@ -57,14 +57,14 @@
       <!--Fim - Menu de Busca-->
 
       <!--Cards - Resultado Busca-->
-      <section id="cards-result" class="container shadow">
-        <div class="row">
+      <section id="cards-result" class="container shadow d-flex justify-content-center">
+        <div class="row mt-5">
           <!--Card 1-->
-          <% relacaoPrestadores.forEach((prestador, index)=>{ %>
-          <div class="col-md-4 mt-4" id="card-prestador">
+          <% resultadoPrestadores.forEach((prestador, index)=>{ %>
+          <div class="col-md-3 mt-0 p-0" id="card-prestador">
             <div
               class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded"
-              style="width: 250px; height: 350px;"
+              style="width: 240px; height: 350px;"
             >
               <img
                 src="/img/prestador-1.webp"
@@ -73,20 +73,20 @@
                 style="height: 100px; width: auto;"
               />
               <div class="card-body">
-                <h4 class="card-title mt-2 mb-2"><%= prestador.nome %>></h4>
+                <h4 class="card-title mt-2 mb-2"><%= prestador.nome %></h4>
                 <div class="mb-3">
                   <span class="fa fa-star checked"></span>
                   <span class="fa fa-star checked"></span>
                   <span class="fa fa-star checked"></span>
                   <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
                 </div>
                 <p
                   class="p-0 text-muted"
                   href="#"
                   style="text-decoration: underline; font-weight: 400; font-size: 12px;"
                 >
-                  <%= prestador.regiao %>
+                  Região: <%= prestador.regiao %>
                 </p>
                 <p
                   class="card-text pt-2"
