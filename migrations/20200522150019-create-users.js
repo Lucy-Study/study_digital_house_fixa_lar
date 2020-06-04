@@ -22,13 +22,38 @@ module.exports = {
           type: Sequelize.INTEGER,
           allowNull: false,
         },
-        senha: {
+        phone: {
           type: Sequelize.STRING,
           allowNull: false,
         },
-        logradouro: Sequelize.STRING,
-        cep: Sequelize.STRING,
-        complemento: Sequelize.STRING,
+        password: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
+        address: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
+        cep: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
+        complemento: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
+        city: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
+        state: {
+          type: Sequelize.STRING(2),
+          allowNull: false,
+        },
+        zone: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
         created_at: {
           type: Sequelize.DATE,
           allowNull: false,

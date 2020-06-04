@@ -3,7 +3,7 @@ module.exports = {
   dialect: "mysql",
   username: "davijose",
   password: "davijose",
-  database: "fixa1",
+  database: "fixadb",
   define: {
     underscore: true,
   },
