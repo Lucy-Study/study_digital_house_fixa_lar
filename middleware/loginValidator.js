@@ -12,7 +12,8 @@ const userValidationRules = () => {
       .isEmail(),
     // cpf obrigatorio
     body('cpf')
-      .isLength({ min: 11, max: 11})
+      .not()
+      .isEmpty()
       .withMessage('preenchimento do cpf obrigatório'),
     // password must be at least 5 chars logn
     body('password','Por favor verifique: tamanho=5 e se são iguais')
@@ -45,5 +46,6 @@ const validate = (req, res, next) => {
 module.exports = {
   userValidationRules,
   validate,
-}// Response will contain something like
+}
+// Response will contain something like
     // { errors: [ "body[password]: must be at least 10 chars long" ] }

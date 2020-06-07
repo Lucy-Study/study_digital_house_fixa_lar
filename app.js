@@ -1,18 +1,20 @@
-var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+const createError = require("http-errors");
+const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
+const session = require("express-session");
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var rotasContratar = require("./routes/contratarRoute");
-var rotasCliente = require("./routes/clienteRoute");
-var rotasConta = require("./routes/contaRoute");
-var rotasPrestador = require("./routes/prestadorRoute");
-var rotasBusca = require("./routes/buscaRoute");
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const loginRouter = require("./routes/login");
+const rotasContratar = require("./routes/contratarRoute");
+const rotasCliente = require("./routes/clienteRoute");
+const rotasConta = require("./routes/contaRoute");
+const rotasPrestador = require("./routes/prestadorRoute");
+const rotasBusca = require("./routes/buscaRoute");
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -21,12 +23,20 @@ app.set("view engine", "ejs");
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(
+  session({
+    secret: "5ec2048b6d1c8a4fe06ec4fd3d5f31a427c43661e80e438bf35ab03559d38c43",
+    resave: true,
+    saveUninitialized: true,
+  })
+)
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 // used as router to register
 app.use("/users", usersRouter);
+app.use("/", loginRouter);
 app.use("/contratar", rotasContratar);
 app.use("/cadastroCliente", rotasCliente);
 app.use("/criarConta", rotasConta);

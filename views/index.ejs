@@ -57,20 +57,21 @@
         </div>
         <div class="card-body text-success">
           <p class="card-text">
-            <form action="">
+
+            <!--form login-->
+            <form action="/login" method="POST">
               <div class="form-group">
-                <input type="text" class="form-control mb-2"  name="name" id="name" placeholder="Email"
+                <input type="text" class="form-control mb-2"  name="email" id="email" placeholder="Email"
                 style="border-radius: 20px;"
                 >
-                <input type="password" class="form-control" name="passwd" id="passwd" placeholder="Senha"
+                <input type="password" class="form-control" name="password" id="password" placeholder="Senha"
                 style="border-radius:20px"
                 >
-                <small id="passwordHelpInline" class="text-muted card-footer_body-senha mb-2" style="text-align: left;">
-                  <a class="login-link" href="#">Esqueci minha senha</a>
+                  <small id="passwordHelpInline" class="text-muted card-footer_body-senha mb-2 mt-2" style="text-align: left;">
+                  <a class="login-link pt-4" href="#">Esqueci minha senha</a>
                 </small>
-                <a href="#" class="badge badge-pill badge-success"
-                style="font-size: 1rem; padding: 7px 14px;"
-                >Entrar</a>
+               
+                <button type="submit" class="badge badge-pill badge-success" style="font-size: 1rem; padding: 7px 14px;">Entrando</button>
               </div>
             </form>
           </p>

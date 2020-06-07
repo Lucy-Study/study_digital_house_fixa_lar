@@ -28,6 +28,17 @@
         <% }else{%>
         <% console.log('2')%>
         <% } %>
+         <% if(typeof(message) !== 'undefined') { %>
+          <div class="alert alert-success" role="alert">
+            <%= message%>
+            <h5>
+              <a href="/#login"  style="color:darkslategray">Voltar para Home</a>
+            </h5>
+          </div>
+           <% console.log(message) %>
+           <% } else {%>
+            <% console.log('não tenho mensagem') %>
+           <% } %> 
 
         <!--inicio area de pessoa-->
         <div class="form-group col-md-6">

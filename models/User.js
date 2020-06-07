@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       cpf: {
-        type:DataTypes.INTEGER,
+        type:DataTypes.STRING,
         allowNull: false,
       },
       password: {
@@ -27,12 +27,26 @@ module.exports = (sequelize, DataTypes) => {
         type:DataTypes.STRING,
         allowNull: false,
       },
+      city: {
+        type:DataTypes.STRING,
+        allowNull: false,
+      },
+      state: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      zone: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       phone: DataTypes.STRING,
       cep: {
         type:DataTypes.STRING,
         allowNull: false,
       },
       complemento: DataTypes.STRING,
+      created_at: DataTypes.DATE,
+      updated_at: DataTypes.DATE,
     },
     {
       timestamps: false,
@@ -42,4 +56,5 @@ module.exports = (sequelize, DataTypes) => {
 
   return User;
 }
+
 
