@@ -22,6 +22,7 @@ module.exports = {
       city,
       state,
       zone,
+      role
     } = req.body;
     const hashPassword = bcrypt.hashSync(password, 10);
     console.log('from userController: ', name, email, cpf, phone, password, address, cep, complemento, city, state, zone);
@@ -39,6 +40,7 @@ module.exports = {
       zone,
       created_at: new Date(),
       updated_at: new Date(),
+      role
     };
     
     return  User.create(userRegisterData)

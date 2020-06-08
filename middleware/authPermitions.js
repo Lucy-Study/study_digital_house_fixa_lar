@@ -1,9 +1,9 @@
 function authUser(req, res, next) {
-  console.log(req.user);
-  if(req.user == null) {
-    
+
+   console.log(req.session.user);
+  if(req.session.user == null) {
     return  res.status(400).render("notFound", {
-      message: "Por favor faço o cadastro para ter acesso a essa página."
+      message: "Por favor faça o login para ter acesso a essa página."
     });
   }
   next();

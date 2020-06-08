@@ -27,8 +27,10 @@ const authController = {
       id: user.id,
       name: user.name,
       email: user.email,
+      role: user.role,
     };
-    return res.redirect("/");
+    console.log(req.session.user);
+    return res.redirect("/busca");
     
   },
 

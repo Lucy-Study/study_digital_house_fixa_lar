@@ -47,6 +47,7 @@ module.exports = (sequelize, DataTypes) => {
       complemento: DataTypes.STRING,
       created_at: DataTypes.DATE,
       updated_at: DataTypes.DATE,
+      role: DataTypes.STRING,
     },
     {
       timestamps: false,
