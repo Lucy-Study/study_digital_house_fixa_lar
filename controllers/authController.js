@@ -19,7 +19,7 @@ const authController = {
     
     if (!user || !bcrypt.compareSync(password, user.password)) {
       return res.render("index", {
-        msg: "Email ou senha errados!",
+        message: "Email ou senha errados!",
        });
     }
 
@@ -29,14 +29,14 @@ const authController = {
       email: user.email,
       role: user.role,
     };
-    console.log(req.session.user);
+    
     return res.redirect("/busca");
     
   },
 
   destroy: (req, res) => {
     req.session = undefined;
-    return res.redirect("/", {message: "login com sucesso"});
+    return res.redirect("/",);
   },
 };
 

@@ -1,6 +1,6 @@
 function authUser(req, res, next) {
 
-   console.log(req.session.user);
+  const usuario = typeof(req.session.user) !== 'undefined' ? req.session.user : false;
   if(req.session.user == null) {
     return  res.status(400).render("notFound", {
       message: "Por favor faça o login para ter acesso a essa página."
