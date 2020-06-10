@@ -4,6 +4,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const session = require("express-session");
+require('dotenv').config();
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
@@ -25,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
   session({
-    secret: "5ec2048b6d1c8a4fe06ec4fd3d5f31a427c43661e80e438bf35ab03559d38c43",
+    secret: process.env.SESSION_SECRET,
     resave: true,
     saveUninitialized: true,
   })
