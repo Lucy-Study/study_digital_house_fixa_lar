@@ -7,8 +7,12 @@
 <link rel="stylesheet" type="text/css" href="/css/style-cadastro.css">
 
 <body>
-  <!--###### navbar section #############-->
+<!--###### navbar section #############-->
 <%- include('./includes/header') %>
+
+<% if (typeof alert !== "undefined") { %>
+    <span onclick="this.parentElement.style.display='none';">&times;</span>
+<% } %>
 
   <div class="card-cadastro">
     <div class="card">
@@ -20,29 +24,30 @@
       <p>Já possui cadastro? Clique <a class="clique-aqui" href="/#login">aqui</a> para login.</p>
     </div>
 
-      <form class="form-cadastro">
+      <form class="form-cadastro" action="/prestador/cadastro" method="POST">
         <!--inicio area de pessoa-->
         <div class="form-group col-md-6">
           <label class="label-form" for="cpf">CPF:</label>
-          <input type="number" class="form-control" id="cpf" placeholder="Informe somente números" maxlength="11">
+          <input type="number" class="form-control" id="cpf" name="cpf" placeholder="Informe somente números" maxlength="11">
         </div>
         
         <div class="form-row col-md-12">
           <div class="form-group col-md-9">
             <label class="label-form" for="nome">Nome Completo:</label>
-            <input type="text" class="form-control" id="nome" placeholder="Informe seu nome completo">
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Informe seu nome completo">
           </div>
+
 
           <!--genero-->
           <div class="form-group col-md-3" >
             <div class="genero">
               <div class="form-check">
                 <label class="form-check-label label-form" for="">Gênero:</label><br>    
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="masculino">
+                <input class="form-check-input" type="radio" name="genero" id="genero" value="m">
                 <label class="form-check-label label-form-genero" for="exampleRadios1">Masculino</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="feminino">
+                <input class="form-check-input" type="radio" name="genero" id="genero" value="f">
                 <label class="form-check-label label-form-genero" for="exampleRadios2">Feminino</label>
               </div>
             </div>
@@ -52,12 +57,12 @@
         <div class="form-row col-md-12">
           <div class="form-group col-md-8">
             <label class="label-form" for="email">E-mail:</label>
-            <input type="email" class="form-control" id="email" placeholder="exemplo@email.com">
+            <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@email.com">
           </div>
 
           <div class="form-group col-md-4">
             <label class="label-form" for="contato">Contato:</label>
-            <input type="contato" class="form-control" id="contato" placeholder="(00)99999-0000">
+            <input type="contato" class="form-control" id="contato" name="contato" placeholder="(00)99999-0000">
           </div>
       </div>
       <!--fim area de pessoa-->
@@ -67,12 +72,12 @@
         <!--logradouro-->  
         <div class="form-group col-md-9">
           <label class="label-form" for="inputAddress">Logradouro:</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="Av. Brasil, nr 000 - Centro">
+          <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Av. Brasil, nr 000 - Centro">
         </div>
 
         <div class="form-group col-md-3">
           <label class="label-form" for="inputZip">CEP:</label>
-          <input type="text" class="form-control" id="inputZip" placeholder="00000-000" autocomplete="off" maxlength="9">
+          <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" autocomplete="off" maxlength="9">
         </div>
       </div>
       
@@ -80,17 +85,22 @@
       <div class="form-row col-md-12">
         <div class="form-group col-md-9">
           <label class="label-form" for="inputAddress2">Complemento:</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, quadra, bloco">
+          <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Apartamento, quadra, bloco">
         </div>
         <div class="form-group col-md-3" >
           <label class="label-form" for="inputZona">Zona:</label>
-          <select id="inputZona" class="form-control">
-            <option selected>Selecione...</option>
-              <option value="Norte"> Norte </option>
+          <select id="zona" name="zona" class="form-control">
+            <option disabled selected>Selecione...</option>
+            <% for(let i=0; i<zonas.length; i++) { %>
+              <option value="<%= zonas[i].id %>"><%= zonas[i].nome %></option>
+            <% } %>
+
+
+           <!--   <option value="Norte"> Norte </option>
               <option value="Sul"> Sul </option>
               <option value="Leste"> Leste </option>
               <option value="Oeste"> Oeste </option>
-              <option value="Oeste"> Centro </option>
+              <option value="Oeste"> Centro </option>-->
           </select>
         </div>
       </div>
@@ -99,13 +109,27 @@
         <div class="form-row col-md-12"><!--inicio area de endereco-->
           <div class="form-group col-md-9">
             <label class="label-form" for="cidade">Cidade:</label>
-            <input type="text" class="form-control" id="cidade" placeholder="Informe cidade que mora">
+            <select id="cidade"  name="cidade" class="form-control">
+              <option disabled selected>Selecione...</option>
+              <% for(let i=0; i<estados.length; i++) { %>
+                <% for(let j=0; j<estados[i].Cidades.length; j++) { %>
+                  <option value="<%= estados[i].Cidades[j].id %>"><%= estados[i].Cidades[j].nome %></option>
+                <% } %>
+              <% } %>
+            </select>
+          </select>
+         <!-- <input type="text" class="form-control" id="cidade" placeholder="Informe cidade que mora"> -->
           </div>
           <div class="form-group col-md-3">
             <label class="label-form" for="inputState">Estado:</label>
-            <select id="inputState" class="form-control">
-              <option selected>Selecione...</option>
-              <option value="AC"> AC </option><option value="AL"> AL </option><option value="AM"> AM </option><option value="AP"> AP </option><option value="BA"> BA </option><option value="CE"> CE </option><option value="DF"> DF </option><option value="ES"> ES </option><option value="GO"> GO </option><option value="MA"> MA </option><option value="MG"> MG </option><option value="MS"> MS </option><option value="MT"> MT </option><option value="PA"> PA </option><option value="PB"> PB </option><option value="PE"> PE </option><option value="PI"> PI </option><option value="PR"> PR </option><option value="RJ"> RJ </option><option value="RN"> RN </option><option value="RO"> RO </option><option value="RR"> RR </option><option value="RS"> RS </option><option value="SC"> SC </option><option value="SE"> SE </option><option value="SP"> SP </option><option value="TO"> TO </option>
+            <select id="estado" name="estado" class="form-control">
+              <option disabled selected>Selecione...</option>
+              <% for(let i=0; i<estados.length; i++) { %>
+                <option value="<%= estados[i].id %>"><%= estados[i].nome %></option>
+              <% } %>
+              
+              
+          <!--    <option value="AC"> AC </option><option value="AL"> AL </option><option value="AM"> AM </option><option value="AP"> AP </option><option value="BA"> BA </option><option value="CE"> CE </option><option value="DF"> DF </option><option value="ES"> ES </option><option value="GO"> GO </option><option value="MA"> MA </option><option value="MG"> MG </option><option value="MS"> MS </option><option value="MT"> MT </option><option value="PA"> PA </option><option value="PB"> PB </option><option value="PE"> PE </option><option value="PI"> PI </option><option value="PR"> PR </option><option value="RJ"> RJ </option><option value="RN"> RN </option><option value="RO"> RO </option><option value="RR"> RR </option><option value="RS"> RS </option><option value="SC"> SC </option><option value="SE"> SE </option><option value="SP"> SP </option><option value="TO"> TO </option> -->
                 </select>
             </select>
           </div>
@@ -115,11 +139,11 @@
         <div class="form-row col-md-12"><!--inicio area senha-->
           <div class="form-group col-md-6">
             <label class="label-form" for="criar-senha">Criar Senha:</label>
-            <input type="password" class="form-control" id="criar-senha" placeholder="**********">
+            <input type="password" class="form-control" id="senha" name="senha" placeholder="**********">
           </div>
           <div class="form-group col-md-6">
             <label class="label-form" for="conf-senha">Confirme Senha:</label>
-            <input type="password" class="form-control" id="conf-senha" placeholder="**********">
+            <input type="password" class="form-control" id="conf-senha" name="conf-senha" placeholder="**********">
           </div>
         </div><br> <!--fim area senha-->
 
@@ -128,7 +152,6 @@
 <div class="form-row col-md-12">
   <p class="label-form"> Selecione Zona de Atendimento:</p>
   <div class="accordion">
-
     <div class="accordion-item">
       <div class="accordion-heading">
         <span class="accordion-titulo">
@@ -139,23 +162,23 @@
       <div class="accordion-detales">
         <p>Escolha a(s) zonas(s) onde poderá realizar o serviço(s).</p>
           <span>
-            <input class="input-habilidade" type="checkbox" id="chkZonaNorte" value="zonaNorte">
+            <input class="input-habilidade" type="checkbox" id="chkZonaNorte" name="chkZonaNorte" value="1">
             <label class="label-habilidades" for="chkZonaNorte">Zona Norte</label>
           </span>
           <span>
-            <input class="input-habilidade" type="checkbox" id="chkZonaLeste" value="zonaLeste">
+            <input class="input-habilidade" type="checkbox" id="chkZonaLeste" name="chkZonaLeste" value="3">
             <label class="label-habilidades" for="chkZonaLeste">Zona Leste</label>
           </span>
           <span>
-            <input class="input-habilidade" type="checkbox" id="chkZonaCentral" value="zonaCentral">
+            <input class="input-habilidade" type="checkbox" id="chkZonaCentral" name="chkZonaCentral" value="5">
             <label class="label-habilidades" for="chkZonaCentral">Zona Central</label>
           </span>
           <span>
-            <input class="input-habilidade" type="checkbox" id="chkZonaOeste" value="zonaOeste">
+            <input class="input-habilidade" type="checkbox" id="chkZonaOeste" name="chkZonaOeste" value="4">
             <label class="label-habilidades" for="chkZonaOeste">Zona Oeste</label>
           </span>
           <span>
-            <input class="input-habilidade" type="checkbox" id="chkZonaSul" value="zonaSul">
+            <input class="input-habilidade" type="checkbox" id="chkZonaSul" name="chkZonaSul" value="2">
             <label class="label-habilidades"  for="chkZonaSul">Zona Sul</label>
           </span>
           
@@ -182,35 +205,35 @@
             <div class="accordion-detales">
               <p>As habilidades nesta área estão relacionadas em instalação, manutenção ou troca.</p>
                 <span>
-                  <input class="input-habilidade" type="checkbox" id="chkLuminaria" value="luminaria">
+                  <input class="input-habilidade" type="checkbox" id="chkLuminaria" name="chkLuminaria" value="1">
                   <label class="label-habilidades" for="chkLuminaria">Luminária</label>
                 </span>
                 <span>
-                  <input class="input-habilidade" type="checkbox" id="chkTomadas" value="tomadas">
+                  <input class="input-habilidade" type="checkbox" id="chkTomadas" name="chkTomadas" value="2">
                   <label class="label-habilidades" for="chkTomadas">Tomadas e extensão</label>
                 </span>
                 <span>
-                  <input class="input-habilidade" type="checkbox" id="chkInterruptor" value="interruptor">
+                  <input class="input-habilidade" type="checkbox" id="chkInterruptor" name="chkInterruptor" value="3">
                   <label class="label-habilidades" for="chkInterruptor">Interruptor</label>
                 </span>
                 <span>
-                  <input class="input-habilidade" type="checkbox" id="chkDisjuntor" value="disjuntor">
+                  <input class="input-habilidade" type="checkbox" id="chkDisjuntor" name="chkDisjuntor" value="4">
                   <label class="label-habilidades" for="chkDisjuntor">Disjuntor</label>
                 </span>
                 <span>
-                  <input class="input-habilidade" type="checkbox" id="chkTrocaLampada" value="trocaLampada">
+                  <input class="input-habilidade" type="checkbox" id="chkTrocaLampada" name="chkTrocaLampada" value="5">
                   <label class="label-habilidades" class="label-habilidades" for="chkTrocaLampada">Troca de Lâmpada</label>
                 </span>
                 <span>
-                  <input class="input-habilidade" type="checkbox" id="chkVentilador" value="ventilador">
+                  <input class="input-habilidade" type="checkbox" id="chkVentilador" name="chkVentilador" value="6">
                   <label class="label-habilidades" class="label-habilidades" for="chkVentilador">Ventilador de teto</label>
                 </span>
                 <span>
-                  <input class="input-habilidade" type="checkbox" id="chkReator" value="reator">
+                  <input class="input-habilidade" type="checkbox" id="chkReator" name="chkReator" value="7">
                   <label class="label-habilidades" for="chkReator">Reator</label>
                 </span>
                 <span>
-                  <input class="input-habilidade" type="checkbox" id="chkLustre" value="lustre">
+                  <input class="input-habilidade" type="checkbox" id="chkLustre" name="chkLustre" value="8">
                   <label class="label-habilidades" for="chkLustre">Lustre</label>
                 </span>
 
@@ -228,32 +251,32 @@
               <p>As habilidades nesta área estão relacionadas em instalação, manutenção ou troca.</p>
 
               <span>
-                <input class="input-habilidade" type="checkbox" id="chkTorneira" value="torneira">
+                <input class="input-habilidade" type="checkbox" id="chkTorneira" name="chkTorneira" value="101">
                 <label class="label-habilidades" for="chkTorneira">Torneira</label>
               </span>
 
               <span>
-                <input class="input-habilidade" type="checkbox" id="chkTanqRoupa" value="tanqRoupa">
+                <input class="input-habilidade" type="checkbox" id="chkTanqRoupa" name="chkTanqRoupa" value="102">
                 <label class="label-habilidades" for="chkTanqRoupa">Tanque de roupa</label>
               </span>
               
               <span>
-                <input class="input-habilidade" type="checkbox" id="chkCxAcoplada" value="cxAcoplada">
+                <input class="input-habilidade" type="checkbox" id="chkCxAcoplada" name="chkCxAcoplada" value="103">
                 <label class="label-habilidades" for="chkCxAcoplada">Caixa acoplada</label>
               </span>
 
               <span>
-                <input class="input-habilidade" type="checkbox" id="chkSifao" value="sifao">
+                <input class="input-habilidade" type="checkbox" id="chkSifao" name="chkSifao" value="104">
                 <label class="label-habilidades" for="chkSifao">Sifão</label>
               </span>
               
               <span>
-                <input class="input-habilidade" type="checkbox" id="chkRegAgua" value="regAgua">
+                <input class="input-habilidade" type="checkbox" id="chkRegAgua" name="chkRegAgua" value="105">
                 <label class="label-habilidades" for="chkRegAgua">Registro de água</label>
               </span>
 
               <span>
-                <input class="input-habilidade" type="checkbox" id="chkValHydra" value="valHydra">
+                <input class="input-habilidade" type="checkbox" id="chkValHydra" name="chkValHydra" value="106">
                 <label class="label-habilidades" for="chkValHydra">Válvula Hydra</label>
               </span>
 
@@ -270,42 +293,42 @@
 
 
               <span>
-                <input class="input-habilidade" type="checkbox" id="chkDobradica" value="dobradica">
+                <input class="input-habilidade" type="checkbox" id="chkDobradica" name="chkDobradica" value="201">
                 <label class="label-habilidades" for="chkDobradica">Dobradiças</label>
               </span>
           
               <span>
-                <input class="input-habilidade" type="checkbox" id="chkAlinhaPortasGavetas" value="alinhaPortasGavetas">
+                <input class="input-habilidade" type="checkbox" id="chkAlinhaPortasGavetas" name="chkAlinhaPortasGavetas" value="202">
                 <label class="label-habilidades" for="chkAlinhaPortasGavetas">Alinhamento de portas e gavetas</label>
               </span>
 
               <span>
-                <input class="input-habilidade" type="checkbox" id="chkTrilhosGavetas" value="trilhosGavetas">
+                <input class="input-habilidade" type="checkbox" id="chkTrilhosGavetas" name="chkTrilhosGavetas" value="203">
                 <label class="label-habilidades" for="chkTrilhosGavetas">Trilhos e gavetas</label>
               </span>
 
               <span>
-                <input class="input-habilidade" type="checkbox" id="chkMoveis" value="moveis">
+                <input class="input-habilidade" type="checkbox" id="chkMoveis" name="chkMoveis" value="204">
                 <label class="label-habilidades" for="chkMoveis">Móveis</label>
               </span>
 
               <span>
-                <input class="input-habilidade" type="checkbox" id="chkSuportTv" value="suportTv">
+                <input class="input-habilidade" type="checkbox" id="chkSuportTv" name="chkSuportTv" value="205">
                 <label class="label-habilidades" for="chkSuportTv">Suporte de TV</label>
               </span>
 
               <span>
-                <input class="input-habilidade" type="checkbox" id="chkCortina" value="cortina">
+                <input class="input-habilidade" type="checkbox" id="chkCortina" name="chkCortina" value="206">
                 <label class="label-habilidades" for="chkCortina">Cortinas</label>
               </span>
 
               <span>
-                <input class="input-habilidade" type="checkbox" id="chkMangFogao" value="mangueiraFogao">
+                <input class="input-habilidade" type="checkbox" id="chkMangFogao" name="chkMangFogao" value="207">
                 <label class="label-habilidades" for="chkMangFogao">Mangueira do fogão</label>
               </span>
 
               <span>
-                <input class="input-habilidade" type="checkbox" id="chkVaralTeto" value="varalTetoParede">
+                <input class="input-habilidade" type="checkbox" id="chkVaralTeto" name="chkVaralTeto" value="208">
                 <label class="label-habilidades" for="chkVaralTeto">Varal de teto ou parede</label>
               </span>
             </div>
