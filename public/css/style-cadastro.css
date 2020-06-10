@@ -21,7 +21,7 @@ paleta-de-cores {
 
 /* ##### FORMULARIO CADASTRO #####*/
 input {
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);
+  /*box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);*/
   margin-top: -5px;
 }
 select {
@@ -42,6 +42,7 @@ select {
 /*inputs form*/
 ::placeholder {
   /*color: #ffffff;*/
+  font-family: sans-serif;
   font-size: 0.9em;
   padding-top: 2px;
   font-weight: lighter;
@@ -49,8 +50,9 @@ select {
 }
 
 .label-form {
+  font-family: sans-serif;
   color: rgb(139, 137, 137);
-  font-weight: bold;
+  /*font-weight: bold;*/
 }
 .label-form-genero {
   color: rgb(139, 137, 137);
@@ -252,13 +254,14 @@ a.nounderline:link {
 }
 
 /*############### FOOTER ###############*/
+/*
 footer {
   height: 30%;
   background-color: grey;
-  /*color: #43bd69;*/
   padding: 1.5%;
 }
-
+*/
+/*
 .sub-titulo {
   font-size: 13px;
   color: aliceblue;
@@ -284,3 +287,4 @@ footer {
 #exampleInputEmail1 {
   border-radius: 100px;
 }
+*/

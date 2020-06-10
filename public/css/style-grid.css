@@ -1,0 +1,409 @@
+/*
+  Autor: Dorivan Almeida
+*/
+* {
+  margin: 0px;
+  padding: 0px;
+  /*font-family: Helvetica, sans-serif;*/
+  /*background: #F7F9F9;*/
+}
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("font/montserrat/Montserrat-Regular.otf");
+  /*src: url('https://www.fontsquirrel.com/fonts/montserrat');*/
+}
+
+
+/* FORMAÇÃO GRID*/
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 110px 1fr 200px;
+  gap: 1px 1px;
+  grid-template-areas:
+    "header header header header header header header header header header header header"
+    "conteudo conteudo conteudo conteudo conteudo conteudo conteudo conteudo conteudo conteudo conteudo conteudo"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+  height: auto;
+}
+
+.header {
+  /*border: 1px solid red;*/
+  grid-area: header;
+  
+}
+
+.footer {
+  /*border: 1px solid red*/
+  grid-area: footer;
+  
+}
+
+.conteudo {
+  /*border: 1px solid red;*/
+  grid-area: conteudo;
+  display: grid;
+  grid-template-columns: .5fr 1.7fr;
+  grid-template-rows: auto auto .5fr;
+  gap: 0px 0px;
+  grid-template-areas: "prestador form-dados";
+  background-color: #f8f8f8;
+  padding-top: 20px;
+}
+
+
+@media only screen and (max-width: 960px) {
+  .conteudo {
+    grid-area: conteudo;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 0px 0px;
+    grid-template-areas: "prestador form-dados";
+    background-color: #f8f8f8;
+    padding-top: 20px;
+  }
+}
+
+
+.prestador {
+  border: 3px solid #797D7F;
+  grid-area: prestador;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 150px 40px 40px 40px;
+  gap: 0px 0px;
+  grid-template-areas:
+    "avatar avatar avatar avatar avatar avatar avatar avatar avatar avatar avatar avatar"
+    "perfil perfil perfil perfil perfil perfil perfil perfil perfil perfil perfil perfil"
+    "mensagem mensagem mensagem mensagem mensagem mensagem mensagem mensagem mensagem mensagem mensagem mensagem"
+    "servico servico servico servico servico servico servico servico servico servico servico servico"
+  ;
+  background-color:#F2F3F4;
+  justify-items: center;
+  padding: 45px 40px 40px 40px;
+}
+
+.avatar {
+  /*border: 1px solid red;*/
+  grid-area: avatar;
+  border-radius: 5px;
+  width: 150px;
+  height: 150px;
+}
+
+.perfil {
+  /*border: 1px solid red;*/
+  grid-area: perfil;
+
+}
+
+.mensagem {
+  /*border: 1px solid red;*/
+  grid-area: mensagem;
+  
+}
+
+.servico {
+  /*border: 1px solid red;*/
+  grid-area: servico;
+  
+}
+
+.perfil,
+.mensagem,
+.servico {
+  width: 200px;
+  text-decoration: none;
+}
+
+.perfil:hover,
+.mensagem:hover,
+.servico:hover {
+  font-weight: 500;
+  cursor: pointer;
+  color: #52BE80;
+}
+
+.form-dados {
+  /*border: 1px solid red;*/
+  grid-area: form-dados;
+  display: grid;
+  gap: 15px 30px;
+  grid-template-rows: auto;
+  background-color: #fff;
+  padding: 35px 100px 45px 40px;
+
+}
+
+
+
+/*Style*/
+
+fieldset {
+  border: 1px solid #ddd !important;
+  margin: 0;
+  /*xmin-width: 0;*/
+  padding: 10px;
+  position: relative;
+  border-radius: 4px;
+  background: #F7F9F9;
+  padding-left: 10px !important;
+}
+
+
+legend {
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px 5px 5px 10px;
+  background-color: #ffffff;
+}
+
+a,
+p,
+.header,
+.sair,
+.servico,
+.orcamento,
+.perfil,
+.foto,
+.nome,
+.endereco,
+.senha,
+.zonas,
+.habilidades,
+.footer {
+  /*background-color: #FDFEFE;*/
+}
+
+.avatar {
+  height: 50px;
+}
+
+a {
+  color: #566573;
+  text-decoration: none;
+  padding-top: 15px;
+}
+
+.label-form{
+  font-family: sans-serif;
+  font-size: 15px;
+  /*color: #2C3E50;*/
+  color: #566573;
+  font-weight: bold;
+}
+
+::placeholder{
+  font-family: sans-serif;
+  font-size: 12px;
+  font-style: italic;
+  padding-top: 3px;
+}
+
+
+
+
+/* ##### Habilidades #####*/
+.label-habilidades {
+  cursor: pointer;
+  margin: 0px 5px 15px 5px;
+  padding: 5px 20px 5px 20px;
+  border: 1px solid gray;
+  border-radius: 40px;
+  font-family: sans-serif;
+  font-size: 14px;
+  float: left;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  transition: 0.75s;
+}
+
+.input-habilidade:checked + label {
+  border-color: greenyellow;
+  background: green;
+  transition: background-color 0.75s;
+}
+
+.input-habilidade:focus:checked + label {
+  border-color: green;
+}
+
+/*ocultar caixa de seleção*/
+.input-habilidade {
+  display: none;
+}
+
+.input-habilidade:checked ~ label {
+  color: #fff;
+}
+
+
+/* ##### ACCORDION #####*/
+:root {
+  --padding: 0.6rem 1.2rem;
+}
+
+.accordion {
+  /*margin: 3rem auto;*/
+  width: 100%;
+  font-family: Montserrat-Regular, sans-serif;
+}
+
+.accordion-titulo {
+  color: rgb(139, 137, 137);
+  /*color: #5d5b5b;*/
+  /*color: #43BD69;*/
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/*borda top do componente*/
+.accordion-item {
+  /*margin: 0 auto;*/
+  margin: 0px 0px 10px 0px;
+  border-top: 2px solid #43bd69;
+  border-radius: 5px;
+  /* padding: .6rem 1.2rem; */
+  /* text-align: center; */
+  width: 100%;
+}
+
+/*Interior do componente*/
+.accordion-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding);
+  background: rgba(207, 207, 207, 0.219);
+  /*background: rgb(236, 234, 234);*/
+  /*background: #eee;*/
+
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/*Icon do componente*/
+.accordion-icon {
+  border: 0.5rem solid transparent;
+  border-top-color: #43bd69;
+  transform: translateY(25%);
+  transform-origin: center 37.5%;
+  transition: 0.4s all ease;
+}
+
+/*Icon do componente rotacao*/
+.accordion-icon--turn {
+  transform: rotate(180deg);
+}
+
+/*Detalhes do accordion*/
+.accordion-detales {
+  max-height: 0;
+  /*background: rgba(207, 207, 207, 0.219);*/
+  font-size: 15px;
+  color: #5d5b5b;
+  margin-left: 10px;
+  overflow: hidden;
+
+  transition: 0.4s all ease;
+}
+
+.accordion-details > p {
+  padding: var(--padding);
+}
+/*####### END ACCORDION **************/
+
+
+
+
+
+
+/*EFEITO LINK*/
+/* Underline From Left */
+.hvr-underline-from-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+.hvr-underline-from-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #52BE80;
+  height: 3px;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-underline-from-left:hover:before,
+.hvr-underline-from-left:focus:before,
+.hvr-underline-from-left:active:before {
+  right: 0;
+}
+
+/* Bounce To Right */
+.hvr-bounce-to-right {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.hvr-bounce-to-right:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-bounce-to-right:hover,
+.hvr-bounce-to-right:focus,
+.hvr-bounce-to-right:active {
+  color: white;
+}
+
+.hvr-bounce-to-right:hover:before,
+.hvr-bounce-to-right:focus:before,
+.hvr-bounce-to-right:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}

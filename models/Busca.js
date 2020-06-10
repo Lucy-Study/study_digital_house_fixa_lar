@@ -8,9 +8,4 @@ function listarPrestador() {
   return listaDePrestadores;
 }
 
-function buscarPrestador(posicao) {
-  let listaDePrestadores = JSON.parse(fs.readFileSync(arquivoPrestador, { encoding: "utf-8" }));
-  return listaDePrestadores[posicao];
-}
-
-module.exports = { listarPrestador, buscarPrestador };
+module.exports = buscarPrestador;
