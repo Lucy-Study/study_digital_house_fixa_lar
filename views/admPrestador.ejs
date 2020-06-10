@@ -1,0 +1,304 @@
+<%- include('./includes/head', {title: 'Fixa Lar | Cadastro de Prestador'}) %>
+
+    <link rel="stylesheet" href="/css/style-grid.css">
+    <!--<link rel="stylesheet" href="/css/adm-prestador-grid-retirar.css">-->
+    
+
+<body>
+    <div class="grid-container">
+        <div class="header">
+            <%- include('./includes/header') %>
+        </div>
+
+        <div class="conteudo">
+            <div class="prestador">
+                <div class="avatar">
+                    <img src="/img/prestadores/<%= prestador.foto %>" alt="imagem-prestador" width="150" height="150">
+                </div>
+                <a href="#" class="perfil">Perfil</a>
+                <a href="#" class="mensagem">Mensagem</a>
+                <a href="#services" class="servico">Serviço</a>
+            </div>
+
+            <!-- Área do Formulário -->
+            <form id="dadosPrestador" class="form-dados" method="POST" action="/prestador/<%= prestador.id %>/edit?_method=PUT" 
+              enctype="multipart/form-data">
+                <div class="col-md-12"> <h4>Perfil Prestador</h4></div>
+                <!--Dados Pessoais-->
+                <fieldset class="col-md-12">
+                    <legend>Dados Pessoais</legend>
+                        <div class=" form-row col-md-12">
+                            <div class="col-md-4">
+                                <label class="label-form" for="cpf">CPF:</label>
+                                <input type="number" class="form-control" id="cpf" name="cpf" placeholder="Informe somente números" maxlength="15"
+                                value="<%= prestador.cpf %>" >
+                            </div>
+
+                            <div class="col-md-5">
+                                <label class="label-form" for="nome">Nome Completo:</label>
+                                <input type="text" class="form-control" id="nome" name="nome" placeholder="Informe seu nome completo"
+                                value="<%= prestador.nome %>" >
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label class="label-form" for="genero">Gênero:</label><br>    
+                                <select class="form-control" name="genero" name="genero" id="genero">
+                                  <% if (prestador.genero === "m") { %>
+                                    <option selected value="m">Masculino</option>
+                                    <option value="f">Feminino</option>
+                                  <% } else if (prestador.genero === "f") { %>
+                                    <option value="m">Masculino</option>
+                                    <option selected value="f">Feminino</option>
+                                  <% } %>
+                                </select>
+                            </div>
+                        </div>  
+                </fieldset>  
+
+                <fieldset class="col-md-12">
+                  <legend>Foto do perfil</legend>
+                    <div class="form-row col-md-12">
+                      <div class="form-group col-md-12">
+                        <input type="file" name="foto" id="foto" accept="image/png, image/jpeg">
+                      </div>
+                    </div>
+                </fieldset>
+                <!--Contato-->
+                <fieldset class="col-md-12">
+                    <legend>Contato</legend>
+                        <!--<div class="form-row col-md-12">-->
+                            <div class="form-row col-md-12">
+                                <div class="form-group col-md-8">
+                                    <label class="label-form" for="email">E-mail:</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@email.com"
+                                    value="<%= prestador.email %>">
+                                </div>
+                    
+                                <div class="form-group col-md-4">
+                                    <label class="label-form" for="contato">Contato:</label>
+                                    <input type="contato" class="form-control" id="contato" name="contato" placeholder="(00)99999-0000" value="<%= prestador.contato %>">
+                                </div>
+                            </div>
+                        <!--</div>-->
+                </fieldset>
+
+                <!--Endereco-->
+                <fieldset class="col-md-12">
+                    <legend>Dados Complementares</legend>
+                        <div class="form-row col-md-12">
+                            <div class="form-row col-md-12">
+                                
+                                <div class="form-group col-md-9">
+                                    <label class="label-form" for="inputAddress">Logradouro:</label>
+                                    <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Av. Brasil, nr 000 - Centro" value="<%= prestador.logradouro %>">
+                                </div>
+                            
+                                <div class="form-group col-md-3">
+                                    <label class="label-form" for="inputZip">CEP:</label>
+                                    <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" autocomplete="off" maxlength="9" value="<%= prestador.cep %>">
+                                </div>
+                            </div>
+                        
+                            <!--complemento-->
+                            <div class="form-row col-md-12">
+                                <div class="form-group col-md-9">
+                                    <label class="label-form" for="inputAddress2">Complemento:</label>
+                                    <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Apartamento, quadra, bloco" value="<%= prestador.complemento %>">
+                                </div>
+                                <div class="form-group col-md-3" >
+                                    <label class="label-form" for="inputZona">Zona:</label>
+                                        <select id="zona" name="zona" class="form-control">
+                                            <option disabled selected>Selecione...</option>
+                                            <% for(let i=0; i<zonas.length; i++) { %>
+                                            <option
+                                            <%= zonas[i].id == prestador.zonas_id ? `selected`: ``%>
+                                            value="<%= zonas[i].id %>">
+                                            <%= zonas[i].nome %>
+                                          </option>
+                                            <% } %>
+                                            <!--   
+                                            <option value="Norte"> Norte </option>
+                                            <option value="Sul"> Sul </option>
+                                            <option value="Leste"> Leste </option>
+                                            <option value="Oeste"> Oeste </option>
+                                            <option value="Oeste"> Centro </option>
+                                            -->
+                                        </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row col-md-12">
+                                <div class="form-group col-md-9">
+                                    <label class="label-form" for="cidade">Cidade:</label>
+                                    <select id="cidade"  name="cidade" class="form-control">
+                                        <option disabled selected>Selecione...</option>
+                                        <% for(let i=0; i<estados.length; i++) { %>
+                                        <% for(let j=0; j<estados[i].Cidades.length; j++) { %>
+                                          
+                                        <option 
+                                        <%= estados[i].Cidades[j].id == prestador.cidades_id ? `selected`: ``%>
+                                        value="<%= estados[i].Cidades[j].id %>">
+                                          <%= estados[i].Cidades[j].nome %></option>
+                                        <% } %>
+                                        <% } %>
+                                    </select>
+                                    <!-- <input type="text" class="form-control" id="cidade" placeholder="Informe cidade que mora"> -->
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label class="label-form" for="inputState">Estado:</label>
+                                    <select id="estado" name="estado" class="form-control">
+                                        <option disabled selected>Selecione...</option>
+                                    <% for(let i=0; i<estados.length; i++) { %>
+
+                                        <option 
+                                        <%= estados[i].id == prestador.Cidade.estados_id ? `selected`: ``%>
+                                        value="<%= estados[i].id %>"><%= estados[i].nome %></option>
+                                    <% } %>
+                                        </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                </fieldset>
+
+                <!--Senha-->
+                <fieldset class="col-md-12">
+                    <legend>Senha</legend>
+                        <div class="form-row col-md-12">
+                            <div class="form-group col-md-4">
+                                <label class="label-form" for="old_senha">Senha atual:</label>
+                                <input type="password" class="form-control" id="old_senha" name="old_senha" placeholder="**********">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="label-form" for="new_senha">Nova Senha:</label>
+                                <input type="password" class="form-control" id="new_senha" name="new_senha" placeholder="**********">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="label-form" for="confirm_new_senha">Confirme Senha:</label>
+                                <input type="password" class="form-control" id="confirm_new_senha" name="confirm_new_senha" placeholder="**********">
+                            </div>
+                        </div>
+                </fieldset>
+                <hr>
+
+                <div class="form-row col-md-12" id="services">
+                    <p class="label-form"> Minhas Zonas de Atendimento:</p>
+                    <div class="accordion">
+                    <div class="accordion-item">
+                      <div class="accordion-heading">
+                        <span class="accordion-titulo">
+                          Zonas
+                        </span>
+                        <span class="accordion-icon"></span>
+                      </div>
+                      <div class="accordion-detales">
+                        <p>Escolha a(s) zonas(s) onde poderá realizar o serviço(s).</p>
+                          
+                        <% let prestadores_zonas = []; %>
+                        <% for(let i=0; i<prestador.prestadores_zonas.length; i++) { %>
+                          <% prestadores_zonas[i] = prestador.prestadores_zonas[i].id %>
+                          <% } %>
+                          
+                          <span>
+                            <input class="input-habilidade" type="checkbox" id="chkZonaNorte" name="chkZonaNorte" value="1"
+                            <%= prestadores_zonas.indexOf(1) ? `checked` : ``; %> >
+                            <label class="label-habilidades" for="chkZonaNorte">Zona Norte</label>
+                          </span>
+                          <span>
+                            <input class="input-habilidade" type="checkbox" id="chkZonaLeste" name="chkZonaLeste" value="3"
+                            <%= prestadores_zonas.indexOf(3) ? `checked` : ``; %>>
+                            <label class="label-habilidades" for="chkZonaLeste">Zona Leste</label>
+                          </span>
+                          <span>
+                            <input class="input-habilidade" type="checkbox" id="chkZonaCentral" name="chkZonaCentral" value="5"
+                            <%= prestadores_zonas.indexOf(5) ? `checked` : ``; %> >
+                            <label class="label-habilidades" for="chkZonaCentral">Zona Central</label>
+                          </span>
+                          <span>
+                            <input class="input-habilidade" type="checkbox" id="chkZonaOeste" name="chkZonaOeste" value="4"
+                            <%= prestadores_zonas.indexOf(4) ? `checked` : ``; %> >
+                            <label class="label-habilidades" for="chkZonaOeste">Zona Oeste</label>
+                          </span>
+                          <span>
+                            <input class="input-habilidade" type="checkbox" id="chkZonaSul" name="chkZonaSul" value="2"
+                            <%= prestadores_zonas.indexOf(2) ? `checked` : ``; %> >
+                            <label class="label-habilidades"  for="chkZonaSul">Zona Sul</label>
+                          </span>
+                          
+                      </div>
+                    </div>
+                    </div>
+                    </div>
+
+                    <!--Inicio Area Habilidades-->
+    <div class="form-row col-md-12">
+        <p class="label-form"> Minhas habilidades:</p>
+        <div class="accordion">
+
+<!-- TESTANDO VIR DO BANCO AS INFORMACOES  -->
+
+<% for (let i=0; i< tipo_servicos.length; i++) { %>
+<div class="accordion-item">
+  <div class="accordion-heading">
+    <span class="accordion-titulo">
+     <%= tipo_servicos[i].nome %>
+     <% let msg = tipo_servicos[i].nome === 'Civil' ? 'As habilidades nesta área estão relacionadas em instalação, manutenção, troca, montagem ou desmontagem.' :  'As habilidades nesta área estão relacionadas em instalação, manutenção ou troca.' %>
+    </span>
+    <span class="accordion-icon"></span>
+  </div>
+  <div class="accordion-detales">
+    <p><%= msg %></p>
+    <% for (let j=0; j<tipo_servicos[i].Servicos.length; j++) { %>
+    <span>
+      <input class="input-habilidade" type="checkbox" id="<%= 'check' + i + j %>" name="chkHabilidades[]"
+      value="<%= tipo_servicos[i].Servicos[j].id %>">
+      <label class="label-habilidades" for="<%= 'check' + i + j %>"><%= tipo_servicos[i].Servicos[j].nome %></label>
+    </span>
+  <% } %>
+  </div>
+</div>
+<% } %>
+
+<!-- fim DO TESTE  -->
+
+        </div> <!--final accordion-->
+      </div>
+      <hr>  
+      <!--Fim Area Habilidades-->
+
+            <!--btn enviar-->
+            <div class="form-row col-md-12">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-danger btn-block">Cancelar</button>
+                </div>
+                <br>
+
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-success btn-block">Atualizar</button>
+                </div>
+            </div>
+
+            </div> <!--fim Grid Conteudo-->
+
+
+            <!--btn enviar-->
+    
+                </form> <!--Fim Formulario-->
+        
+        <!--Grid Footer-->
+        <div class="footer">
+          <%- include('./includes/footer') %>
+        </div>
+    </div> <!--Fim Grid Container-->
+
+    <!-- Script-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/js/accordion.js"></script>
+    
+
+</body>
