@@ -74,7 +74,7 @@ body {
 .link-houver:hover {
   transition-duration: 0.4s;
   border-radius: 5px;
-  border: 1px solid white;
+  border: .5px solid white;
 }
 
 a {
