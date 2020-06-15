@@ -20,7 +20,7 @@
         <p>Já possui cadastro? Clique <a class="clique-aqui" href="/#login">aqui</a> para login.</p>
       </div>
 
-      <form class="form-cadastro" method="POST" action="/users/register">
+      <form class="form-cadastro" method="POST" action="/users/cepSearchRegister">
         <% if(typeof(errors) !== 'undefined') {%>
         <% errors.forEach((error, index) => { %>
         <p class="small text-danger pl-5"><%= error %></p>
@@ -35,47 +35,43 @@
               <a href="/#login"  style="color:darkslategray">Voltar para Home</a>
             </h5>
           </div>
-          
-          <!-- verifica role do usuário e cep -->
-           <% console.log(message) %>
-           <% } %>
 
+          <!-- get cep -->
+           <% console.log(message) %>
+           <% } else {%>
+            <% console.log('msg do register: não tenho mensagem') %>
+           <% } %> 
            <% if(typeof(cep) !== 'undefined') {%>
-           
-          
+           <% console.log(cep) %>
+           <% } else {%>
+            <% console.log('msg do register: não tenho mensagem') %>
+           <% } %> 
+
         <!--inicio area de pessoa-->
         <div class="form-row col-md-12">
           <div class="form-group col-md-6">
             <label class="label-form" for="cpf">CPF:</label>
-            <input type="number" class="form-control" id="cpf" name="cpf" placeholder="Informe somente números">
+            <input type="number" class="form-control" id="cpf" name="cpf" placeholder="Informe somente números" readonly>
           </div>
-          <div class="form-group col-md-6">
-            <label class="label-form" for="role">role:</label>
-            <select id="role" name="role" class="form-control">
-              <option selected>Selecione...</option>
-              <option value="ADMIN"> Admin </option>
-              <option value="USER"> Usuário </option>
-              <option value="PROVIDER"> Prestador </option>
-            </select>
-          </div>
+          
         </div>
 
         <div class="form-row col-md-12">
           <div class="form-group col-md-12">
             <label class="label-form" for="nome">Nome Completo:</label>
-            <input type="text" class="form-control" id="nome" name="name" laceholder="Informe seu nome completo">
+            <input type="text" class="form-control" id="nome" name="name" laceholder="Informe seu nome completo" readonly>
           </div>
         </div>
 
         <div class="form-row col-md-12">
           <div class="form-group col-md-8">
             <label class="label-form" for="email">E-mail:</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@email.com">
+            <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@email.com" readonly>
           </div>
 
           <div class="form-group col-md-4">
             <label class="label-form" for="contato">Contato:</label>
-            <input type="contato" class="form-control" id="contato" name="phone" placeholder="(00)99999-0000">
+            <input type="contato" class="form-control" id="contato" name="phone" placeholder="(00)99999-0000" readonly>
           </div>
         </div>
         <!--fim area de pessoa-->
@@ -85,12 +81,18 @@
           <!--logradouro-->
           <div class="form-group col-md-9">
             <label class="label-form" for="inputAddress">Logradouro:</label>
-            <input type="text" class="form-control" id="inputAddress" name="address" value="<%= cep.street %>">
+            <input type="text" class="form-control" id="inputAddress" name="address"
+              placeholder="Av. Brasil, nr 000 - Centro" readonly>
           </div>
 
           <div class="form-group col-md-3">
             <label class="label-form" for="inputZip">CEP:</label>
-            <input type="text" class="form-control" id="inputZip" name="cep" value="<%= cep.cep %>">
+            <input type="text" class="form-control" id="inputZip" name="cep">
+            <small id="emailHelp" class="form-text text-muted">
+              Somente os números,<a class="clique-aqui" href="http://www.buscacep.correios.com.br/sistemas/buscacep/"> cep?</a>
+            </small>
+            
+               
           </div>
         </div>
 
@@ -99,11 +101,11 @@
           <div class="form-group col-md-9">
             <label class="label-form" for="inputAddress2">Complemento:</label>
             <input type="text" class="form-control" id="inputAddress2" name="complemento"
-              placeholder="Apartamento, quadra, bloco">
+              placeholder="Apartamento, quadra, bloco" readonly>
           </div>
           <div class="form-group col-md-3">
             <label class="label-form" for="inputZona">Zona:</label>
-            <select id="inputZona" name="zone" class="form-control">
+            <select id="inputZona" name="zone" class="form-control" readonly>
               <option selected>Selecione...</option>
               <option value="Norte"> Norte </option>
               <option value="Sul"> Sul </option>
@@ -119,13 +121,12 @@
           <!--inicio area de endereco-->
           <div class="form-group col-md-9">
             <label class="label-form" for="cidade">Cidade:</label>
-            <input type="text" class="form-control" id="cidade" name="city" value="<%= cep.city %>">
+            <input type="text" class="form-control" id="cidade" name="city" placeholder="Informe cidade que mora" readonly>
           </div>
           <div class="form-group col-md-3">
             <label class="label-form" for="inputState">Estado:</label>
-            <select id="inputState" name="state" class="form-control">
-              
-              <option selected value="<%= cep.state%>"> <%= cep.state%> </option>
+            <select id="inputState" name="state" class="form-control" readonly>
+              <option selected>Selecione...</option>
               <option value="AC"> AC </option>
               <option value="AL"> AL </option>
               <option value="AM"> AM </option>
@@ -159,20 +160,16 @@
 
         </div>
         <!--fim area de endereco-->
-        <% } else {%>
-          <% console.log('msg do register: cep não encontrado') %>
-          <div class="alert alert-warning">Cep não encontrado</div>
-         <% } %> 
-         <!-- final da inserção do cep -->
+
         <div class="form-row col-md-12">
           <!--inicio area senha-->
           <div class="form-group col-md-6">
             <label class="label-form" for="criar-senha">Criar Senha:</label>
-            <input type="password" class="form-control" id="criar-senha" name="password" placeholder="**********">
+            <input type="password" class="form-control" id="criar-senha" name="password" placeholder="**********" readonly>
           </div>
           <div class="form-group col-md-6">
             <label class="label-form" for="conf-senha">Confirme Senha:</label>
-            <input type="password" class="form-control" id="conf-senha" name="confirm_password" placeholder="**********">
+            <input type="password" class="form-control" id="conf-senha" name="confirm_password" placeholder="**********" readonly>
           </div>
         </div>
         <!--fim area senha-->

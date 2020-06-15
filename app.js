@@ -7,7 +7,8 @@ const session = require("express-session");
 require('dotenv').config();
 
 const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
+const registerRouter = require("./routes/register");
+const registerCepRouter = require("./routes/cepRegister");
 const loginRouter = require("./routes/login");
 const rotasContratar = require("./routes/contratarRoute");
 const rotasCliente = require("./routes/clienteRoute");
@@ -36,7 +37,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 // used as router to register
-app.use("/users", usersRouter);
+app.use("/users", registerRouter);
+app.use("/users", registerCepRouter);
+
 app.use("/", loginRouter);
 app.use("/contratar", rotasContratar);
 app.use("/cadastroCliente", rotasCliente);

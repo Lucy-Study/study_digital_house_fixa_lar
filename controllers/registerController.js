@@ -25,7 +25,7 @@ module.exports = {
       role
     } = req.body;
     const hashPassword = bcrypt.hashSync(password, 10);
-    console.log('from userController: ', name, email, cpf, phone, password, address, cep, complemento, city, state, zone);
+    
     const userRegisterData = {
       name,
       email,
