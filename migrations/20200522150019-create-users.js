@@ -19,24 +19,43 @@ module.exports = {
           allowNull: false,
         },
         cpf: {
-          type: Sequelize.INTEGER,
-          allowNull: false,
-        },
-        senha: {
           type: Sequelize.STRING,
           allowNull: false,
         },
-        logradouro: Sequelize.STRING,
-        cep: Sequelize.STRING,
-        complemento: Sequelize.STRING,
-        created_at: {
-          type: Sequelize.DATE,
+        phone: {
+          type: Sequelize.STRING,
           allowNull: false,
         },
-        updated_at: {
-          type: Sequelize.DATE,
+        password: {
+          type: Sequelize.STRING,
           allowNull: false,
         },
+        address: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
+        cep: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
+        complemento: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
+        city: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
+        state: {
+          type: Sequelize.STRING(2),
+          allowNull: false,
+        },
+        zone: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
+        created_at: Sequelize.DATE,
+        updated_at: Sequelize.DATE,
       });
     
   },

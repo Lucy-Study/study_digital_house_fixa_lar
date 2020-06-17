@@ -23,109 +23,166 @@
             </select>
           </div>
 
-          <div class="ordem">
-            <label for="regiao" class="titulo">Região</label>
-            <br />
-            <select id="regiao">
-              <option value="centro">Centro</option>
-              <option value="leste">Zona Leste</option>
-              <option value="oeste">Zona Oeste</option>
-              <option value="norte">Zona Norte</option>
-              <option value="sul">Zona Sul</option>
-            </select>
-          </div>
-
-          <!-- <div class="ordem">
-            <label for="bairro" class="titulo">Bairro</label>
-            <br />
-            <select id="bairro">
-              <option value="centro">República</option>
-              <option value="leste">Jardins</option>
-              <option value="oeste">Tatuapé</option>
-              <option value="norte">Itaquera</option>
-              <option value="sul">Barra Funda</option>
-            </select>
-          </div> -->
-
-          <div class="botao-buscar">
-            <button type="button" class="btn badge badge-pill badge-success" id="botao-size" style="font-size: 1rem;">
-              <a href="#">Buscar</a>
-            </button>
-          </div>
-        </form>
-      </section>
-      <!--Fim - Menu de Busca-->
-
-      <!--Cards - Resultado Busca-->
-      <section id="cards-result" class="container shadow d-flex justify-content-center">
-        <div class="row mt-5">
-          <!--Card 1-->
-          <% resultadoPrestadores.forEach((prestador, index)=>{ %>
-          <div class="col-md-3 mt-0 p-0" id="card-prestador">
-            <div
-              class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded"
-              style="width: 240px; height: 350px;"
-            >
-              <img
-                src="/img/prestador-1.webp"
-                class="card-img-top rounded-circle align-self-center pt-2 border border-dark"
-                alt="prestador de serviços"
-                style="height: 100px; width: auto;"
-              />
-              <div class="card-body">
-                <h4 class="card-title mt-2 mb-2"><%= prestador.nome %></h4>
-                <div class="mb-3">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                </div>
-                <p
-                  class="p-0 text-muted"
-                  href="#"
-                  style="text-decoration: underline; font-weight: 400; font-size: 12px;"
-                >
-                  Região: <%= prestador.regiao %>
-                </p>
-                <p
-                  class="card-text pt-2"
-                  style="font-family: 'Raleway'; font-weight: lighter; letter-spacing: 0.0625em; font-size: 0.7rem;"
-                >
-                  <%= prestador.servicos %>
-                </p>
-                <div class="btn btn-success"><a href="contratar" class="link-card">Contratar</a></div>
-              </div>
-            </div>
-          </div>
-          <!--Fim - Card 1-->
-          <% }) %>
-        </div>
-      </section>
-      <!--Fim - Cards - Resultado Busca-->
-
-      <!--Paginação-->
-      <nav aria-label="Page navigation example" class="d-flex justify-content-center">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link text-success" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
+<body style="background-color: #fbfbfb;">
+  <nav class="navbar navbar-expand-lg static-top nav-style sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img class="img-logo" src="/img/Logo_FixaLar.png" alt="Fixa Lar" />
+      </a>
+      <button class="navbar navbar-toggleable-md navbar-light navbar-toggler navbar-toggler-right nav-btn-border"
+        type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon icon-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="menu">
+            <a class="nav-link btn-outline-success link-houver" href="/#sect">Como Funciona</a>
           </li>
-          <li class="page-item"><a class="page-link text-success" href="#">1</a></li>
-          <li class="page-item"><a class="page-link text-success" href="#">2</a></li>
-          <li class="page-item"><a class="page-link text-success" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link text-success" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
+          <li class="menu">
+            <a class="nav-link btn-outline-success link-houver" href="/#call-to-action">Seja Parceiro</a>
+          </li>
+          <!--<li class="menu">
+                <a class="nav-link btn-outline-success link-houver" href="#">Serviços</a>
+              </li>-->
+          <li class="menu">
+            <a class="nav-link btn-outline-success link-houver" href="/#footer-container">Contato</a>
+          </li>
+
+          <% if(typeof(email) !== 'undefined') {%>
+            <li class="menu">
+              <form action="/logout" method="POST">
+                <button type="submit" class="mt-1 text-success btn btn-outline-dark">Logout</button>
+              </form>
+
+            </li>  
+          <% }else{ %>
+            <li class="menu">
+              <a class="nav-link btn-outline-success link-houver" href="/#login">Login</a>
+            </li>
+          <% } %>  
+          <li class="link-cadastrar menu btn-outline-outline-warning">
+            <a class="nav-link-cadastro nav-link" ><%= email %></a>
           </li>
         </ul>
-      </nav>
-      <!--Fim Paginação-->
-    </main>
+      </div>
+    </div>
+  </nav>
 
-    <!-- footer section -->
-    <%- include('./includes/footer') %>
-  </body>
+
+
+
+
+  <main class="container">
+    <!--Menu de Busca-->
+    <section id="menu-busca" class="shadow">
+      <form action="" class="form">
+        <div class="ordem">
+          <label for="servicos" class="titulo">Serviço</label>
+          <br />
+          <select id="servicos">
+            <option value="troca">Troca</option>
+            <option value="manutencao">Manutenção</option>
+            <option value="conserto">Conserto</option>
+          </select>
+        </div>
+
+
+
+        <div class="ordem">
+          <label for="regiao" class="titulo">Região</label>
+          <br />
+          <select id="regiao">
+            <option value="centro">Centro</option>
+            <option value="leste">Zona Leste</option>
+            <option value="oeste">Zona Oeste</option>
+            <option value="norte">Zona Norte</option>
+            <option value="sul">Zona Sul</option>
+          </select>
+        </div>
+
+        <div class="ordem">
+          <label for="bairro" class="titulo">Bairro</label>
+          <br />
+          <select id="bairro">
+            <option value="centro">República</option>
+            <option value="leste">Jardins</option>
+            <option value="oeste">Tatuapé</option>
+            <option value="norte">Itaquera</option>
+            <option value="sul">Barra Funda</option>
+          </select>
+        </div>
+
+        <div class="botao-buscar">
+          <button type="button" class="btn badge badge-pill badge-success" id="botao-size" style="font-size: 1rem;">
+            <a href="#">Buscar</a>
+          </button>
+        </div>
+      </form>
+    </section>
+    <!--Fim - Menu de Busca-->
+
+    <!--Cards - Resultado Busca-->
+
+    <section id="cards-result" class="container shadow">
+      <div class="row">
+        <!--Card 1-->
+        <% relacaoPrestadores.forEach((prestador, index)=>{ %>
+        <div class="col-md-4 mt-4" id="card-prestador">
+          <div class="card text-center border border-warning p-2 shadow p-3 mb-5 bg-white rounded"
+            style="width: 250px; height: 350px;">
+            <img src="/img/prestador-1.webp"
+              class="card-img-top rounded-circle align-self-center pt-2 border border-dark" alt="prestador de serviços"
+              style="height: 100px; width: auto;" />
+            <div class="card-body">
+              <h4 class="card-title mt-2 mb-2"><%= prestador.nome %></h4>
+              <div class="mb-3">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <p class="p-0 text-muted" href="#" style="text-decoration: underline; font-weight: 400; font-size: 12px;">
+                <%= prestador.regiao %>
+              </p>
+              <p class="card-text pt-2"
+                style="font-family: 'Raleway'; font-weight: lighter; letter-spacing: 0.0625em; font-size: 0.7rem;">
+                <%= prestador.servicos %>
+              </p>
+              <div class="btn btn-success"><a href="contratar" class="link-card">Contratar</a></div>
+            </div>
+          </div>
+        </div>
+        <!--Fim - Card 1-->
+        <% }) %>
+      </div>
+    </section>
+    <!--Fim - Cards - Resultado Busca-->
+
+    <!--Paginação-->
+    <nav aria-label="Page navigation example" class="d-flex justify-content-center">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link text-success" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link text-success" href="#">1</a></li>
+        <li class="page-item"><a class="page-link text-success" href="#">2</a></li>
+        <li class="page-item"><a class="page-link text-success" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link text-success" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!--Fim Paginação-->
+  </main>
+
+  <!-- footer section -->
+  <%- include('./includes/footer') %>
+</body>
+
 </html>

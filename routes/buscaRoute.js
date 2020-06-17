@@ -1,8 +1,33 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
+const { authUser } = require("../middleware/authPermitions");
 
-var buscaController = require("../controllers/buscaController");
+router.get("/", authUser, function (req, res, next) {
+  const user = req.session.user;
 
-router.get("/", buscaController.buscarPrestador);
+  res.locals.name = user.name;
+  res.locals.email = user.email;
+  res.locals.role = user.role;
+
+  res.render("busca", {
+    relacaoPrestadores: [
+      {
+        nome: "fulano",
+        regiao: "sul",
+        servicos: "nada",
+      },
+      {
+        nome: "teste 2",
+        regiao: "norte",
+        servicos: "nada 2",
+      },
+      {
+        nome: "teste 2",
+        regiao: "norte",
+        servicos: "nada 2",
+      },
+    ],
+  });
+});
 
 module.exports = router;

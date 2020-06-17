@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <!--Head-->
+<%- include('./includes/head', {title: 'Fixa Lar | Contratar'}) %>
+
+<link rel="stylesheet" type="text/css" href="/css/contratar.css">
+
+<body>
+  <!--###### navbar section #############-->
+<%- include('./includes/header') %>
+
+    <main class="container py-4 bg-light col-lg-6 col-lg-offset-6">
+
+      <div class="card m-2 " style="max-width: 740px;">
+
+      <div class="card mb-3 m-3">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img
+              src="/img/cadastro-prestador.png"
+              class="img-thumbnail rounded-circle m-3"
+              width="250"
+              height="250"
+              alt="Foto do prestador"
+            />
+          </div>
+          <div class="col-md-8 pl-4">
+            <div class="card-body">
+              <h5 class="card-title">Pagina não encontrada!</h5>
+              <% if(message !== 'undefined') { %>
+              <p class="text-danger">
+                <%= message %>
+              </p>  
+              <% } %>  
+              <h6></h6>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-body">
+        <a href="/" style="color:slategrey" class="ml-5">Voltar Home page</a>
+        
+      </div>
+    </main>
+
+    <!-- footer section -->
+    <%- include('./includes/footer') %>
+
+  </body>
+</html>

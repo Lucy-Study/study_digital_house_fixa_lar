@@ -22,10 +22,39 @@ module.exports = {
       city,
       state,
       zone,
+      role
     } = req.body;
     const hashPassword = bcrypt.hashSync(password, 10);
     console.log('from userController: ', name, email, cpf, phone, password, address, cep, complemento, city, state, zone);
-    return res.redirect("/users/register")
+    const userRegisterData = {
+      name,
+      email,
+      cpf,
+      phone,
+      password: hashPassword,
+      address,
+      cep,
+      complemento,
+      city,
+      state,
+      zone,
+      created_at: new Date(),
+      updated_at: new Date(),
+      role
+    };
+    
+    return  User.create(userRegisterData)
+                .then(users => {
+                  if(users) {
+                    res.render("auth/register", {
+                      message: "Usuário adicionado com sucesso."
+                    })
+                  } else {
+                    res.status(400).render("aut/register", {
+                      message: "Erro ao cadastrar usuário."
+                    })
+                  }
+                })
   },
 
 }
