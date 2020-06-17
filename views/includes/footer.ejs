@@ -58,16 +58,28 @@
           </ul>
         </div>
         <div class="col-sm">
-          <form>
-            <label class="h5 pt-3" for="exampleInputEmail1" style="color: #43bd69;">Receba nossa newsletter</label>
+          <form method="GET" id="news-form" action="">
+            <label class="h5 pt-3" for="newsletter" style="color: #43bd69;">Receba nossa newsletter</label>
             <div class="form-group text-right">
               <input
                 type="email"
                 class="form-control form-control-sm"
-                id="exampleInputEmail1"
+                id="newsletter"
+                name="newsletter"
                 placeholder="Insira seu e-mail"
               />
-              <button class="btn badge badge-pill badge-success my-2 my-sm-2" id="btn-news" type="submit">ENVIAR</button>
+
+              <div id="error-list" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <ul></ul>
+
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <button class="btn badge badge-pill badge-success my-2 my-sm-2" id="btn-news" type="submit">
+                ENVIAR
+              </button>
             </div>
           </form>
         </div>
@@ -107,3 +119,4 @@
   crossorigin="anonymous"
 ></script>
 <script src="/js/bootstrap.min.js"></script>
+<script src="/js/newsletter.js"></script>

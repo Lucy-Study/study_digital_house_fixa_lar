@@ -8,4 +8,4 @@ function listarPrestador() {
   return listaDePrestadores;
 }
 
-module.exports = buscarPrestador;
+module.exports = listarPrestador;
