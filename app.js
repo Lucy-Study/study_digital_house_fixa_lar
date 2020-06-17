@@ -4,11 +4,11 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const session = require("express-session");
+const cors = require('cors');
 require('dotenv').config();
 
 const indexRouter = require("./routes/index");
 const registerRouter = require("./routes/register");
-const registerCepRouter = require("./routes/cepRegister");
 const loginRouter = require("./routes/login");
 const rotasContratar = require("./routes/contratarRoute");
 const rotasCliente = require("./routes/clienteRoute");
@@ -24,6 +24,7 @@ app.set("view engine", "ejs");
 
 app.use(logger("dev"));
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(
   session({
@@ -38,7 +39,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 // used as router to register
 app.use("/users", registerRouter);
-app.use("/users", registerCepRouter);
 
 app.use("/", loginRouter);
 app.use("/contratar", rotasContratar);

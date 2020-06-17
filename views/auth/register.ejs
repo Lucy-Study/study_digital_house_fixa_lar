@@ -20,7 +20,7 @@
         <p>Já possui cadastro? Clique <a class="clique-aqui" href="/#login">aqui</a> para login.</p>
       </div>
 
-      <form class="form-cadastro" method="POST" action="/users/register">
+      <form class="form-cadastro" method="POST" action="/users/v1/register">
         <% if(typeof(errors) !== 'undefined') {%>
         <% errors.forEach((error, index) => { %>
         <p class="small text-danger pl-5"><%= error %></p>
@@ -28,21 +28,21 @@
         <% }else{%>
         <% console.log('2')%>
         <% } %>
-         <% if(typeof(message) !== 'undefined') { %>
-          <div class="alert alert-success" role="alert">
-            <%= message%>
-            <h5>
-              <a href="/#login"  style="color:darkslategray">Voltar para Home</a>
-            </h5>
-          </div>
-          
-          <!-- verifica role do usuário e cep -->
-           <% console.log(message) %>
-           <% } %>
+        <% if(typeof(message) !== 'undefined') { %>
+        <div class="alert alert-success" role="alert">
+          <%= message%>
+          <h5>
+            <a href="/#login" style="color:darkslategray">Voltar para Home</a>
+          </h5>
+        </div>
+        <% console.log(message) %>
+        <% } %>
 
-           <% if(typeof(cep) !== 'undefined') {%>
-           
-          
+        <!-- verifica role do usuário e cep -->
+
+
+
+
         <!--inicio area de pessoa-->
         <div class="form-row col-md-12">
           <div class="form-group col-md-6">
@@ -50,13 +50,13 @@
             <input type="number" class="form-control" id="cpf" name="cpf" placeholder="Informe somente números">
           </div>
           <div class="form-group col-md-6">
-            <label class="label-form" for="role">role:</label>
+            <!-- <label class="label-form" for="role">role:</label>
             <select id="role" name="role" class="form-control">
               <option selected>Selecione...</option>
               <option value="ADMIN"> Admin </option>
               <option value="USER"> Usuário </option>
               <option value="PROVIDER"> Prestador </option>
-            </select>
+            </select> -->
           </div>
         </div>
 
@@ -85,12 +85,12 @@
           <!--logradouro-->
           <div class="form-group col-md-9">
             <label class="label-form" for="inputAddress">Logradouro:</label>
-            <input type="text" class="form-control" id="inputAddress" name="address" value="<%= cep.street %>">
+            <input type="text" class="form-control" id="inputAddress" name="address">
           </div>
 
           <div class="form-group col-md-3">
             <label class="label-form" for="inputZip">CEP:</label>
-            <input type="text" class="form-control" id="inputZip" name="cep" value="<%= cep.cep %>">
+            <input type="text" class="form-control" id="inputZip" name="cep" autofocus>
           </div>
         </div>
 
@@ -119,51 +119,18 @@
           <!--inicio area de endereco-->
           <div class="form-group col-md-9">
             <label class="label-form" for="cidade">Cidade:</label>
-            <input type="text" class="form-control" id="cidade" name="city" value="<%= cep.city %>">
+            <input type="text" class="form-control" id="inputCity" name="city">
           </div>
           <div class="form-group col-md-3">
             <label class="label-form" for="inputState">Estado:</label>
-            <select id="inputState" name="state" class="form-control">
-              
-              <option selected value="<%= cep.state%>"> <%= cep.state%> </option>
-              <option value="AC"> AC </option>
-              <option value="AL"> AL </option>
-              <option value="AM"> AM </option>
-              <option value="AP"> AP </option>
-              <option value="BA"> BA </option>
-              <option value="CE"> CE </option>
-              <option value="DF"> DF </option>
-              <option value="ES"> ES </option>
-              <option value="GO"> GO </option>
-              <option value="MA"> MA </option>
-              <option value="MG"> MG </option>
-              <option value="MS"> MS </option>
-              <option value="MT"> MT </option>
-              <option value="PA"> PA </option>
-              <option value="PB"> PB </option>
-              <option value="PE"> PE </option>
-              <option value="PI"> PI </option>
-              <option value="PR"> PR </option>
-              <option value="RJ"> RJ </option>
-              <option value="RN"> RN </option>
-              <option value="RO"> RO </option>
-              <option value="RR"> RR </option>
-              <option value="RS"> RS </option>
-              <option value="SC"> SC </option>
-              <option value="SE"> SE </option>
-              <option value="SP"> SP </option>
-              <option value="TO"> TO </option>
-            </select>
-            </select>
+            <input type="text" class="form-control"  name="inputState" id="inputState">
           </div>
 
         </div>
         <!--fim area de endereco-->
-        <% } else {%>
-          <% console.log('msg do register: cep não encontrado') %>
-          <div class="alert alert-warning">Cep não encontrado</div>
-         <% } %> 
-         <!-- final da inserção do cep -->
+
+
+        <!-- final da inserção do cep -->
         <div class="form-row col-md-12">
           <!--inicio area senha-->
           <div class="form-group col-md-6">
@@ -172,7 +139,8 @@
           </div>
           <div class="form-group col-md-6">
             <label class="label-form" for="conf-senha">Confirme Senha:</label>
-            <input type="password" class="form-control" id="conf-senha" name="confirm_password" placeholder="**********">
+            <input type="password" class="form-control" id="conf-senha" name="confirm_password"
+              placeholder="**********">
           </div>
         </div>
         <!--fim area senha-->

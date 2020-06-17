@@ -11,8 +11,8 @@ const {
 
 
 // form with cep informations
-router.get('/register', registerController.create);
-router.post('/register',
+router.get('/v1/register', registerController.create);
+router.post('/v1/register',
  userValidationRules(), validate,  registerController.store);
 
 
