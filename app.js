@@ -6,7 +6,7 @@ const logger = require("morgan");
 const session = require("express-session");
 require("dotenv").config();
 
-
+const routesIndex = require('./routes/index');
 const usersRouter = require("./routes/users");
 const loginRouter = require("./routes/login");
 const rotasContratar = require("./routes/contratarRoute");
@@ -38,6 +38,7 @@ app.use(
 
 // used as router to register
 app.use("/", loginRouter);
+app.use("/", routesIndex)
 app.use("/users", usersRouter);
 app.use("/contratar", rotasContratar);
 app.use("/cadastroCliente", rotasCliente);
