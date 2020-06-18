@@ -6,7 +6,7 @@ const logger = require("morgan");
 const session = require("express-session");
 require("dotenv").config();
 
-const indexRouter = require("./routes/index");
+
 const usersRouter = require("./routes/users");
 const loginRouter = require("./routes/login");
 const rotasContratar = require("./routes/contratarRoute");
@@ -24,13 +24,6 @@ app.set("view engine", "ejs");
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(
-  session({
-    secret: "teste", //process.env.SESSION_SECRET,
-    resave: true,
-    saveUninitialized: true,
-  })
-);
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
@@ -40,12 +33,12 @@ app.use(
     saveUninitialized: true,
   })
 );
-app.use(cookieParser());
 
-app.use("/", indexRouter);
+
+
 // used as router to register
-app.use("/users", usersRouter);
 app.use("/", loginRouter);
+app.use("/users", usersRouter);
 app.use("/contratar", rotasContratar);
 app.use("/cadastroCliente", rotasCliente);
 app.use("/criarConta", rotasConta);
