@@ -21,7 +21,7 @@
             </div>
 
             <!-- Área do Formulário -->
-            <form id="dadosPrestador" class="form-dados" method="POST" action="/prestador/<%= prestador.id %>/edit?_method=PUT" 
+            <form id="dadosPrestador" class="form-dados" method="POST" action="/prestador/<%= prestador_session.id %>/edit?_method=PUT"
               enctype="multipart/form-data">
                 <div class="col-md-12"> <h4>Perfil Prestador</h4></div>
                 <!--Dados Pessoais-->
@@ -31,7 +31,7 @@
                             <div class="col-md-4">
                                 <label class="label-form" for="cpf">CPF:</label>
                                 <input type="number" class="form-control" id="cpf" name="cpf" placeholder="Informe somente números" maxlength="15"
-                                value="<%= prestador.cpf %>" >
+                                value="<%= prestador.cpf %>" readonly>
                             </div>
 
                             <div class="col-md-5">

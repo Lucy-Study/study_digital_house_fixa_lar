@@ -5,6 +5,31 @@ const config = require("../config/database");
 
 const PrestadorController = {
 
+    login: async(req, res) => {
+        
+        const {prestador_email, prestador_password=''} = req.body;
+
+        const prestador = await Prestador.findOne({
+            where: { email: prestador_email }
+        });
+
+        const confirmacao = prestador ? await bcrypt.compare(prestador_password, prestador.senha) : '';
+
+        if (!prestador || !confirmacao) {
+            console.log("Erro: Usuário ou senha inválidos.");
+            return res.render('index');
+        }
+
+        req.session.prestador = {
+            id: prestador.id,
+            nome: prestador.nome,
+            email: prestador.email
+        }
+
+        return res.redirect(`/prestador/${prestador.id}/admin`);
+
+    },
+
     mostrar: async(req, res) => {
 
         const estados = await Estado.findAll({
@@ -324,28 +349,6 @@ const PrestadorController = {
         const { id } = req.params;
 
         
-        /*
-        cpf: '12345657542',
-        nome: 'Marcelo Comeu Todas',
-        genero: 'm',
-        email: 'cometodas@email.com',
-        contato: '(11)92124-5432',
-        logradouro: 'Rua Casa come come, nr 123 - Centro',
-        cep: '21345-654',
-        complemento: 'Se respira dá pra comer',
-        zona: '2',
-        cidade: '1',
-        estado: '1',
-        old_senha: '',
-        new_senha: '',
-        confirm_new_senha: '',
-        chkZonaLeste: '3',
-        chkZonaCentral: '5',
-        chkZonaOeste: '4',
-        chkZonaSul: '2'
-        
-        */
-
         let [file] = req.files;
 
         const prestador = await Prestador.findByPk(id);
