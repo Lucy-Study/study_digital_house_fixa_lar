@@ -57,16 +57,16 @@
       </div>
       <!--end text side-->
 
-      <!--card-->
-      <div class="card border-success text-center mb-3 shadow-lg p-3 mb-5 bg-white rounded" style="max-width: 20rem;" id="login">
+      <!-- card de login -->
+      <!--<div class="card border-success text-center mb-3 shadow-lg p-3 mb-5 bg-white rounded" style="max-width: 20rem;" id="login">
         <div class="card-header bg-transparent border-success">
           <div class="card-header_title">Minha Conta </div>
         </div>
         <div class="card-body text-success">
-          <p class="card-text">
 
-            <!--form login-->
-            <form action="/login" method="POST">
+          <p class="card-text">-->
+            <!--form login Cliente-->
+            <!--<form action="/login" method="POST">
              
               <div class="form-group">
                 <input type="text" class="form-control mb-2"  name="email" id="email" placeholder="Email"
@@ -83,10 +83,104 @@
               </div>
             </form>
           </p>
+
         </div>
         <div class="card-footer bg-transparent border-success card-footer_call">Ainda não tem cadastro? <a class="login-link" href="criarConta">Cadastre-se</a></div>
-      </div>
-      <!--end card-->
+      </div> -->
+      <!-- end card login-->
+
+<!-- inicio do novo login -->
+<div class="bloco-login"> <!--inicio da div do bloco-->
+      
+  <div class="card border-success text-center mb-3 shadow-lg p-3 mb-5 bg-white rounded" style="max-width: 25rem;" id="login"> <!--inicio card-->
+
+    <div class="card-header bg-transparent border-success">
+      <div class="card-header_title">Minha Conta</div>
+    </div> 
+  
+    <br>
+
+    <ul class="nav nav-pills mb-4" id="pills-tab" role="tablist">
+      <li class="nav-item link-nav">
+        <a class="nav-link btn-outline-success active" id="pills-cliente-tab" data-toggle="pill" href="#pills-cliente" role="tab" aria-controls="pills-cliente" aria-selected="true">Cliente</a>
+      </li>
+        &emsp;&emsp;
+      <li class="nav-item link-nav">
+        <a class="nav-link btn-outline-success"  id="pills-prestador-tab" data-toggle="pill" href="#pills-prestador" role="tab" aria-controls="pills-prestador" aria-selected="false">Prestador</a>
+      </li>  
+    </ul>
+
+    <!--pills tab content inicio-->
+    <div class="tab-content" id="pills-tabContent">
+      <!--id pills cliente inicio-->
+      <div class="tab-pane fade show active" id="pills-cliente" role="tabpanel" aria-labelledby="pills-cliente-tab">
+        
+        <!--form cliente inicio-->
+        <h5>Acesso como Cliente</h5>
+          <p class="card-text">
+              <!--form login Cliente-->
+              <form action="/login" method="POST">
+                <div class="form-group">
+                  
+                  <input type="text" class="form-control mb-2"  name="email" id="email" placeholder="Email"
+                  style="border-radius: 20px;"
+                  >
+                  <input type="password" class="form-control" name="password" id="password" placeholder="Senha"
+                  style="border-radius:20px"
+                  >
+                    <small id="passwordHelpInline" class="text-muted card-footer_body-senha mb-2 mt-2" style="text-align: left;"
+                    >
+                    <a class="login-link pt-4" href="#">Esqueci minha senha</a>
+                    </small>
+                  <button type="submit" class="badge badge-pill badge-success" style="font-size: 1rem; padding: 7px 14px;">Entrando</button>
+                </div>
+              </form>
+            </p> <!-- form cliente fim-->
+
+      </div><!--id pills cliente fim-->
+
+      <!--id pills-prestador inicio-->
+      <div class="tab-pane fade" id="pills-prestador" role="tabpanel" aria-labelledby="pills-prestador-tab">
+        <!--form prestador inicio-->  
+        <h5>Acesso como Prestador</h5>
+          <p class="card-text">
+              <!--form login Cliente-->
+              <form action="/prestador/login" method="POST">
+              
+                <div class="form-group">
+                  <input type="text" class="form-control mb-2"  name="prestador_email" id="prestador_email" placeholder="Email"
+                  style="border-radius: 20px;">
+                  
+                  <input type="password" class="form-control" name="prestador_password" id="prestador_password" placeholder="Senha"
+                  style="border-radius:20px">
+
+                    <small id="passwordHelpInline" class="text-muted card-footer_body-senha mb-2 mt-2" style="text-align: left;">
+                      <a class="login-link pt-4" href="#">Esqueci minha senha</a>
+                    </small>
+                
+                  <button type="submit" class="badge badge-pill badge-success" style="font-size: 1rem; padding: 7px 14px;">Entrar</button>
+
+                </div>
+
+              </form>
+            </p> <!-- form prestador fim-->
+
+      </div><!--id pills-prestador fim-->
+    
+    </div><!--pills tab content fim-->
+
+<div class="card-footer bg-transparent border-success card-footer_call">Ainda não tem cadastro? <a class="login-link" href="criarConta">Cadastre-se</a></div> <!--transferido-->
+
+</div> <!--fim card-->
+</div> <!--fim da div bloco-->
+<!--Fim-->
+
+      <!-- form prestador fim-->
+</div>
+
+<!-- fim do novo login -->
+
+      <!--end card login -->
     </div>
   </section>
   <!-- ###### end login-section ######### -->
@@ -264,7 +358,7 @@
     <div style="position: absolute; top: 45vh; left: 30vw;">
       <h4 style="color: #0e0202;">
         É ESPECIALISTA EM CONSERTOS E REPAROS?
-        <button class="btn badge badge-pill badge-success" id="btn-parceiro" style="margin: 3rem 5rem;"><a href="cadastroPrestador">
+        <button class="btn badge badge-pill badge-success" id="btn-parceiro" style="margin: 3rem 5rem;"><a href="/prestador">
           VENHA SER NOSSO PARCEIRO</a>
         </button>
       </h4>

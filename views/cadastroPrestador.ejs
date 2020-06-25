@@ -5,6 +5,7 @@
 <%- include('./includes/head', {title: 'Fixa Lar | Cadastro de Prestador'}) %>
 
 <link rel="stylesheet" type="text/css" href="/css/style-cadastro.css">
+<script type="text/javascript" src="/js/validacaoPrestador.js"></script>  
 
 <body>
 <!--###### navbar section #############-->
@@ -28,13 +29,13 @@
         <!--inicio area de pessoa-->
         <div class="form-group col-md-6">
           <label class="label-form" for="cpf">CPF:</label>
-          <input type="number" class="form-control" id="cpf" name="cpf" placeholder="Informe somente números" maxlength="11">
+          <input type="number" class="form-control" id="cpf" name="cpf" placeholder="Somente números" onKeyPress="if(this.value.length==11) return false;" required>
         </div>
         
         <div class="form-row col-md-12">
           <div class="form-group col-md-9">
             <label class="label-form" for="nome">Nome Completo:</label>
-            <input type="text" class="form-control" id="nome" name="nome" placeholder="Informe seu nome completo">
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Informe seu nome completo" required>
           </div>
 
 
@@ -57,35 +58,54 @@
         <div class="form-row col-md-12">
           <div class="form-group col-md-8">
             <label class="label-form" for="email">E-mail:</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@email.com">
+            <input type="email" class="form-control" id="email" name="email" maxlength="150" placeholder="email@exemplo.com"
+            oninvalid="this.setCustomValidity('Insira um e-mail válido')"
+            onchange="try{setCustomValidity('')}catch(e){}"
+            oninput="setCustomValidity('')"
+            required>
           </div>
 
           <div class="form-group col-md-4">
             <label class="label-form" for="contato">Contato:</label>
-            <input type="contato" class="form-control" id="contato" name="contato" placeholder="(00)99999-0000">
+            <input type="mobile" class="form-control" id="contato" name="contato" 
+            pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}$" 
+          maxlength="20"
+          placeholder="(11) 00000-0000"  
+          oninvalid="this.setCustomValidity('Insira um número válido')"
+          onchange="try{setCustomValidity('')}catch(e){}"
+          oninput="setCustomValidity('')"
+          required>
           </div>
       </div>
       <!--fim area de pessoa-->
 
         <!--inicio area de endereco-->
         <div class="form-row col-md-12">
-        <!--logradouro-->  
+          <div class="form-group col-md-3">
+            <label class="label-form" for="inputZip">CEP:</label>
+            <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" autocomplete="off" maxlength="9"
+            pattern="\d{5}-\d{3}" 
+            maxlength="10"
+            placeholder="00000-000" 
+            oninvalid="this.setCustomValidity('Insira um CEP válido')"
+            onchange="try{setCustomValidity('')}catch(e){}"
+            oninput="setCustomValidity('')"
+            required>
+          </div>
+          <!--logradouro-->  
         <div class="form-group col-md-9">
           <label class="label-form" for="inputAddress">Logradouro:</label>
-          <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Av. Brasil, nr 000 - Centro">
+          <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Av. Brasil, nr 000 - Centro" required>
         </div>
 
-        <div class="form-group col-md-3">
-          <label class="label-form" for="inputZip">CEP:</label>
-          <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" autocomplete="off" maxlength="9">
-        </div>
+        
       </div>
       
       <!--complemento-->
       <div class="form-row col-md-12">
         <div class="form-group col-md-9">
           <label class="label-form" for="inputAddress2">Complemento:</label>
-          <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Apartamento, quadra, bloco">
+          <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Apartamento, quadra, bloco" required>
         </div>
         <div class="form-group col-md-3" >
           <label class="label-form" for="inputZona">Zona:</label>
@@ -139,11 +159,22 @@
         <div class="form-row col-md-12"><!--inicio area senha-->
           <div class="form-group col-md-6">
             <label class="label-form" for="criar-senha">Criar Senha:</label>
-            <input type="password" class="form-control" id="senha" name="senha" placeholder="**********">
+            <input type="password" class="form-control" id="senha" name="senha" placeholder="**********"
+            oninvalid="this.setCustomValidity('Insira uma senha com pelo menos 6 caracteres')"
+          onchange="try{setCustomValidity('')}catch(e){}"
+          oninput="setCustomValidity('')"
+          required>
+
           </div>
           <div class="form-group col-md-6">
             <label class="label-form" for="conf-senha">Confirme Senha:</label>
-            <input type="password" class="form-control" id="conf-senha" name="conf-senha" placeholder="**********">
+            <input type="password" class="form-control" id="conf-senha" name="conf-senha" placeholder="**********"
+            minlength="6" 
+          maxlength="20" 
+          oninvalid="this.setCustomValidity('Confirme a sua senha')"
+          onchange="try{setCustomValidity('')}catch(e){}"
+          oninput="setCustomValidity('')"
+          required>
           </div>
         </div><br> <!--fim area senha-->
 
@@ -342,10 +373,10 @@
         <div class="btn-cadastrar">
           <button type="submit" class="btn btn-success btn-lg btn-block">Cadastrar</button>
           <br>  
-          <button><a class="btn btn-danger btn-lg btn-block" href="/">Cancelar</a></button>
+          <a href="/" class="btn btn-danger btn-lg btn-block" >Cancelar</a> 
         </div>
         
-        <button href="/" class="btn btn-dangert btn-lg btn-block">Cancelar</button>
+        
       </form><!--fim do formulário-->
     </div>
   </div> <!--fim do card para cadastro-->
@@ -357,6 +388,52 @@
    <script src="/jquery/jquery.slim.min.js"></script>
    <script src="/js/bootstrap.bundle.min.js"></script>
    <script src="/js/accordion.js"></script>
+
+
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // masks
+      $('#contato').mask('(00) 00000-0000');
+      $('#cep').mask('00000-000');
+
+      // validators
+      let fullname = document.getElementById('nome');
+      fullname.addEventListener('invalid', function(event){
+        // set limits
+        let minLength = 6;
+        let maxLength = 150;
+        // verification
+        if(fullname.value === "" || fullname.value.length < minLength || fullname.value.length > maxLength){
+          fullname.setCustomValidity("O nome deve possuir pelo menos 6 caracteres.");
+        } else {
+          fullname.setCustomValidity("");
+        }
+      });
+
+      // create axios instance
+      let api = axios.create({
+        baseURL: 'http://viacep.com.br/ws/',
+        timeout: 3000
+      });
+
+      // fill out address field based on zipcode
+      let cep = document.getElementById('cep');
+      let logradouro = document.getElementById('logradouro');
+      
+      cep.addEventListener('keyup', function(){
+        if(cep.value.length === 9){
+          api.get(`${cep.value.replace('-','')}/json`).then(function(res) {
+            logradouro.value = `${res.data.logradouro}, `;
+          });
+        }
+      });
+    });
+  </script>
+
+
 
 </body>
 </html>
