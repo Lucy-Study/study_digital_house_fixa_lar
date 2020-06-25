@@ -25,6 +25,7 @@
             </div>
           </div>
         </div>
+
         <div id="footer-links" class="col-sm">
           <ul class="nav flex-column" style="color: #43bd69;">
             <li class="nav-item">
@@ -41,6 +42,7 @@
             </li>
           </ul>
         </div>
+
         <div id="footer-links" class="col-sm">
           <ul class="nav flex-column" style="color: #43bd69;">
             <li class="nav-item">
@@ -57,8 +59,26 @@
             </li>
           </ul>
         </div>
-        <div class="col-sm">
-          <form method="GET" id="news-form" action="">
+
+        <div id="footer-links" class="col-sm">
+        <!--<div class="col-sm">-->
+          <div id="div-newsletter">
+            
+            <form id="form-newsletter" action="/newsletter" method="POST" class="d-flex flex-column justify-content-center align-items-center align-items-lg-start">
+
+              <label class="h5 pt-3" for="newsletter" style="color: #43bd69;">Receba nossa newsletter</label>
+            
+              <input class="form-control" type="email" name="emailNewsletter" id="email-newsletter" placeholder="Ex.: email@email.com">
+              <p class="align-self-start" id="erro-newsletter"></p>
+            
+               <button class="btn badge badge-pill badge-success my-2 my-sm-2" id="btn-news" type="submit">
+                ENVIAR
+              </button>
+            
+            </form>
+        </div>
+
+        <!--  <form method="GET" id="news-form" action="">
             <label class="h5 pt-3" for="newsletter" style="color: #43bd69;">Receba nossa newsletter</label>
             <div class="form-group text-right">
               <input
@@ -83,13 +103,18 @@
             </div>
           </form>
         </div>
-      </div>
+      </div> -->
+    <!--</div>-->
     </div>
+      </div>
+    
     <!-- division hr -->
-    <div class="mt-4 mb-4">
+    <div class="mt-3 mb-3">
       <hr class="container-fluid" style="color: #c8c8c8; background-color: #c8c8c8; height: 1px; width: 96%;" />
     </div>
+      
     <!-- division footer -->
+    
     <div class="container-fluid">
       <div class="d-flex justify-content-between">
         <small>Por Grupo 2 DH</small>
@@ -102,6 +127,7 @@
         <small>2020 &copy; Todos os direitos reservados.</small>
       </div>
     </div>
+  </div>
   </div>
 </footer>
 <!-- footer end-section -->
@@ -119,4 +145,5 @@
   crossorigin="anonymous"
 ></script>
 <script src="/js/bootstrap.min.js"></script>
-<script src="/js/newsletter.js"></script>
+<script src="/js/newsletterScript.js"></script>
+<!-- <script src="/js/newsletter.js"></script> -->
