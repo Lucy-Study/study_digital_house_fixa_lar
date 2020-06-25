@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const session = require("express-session");
 require("dotenv").config();
+const methodOverride = require('method-override');
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
@@ -23,7 +24,7 @@ app.set("view engine", "ejs");
 
 app.use(logger("dev"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
     secret: "teste", //process.env.SESSION_SECRET,
@@ -31,6 +32,7 @@ app.use(
     saveUninitialized: true,
   })
 );
+app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
@@ -40,7 +42,7 @@ app.use(
     saveUninitialized: true,
   })
 );
-app.use(cookieParser());
+
 
 app.use("/", indexRouter);
 // used as router to register
