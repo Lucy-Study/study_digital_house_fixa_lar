@@ -4,10 +4,11 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const session = require("express-session");
+const cors = require("cors");
 require("dotenv").config();
 const methodOverride = require('method-override');
 
-const indexRouter = require("./routes/index");
+const routesIndex = require('./routes/index');
 const usersRouter = require("./routes/users");
 const loginRouter = require("./routes/login");
 const rotasContratar = require("./routes/contratarRoute");
@@ -44,10 +45,11 @@ app.use(
 );
 
 
-app.use("/", indexRouter);
+
 // used as router to register
-app.use("/users", usersRouter);
 app.use("/", loginRouter);
+app.use("/", routesIndex)
+app.use("/users", usersRouter);
 app.use("/contratar", rotasContratar);
 app.use("/cadastroCliente", rotasCliente);
 app.use("/criarConta", rotasConta);
