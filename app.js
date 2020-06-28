@@ -9,7 +9,7 @@ require("dotenv").config();
 const methodOverride = require('method-override');
 
 const routesIndex = require('./routes/index');
-const usersRouter = require("./routes/users");
+const usersRouter = require("./routes/register");
 const loginRouter = require("./routes/login");
 const rotasContratar = require("./routes/contratarRoute");
 const rotasCliente = require("./routes/clienteRoute");
