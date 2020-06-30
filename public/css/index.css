@@ -112,7 +112,7 @@ form-group input {
   font-weight: 800;
   letter-spacing: 0.1em;
 
-  text-shadow: 2px 3px #ccc;
+  /* text-shadow: 2px 3px #ccc; */
 }
 
 .text-side-login_fixalar {
@@ -126,6 +126,23 @@ form-group input {
 /*
 * end text login section 
 */
+
+/* Login Session Input */
+#box input[type="text"],
+#box input[type="password"] {
+  display: block;
+  margin: 20px auto;
+  border: 1px solid gray;
+  width: 230px;
+  transition: 0.25s;
+}
+
+#box input[type="text"]:focus,
+#box input[type="password"]:focus {
+  width: 290px;
+  border-color: #43bd69;
+}
+/* End Login Session Input */
 
 /*
 * end login section

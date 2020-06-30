@@ -7,11 +7,11 @@ const listaTemp = [
   { nome: "Pereira", regiao: "Sul", servicos: "Troca" },
   { nome: "Zé", regiao: "Norte", servicos: "Conserto, Manutenção" },
   { nome: "Everton", regiao: "Centro", servicos: "Manutenção, Troca" },
-  { nome: "John Doe", regiao: "Leste", servicos: "Manutenção" },
-  { nome: "Airton", regiao: "Norte", servicos: "Conserto" },
-  { nome: "Pereira", regiao: "Sul", servicos: "Troca" },
-  { nome: "Zé", regiao: "Norte", servicos: "Conserto, Manutenção" },
-  { nome: "Everton", regiao: "Centro", servicos: "Manutenção, Troca" },
+  { nome: "Alex", regiao: "Leste", servicos: "Manutenção" },
+  { nome: "João", regiao: "Norte", servicos: "Conserto" },
+  { nome: "Pedro", regiao: "Sul", servicos: "Troca" },
+  { nome: "Zeca", regiao: "Norte", servicos: "Conserto, Manutenção" },
+  { nome: "Anderson", regiao: "Centro", servicos: "Manutenção, Troca" },
 ];
 
 let buscaController = {
