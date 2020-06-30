@@ -16,7 +16,9 @@ const rotasCliente = require("./routes/clienteRoute");
 const rotasConta = require("./routes/contaRoute");
 const rotasPrestador = require("./routes/prestadorRoute");
 const rotasBusca = require("./routes/buscaRoute");
-
+// admin
+const rotasAdmin = require("./routes/adminRoute");
+ 
 const app = express();
 
 // view engine setup
@@ -46,6 +48,8 @@ app.use(
 
 
 
+// admin
+app.use("/admin", rotasAdmin);
 // used as router to register
 app.use("/", loginRouter);
 app.use("/", routesIndex)

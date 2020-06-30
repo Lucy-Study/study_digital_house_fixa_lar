@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!--Head-->
+<%- include('../includes/head', {title: 'Fixa Lar | Admin'}) %>
+
+<link rel="stylesheet" type="text/css" href="/css/style-cadastro.css">
+
+<body>
+  <!--###### navbar section #############-->
+  <%- include('../includes/header') %>
+
+  <div class="card-cadastro">
+    <div class="card">
+      <div class="card-header text-white title-card">
+        <h2>Login Admin</h2>
+      </div>
+
+      <div class="card-body">
+        
+        <form  method="post" action="admin">
+
+          <div class="mx-5 mt-2">
+            <div class="form-group mb-5">
+              <label class="label-form" for="email">E-mail:</label>
+              <input type="email" class="form-control" id="email" name="mail" placeholder="exemplo@email.com">
+            </div>
+          </div>
+          
+          <div class="mx-5">
+            <!--inicio area senha-->
+            <div class="form-group">
+              <label class="label-form" for="criar-senha">Senha:</label>
+              <input type="password" class="form-control" id="senha" name="passwd" placeholder="**********">
+            </div>
+          </div>
+
+          
+          <hr>
+          
+          
+          <!--btn enviar-->
+          <div class="btn-cadastrar">
+            <button type="submit" class="btn btn-success btn-lg btn-block">Cadastrar</button>
+          </div>
+        </form>
+
+      </div>
+      <!--fim do formulário-->
+    </div>
+  </div>
+  <!--fim do card para cadastro-->
+
+  <!-- footer section -->
+  <%- include('../includes/footer') %>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/jquery/jquery.slim.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
