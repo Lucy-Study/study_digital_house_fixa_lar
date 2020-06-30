@@ -52,6 +52,7 @@ app.use(
 app.use("/admin", rotasAdmin);
 // used as router to register
 app.use("/", loginRouter);
+// newsletter
 app.use("/", routesIndex)
 app.use("/users", usersRouter);
 app.use("/contratar", rotasContratar);

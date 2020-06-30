@@ -19,7 +19,7 @@ const authController = {
     
     if (!user || !bcrypt.compareSync(password, user.password)) {
       return res.render("index", {
-        message: "Email ou senha errados!",
+        message: "Por favor verifique, email ou senha errados!",
        });
     }
 
