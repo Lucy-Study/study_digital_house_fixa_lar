@@ -19,11 +19,20 @@
       <div class="card-body">
         
         <form  method="post" action="admin">
-
+          <%if(typeof(error) !== 'undefined') { %>
+             <a href="/admin" class="alert-link">
+              <div class="alert alert-danger" role="alert">
+                <%= error %>
+              </div>
+            </a>
+           
+              
+          
+          <% } %>  
           <div class="mx-5 mt-2">
             <div class="form-group mb-5">
               <label class="label-form" for="email">E-mail:</label>
-              <input type="email" class="form-control" id="email" name="mail" placeholder="exemplo@email.com">
+              <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@email.com">
             </div>
           </div>
           
@@ -31,7 +40,7 @@
             <!--inicio area senha-->
             <div class="form-group">
               <label class="label-form" for="criar-senha">Senha:</label>
-              <input type="password" class="form-control" id="senha" name="passwd" placeholder="**********">
+              <input type="password" class="form-control" id="senha" name="password" placeholder="**********">
             </div>
           </div>
 
@@ -41,7 +50,7 @@
           
           <!--btn enviar-->
           <div class="btn-cadastrar">
-            <button type="submit" class="btn btn-success btn-lg btn-block">Cadastrar</button>
+            <button type="submit" class="btn btn-success btn-lg btn-block">Fazer Login</button>
           </div>
         </form>
 

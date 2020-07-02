@@ -7,9 +7,6 @@ const {
 } = require('../middleware/loginValidator');
 
 
-/* GET users listing. */
-
-
 // form with cep informations
 router.get('/v1/register', registerController.create);
 router.post('/v1/register',

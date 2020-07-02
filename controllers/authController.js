@@ -19,7 +19,7 @@ const authController = {
     
     if (!user || !bcrypt.compareSync(password, user.password)) {
       return res.render("index", {
-        message: "Por favor verifique, email ou senha errados!",
+        message: "Por favor verifique, email ou senha inválidos!",
        });
     }
 
@@ -35,7 +35,7 @@ const authController = {
   },
 
   destroy: (req, res) => {
-    req.session = undefined;
+    req.session.user = undefined;
     return res.redirect("/",);
   },
 };
