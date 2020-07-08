@@ -34,10 +34,16 @@ const validate = (req, res, next) => {
   const errorFormatter = ({ location, msg, param, value, nestedErrors }) => {
     return `${msg}`;
   };
+
+  const { user } = req.session;
+
   const result = validationResult(req).formatWith(errorFormatter);
   if (!result.isEmpty()) {
     // return errors to view
-    return res.render('auth/register' , { errors: result.array() });
+    returnView = (user.role !== "undefined") 
+      ? 'admin/adminCadastro' 
+      : 'auth/register'
+    return res.render(returnView , { errors: result.array() });
   }
 
   return next();

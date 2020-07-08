@@ -33,7 +33,7 @@
 
           <% if(typeof(user.email) !== 'undefined') {%>
             <li class="menu">
-              <form action="/logout" method="POST">
+              <form action="/" method="POST">
                 <button type="submit" class="mt-1 text-success btn btn-outline-dark">Logout</button>
               </form>
             </li>  
@@ -57,8 +57,34 @@
       </div>
 
       <div class="card-body">
-        
-       this is index admin dashboard
+        <form action="/admin/store" method="get">
+          <button type="submit" class="btn btn-primary btn-sm btn-lg btn-block mb-3">
+            Adicionar Cliente, Prestador, Admin ao Banco de Dados
+          </button>
+        </form>
+        <ul class="list-group d-flex justify-content-between">
+          <% if(typeof(users) !== 'undefined') { %>
+            <% users.forEach(user => { %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <%= user.name %>
+
+              <div class="d-flex">
+
+                <form method="GET" action="/admin/update/<%=user.id %>" class="mr-2">
+                  <button type="submit" class="badge badge-success badge-pill">
+                    Update
+                  </button>
+                </form>
+
+                 <form method="POST" action="/admin/<%=user.id%>?_method=DELETE" class="mr-2">
+                  <button type="submit" class="badge badge-danger badge-pill">Delete</button>
+                </form>
+              </div>
+            </li>
+            <% } ) %>
+          <% } %>  
+         
+        </ul>
 
       </div>
       <!--fim do formulário-->

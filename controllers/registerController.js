@@ -3,8 +3,6 @@ const bcrypt = require("bcrypt");
 const Sequelize = require("sequelize")
 const config = require("../config/database");
 
-// this is active record controller to store user in db
-
 module.exports = {
   // display view register with form
   create: (_req, res) => res.render("auth/register"),
@@ -28,13 +26,13 @@ module.exports = {
     } = req.body;
     const hashPassword = bcrypt.hashSync(password, 10);
     
-    const isUserExit = await User.findOne({
+    const isUserExist = await User.findOne({
       where: {
-        email,
+        cpf,
       }
     });
 
-    if (typeof(isUserExit) !== 'undefined') {
+    if (!!isUserExist) {
       return res.render("auth/register", {
         message: "Usuário já tem cadastro, faça login."
       })
@@ -54,7 +52,7 @@ module.exports = {
       zone,
       created_at: new Date(),
       updated_at: new Date(),
-      role: 'client'
+      role: 'CLIENT'
     };
     
     return  User.create(userRegisterData)

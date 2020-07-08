@@ -19,10 +19,10 @@
       <div class="card-body">
         
         <form  method="post" action="admin">
-          <%if(typeof(error) !== 'undefined') { %>
+          <%if(typeof(message) !== 'undefined') { %>
              <a href="/admin" class="alert-link">
               <div class="alert alert-danger" role="alert">
-                <%= error %>
+                <%= message %>
               </div>
             </a>
            

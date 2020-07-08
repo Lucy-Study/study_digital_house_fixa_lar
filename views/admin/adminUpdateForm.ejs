@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!--Head-->
+<%- include('../includes/head', {title: 'Fixa Lar | Cadastro de Cliente'}) %>
+
+<link rel="stylesheet" type="text/css" href="/css/style-cadastro.css">
+
+<body>
+  <!--###### navbar section #############-->
+  <nav class="navbar navbar-expand-lg static-top nav-style sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img class="img-logo" src="/img/Logo_FixaLar.png" alt="Fixa Lar" />
+      </a>
+      <button
+        class="navbar navbar-toggleable-md navbar-light navbar-toggler navbar-toggler-right nav-btn-border"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarResponsive"
+        aria-controls="navbarResponsive"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon icon-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="menu">
+           
+          </li>
+          <li class="menu">
+           
+          </li>
+          
+          <li class="menu">
+          
+          </li>
+  
+          <div class="vl"></div>
+  
+  
+          <li class="menu">
+           
+          </li>
+          <li class="link-cadastrar menu btn-outline-success" style="border-radius: 50px;">
+            
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+  <div class="card-cadastro">
+    <div class="card">
+      <div class="card-header text-white title-card">
+        <h2>Cadastro de Cliente</h2>
+      </div>
+
+      <div class="card-body">
+        
+      </div>
+
+      <form class="form-cadastro" method="POST" action="/admin/store">
+        <% if(typeof(errors) !== 'undefined') {%>
+        <% errors.forEach((error, index) => { %>
+        <p class="small text-danger pl-5"><%= error %></p>
+        <% }) %>
+        <% }else{%>
+        <% console.log('')%>
+        <% } %>
+        <% if(typeof(message) !== 'undefined') { %>
+        <div class="alert alert-success" role="alert">
+          <%= message%>
+          <h5>
+           
+            <a type="submit" href="/admin/index" style="color:darkslategray">
+              Voltar para Home
+            </a>
+          </h5>
+        </div>
+        <% console.log(message) %>
+        <% } %>
+
+        <!-- verifica role do usuário e cep -->
+
+
+
+
+        <!--inicio area de pessoa-->
+        <div class="form-row col-md-12">
+          <% if(typeof(user) !== 'undefined') { %>
+            
+          
+          <div class="form-group col-md-6">
+            <label class="label-form" for="cpf">CPF:</label>
+            <input type="number" class="form-control" id="cpf" name="cpf" value=<%= user.cpf %>
+          </div>
+          <div class="form-group col-md-6">
+            <label class="label-form" for="role">role:</label>
+            <select id="role" name="role" class="form-control">
+              <option selected>Selecione...</option>
+              <option value="ADMIN"> Admin </option>
+              <option value="CLIENT"> Cliente </option>
+              <option value="PROVIDER"> Prestador </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row col-md-12">
+          <div class="form-group col-md-12">
+            <label class="label-form" for="nome">Nome Completo:</label>
+            <input type="text" class="form-control" id="nome" name="name"  value=<%= user.name %>
+          </div>
+        </div>
+
+        <div class="form-row col-md-12">
+          <div class="form-group col-md-8">
+            <label class="label-form" for="email">E-mail:</label>
+            <input type="email" class="form-control" id="email" name="email"  value=<%= user.email %>>
+          </div>
+
+          <div class="form-group col-md-4">
+            <label class="label-form" for="contato">Contato:</label>
+            <input type="contato" class="form-control" id="contato" name="phone" placeholder="(00)99999-0000">
+          </div>
+        </div>
+        <!--fim area de pessoa-->
+
+        <!--inicio area de endereco-->
+        <div class="form-row col-md-12">
+          <!--logradouro-->
+          <div class="form-group col-md-9">
+            <label class="label-form" for="inputAddress">Logradouro:</label>
+            <input type="text" class="form-control" id="inputAddress" name="address"  value=<%= user.address %>>
+          </div>
+
+          <div class="form-group col-md-3">
+            <label class="label-form" for="inputZip">CEP:</label>
+            <input type="text" class="form-control" id="inputZip" name="cep"  value=<%= user.cep %>>
+          </div>
+        </div>
+
+        <!--complemento-->
+        <div class="form-row col-md-12">
+          <div class="form-group col-md-9">
+            <label class="label-form" for="inputAddress2">Complemento:</label>
+            <input type="text" class="form-control" id="inputAddress2" name="complemento"
+              placeholder="Apartamento, quadra, bloco">
+          </div>
+          <div class="form-group col-md-3">
+            <label class="label-form" for="inputZona">Zona:</label>
+            <select id="inputZona" name="zone" class="form-control">
+              <option selected>Selecione...</option>
+              <option value="Norte"> Norte </option>
+              <option value="Sul"> Sul </option>
+              <option value="Leste"> Leste </option>
+              <option value="Oeste"> Oeste </option>
+              <option value="Oeste"> Centro </option>
+            </select>
+          </div>
+        </div>
+        <!--fim area de dados-->
+
+        <div class="form-row col-md-12">
+          <!--inicio area de endereco-->
+          <div class="form-group col-md-9">
+            <label class="label-form" for="cidade">Cidade:</label>
+            <input type="text" class="form-control" id="inputCity" name="city"  value=<%= user.city %>>
+          </div>
+          <div class="form-group col-md-3">
+            <label class="label-form" for="inputState">Estado:</label>
+            <input type="text" class="form-control"  name="state" id="inputState">
+          </div>
+
+        </div>
+        <!--fim area de endereco-->
+
+
+        <!-- final da inserção do cep -->
+        <div class="form-row col-md-12">
+          <!--inicio area senha-->
+          <div class="form-group col-md-6">
+            <label class="label-form" for="criar-senha">Criar Senha:</label>
+            <input type="password" class="form-control" id="criar-senha" name="password" placeholder="**********">
+          </div>
+          <div class="form-group col-md-6">
+            <label class="label-form" for="conf-senha">Confirme Senha:</label>
+            <input type="password" class="form-control" id="conf-senha" name="confirm_password"
+              placeholder="**********">
+          </div>
+        </div>
+        <!--fim area senha-->
+        <hr>
+
+
+        <!--btn enviar-->
+        <div class="btn-cadastrar">
+          <button type="submit" class="btn btn-success btn-lg btn-block">Cadastrar</button>
+        </div>
+        <% } %>
+      </form>
+
+      <!--fim do formulário-->
+    </div>
+  </div>
+  <!--fim do card para cadastro-->
+
+  <!-- footer section -->
+  <%- include('../includes/footer') %>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/jquery/jquery.slim.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/viacep.js"></script>
+</body>
+
+</html>
